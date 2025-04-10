@@ -1,0 +1,31 @@
+Algorithm Notes:
+
+1. Introduction to Algorithms
+    Priori Analysis & Posteriori testing
+    ----------------------------------------
+    [Priori Analysis]: This Analysis is done on Algorithms, Independent of language, hardware
+    independent, Time and space function.
+
+    [Posteriori Testing]: This testing is done on Program, language dependent, hardware dependent,
+    watch time and bytes.
+
+
+    How to Analyze an Algorithm
+    -----------------------------
+    1. Time : how much time it is taking, we get a time function
+       - Every single statement in an algorithm takes '1 unit' of time
+       Algorithm Swap(a,b)
+       {
+        temp = a;   // 1 unit
+        a = b;      //1 unit
+        b = temp;   // 1 unit
+       }
+       f(n) = 3   
+    2. Space: how much memory space it will consume
+    3. Network consumption: how much data transfer is being done
+    4. Power consumption: how much power is being consumed
+    5. CPU Registers: how much cpu processing units(registers) it is consuming
+     
+
+
+     
