@@ -1,0 +1,6 @@
+1. Why we use List<> when we have Arrays?
+    - Arrays have fixed size but List<> are dynamic in anture.
+    - List<T> are generic, like they can be List<string>, List<int> whereas Arrays need manual declaration like int[],
+      string[] etc.
+
+      

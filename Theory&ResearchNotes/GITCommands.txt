@@ -1,0 +1,11 @@
+1. To check branch: git branch
+2. To push changes from your local branch
+       git add .
+       git commit -m "enter the message"
+       git push --set-upstream origin <branch-name>
+       * check now in github it will ask to create PR
+       Another option:
+       In command line you can enter the below -
+           gh pr create --base main --head <branch-name> --title "<your message>" --body "<your message>"
+       After the above line: GitHub will give you a link to view the PR.
+3. 
