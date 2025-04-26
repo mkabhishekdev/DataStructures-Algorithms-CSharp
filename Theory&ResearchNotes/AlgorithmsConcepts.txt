@@ -1,6 +1,7 @@
 Algorithm Notes:
 
 1. Introduction to Algorithms
+*********************************************
     Priori Analysis & Posteriori testing
     ----------------------------------------
     [Priori Analysis]: This Analysis is done on Algorithms, Independent of language, hardware
@@ -25,7 +26,163 @@ Algorithm Notes:
     3. Network consumption: how much data transfer is being done
     4. Power consumption: how much power is being consumed
     5. CPU Registers: how much cpu processing units(registers) it is consuming
-     
 
 
-     
+
+
+2. How to Analyze Time Complexity in a Code Snippet
+****************************************************
+
+Ask yourself these key questions:
+
+1. How many times does each line run?
+Look at each loop (for, while, foreach)
+
+Nested loops? Multiply the iterations.
+
+🔁 A single loop from 0 to n → O(n)
+🔁 Nested loop → O(n²), O(n³), etc.
+
+2. Are there recursive calls?
+Count how many times the function recurses, and how the input shrinks.
+
+Example:
+BinarySearch(arr, left, right) → halves input each time → O(log n)
+Fibonacci(n) → calls itself twice → exponential → O(2ⁿ)
+
+3. Look at the input size (n)
+Does the running time depend on input size?
+If you're iterating over an array of n items, it’s probably O(n).
+
+4. Ignore constants and lower-order terms
+O(2n) → O(n)
+O(n + log n) → O(n)
+
+Just focus on the highest growing term.
+
+🔍 Quick Examples:
+✅ Example 1 – O(n):
+
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(i);
+}
+Runs n times → O(n)
+
+✅ Example 2 – O(n²):
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        Console.WriteLine(i + j);
+    }
+}
+Runs n * n times → O(n²)
+
+✅ Example 3 – O(log n):
+
+while (n > 1)
+{
+    n = n / 2;
+}
+Divides n every time → O(log n)
+
+🔑 Summary:
+
+Code Pattern	                                 Time Complexity
+Single loop over n	                               O(n)
+Nested loops	                                     O(n²), O(n³), etc.
+Divide by 2 each time	                            O(log n)
+Loop inside loop over different inputs	             O(n * m)
+Recursion doubling calls	                         O(2ⁿ)
+
+
+
+
+3. How to Analyze Space Complexity (Simple Way)
+************************************************************
+👉 Ask:
+
+How much extra memory is being used as input size (n) grows?
+
+📋 Common Patterns for Space Complexity:
+
+Code Pattern	                                  Space Complexity	                        Reason
+Just a few variables (int, bool, etc.)	              O(1)	                          Constant memory
+New array or list of size n	                       O(n)	                       Space grows with input
+2D array (n x n)	                                   O(n²)	                    Space grows as square of input
+Recursion (depth = n)	                             O(n)	                     Stack memory for each call
+Divide and conquer recursion	                      O(log n)	                  Stack depth based on halves
+
+
+🔥 Simple Examples:
+
+✅ Example 1 — O(1) Space:
+
+int sum = 0;
+for (int i = 0; i < n; i++)
+{
+    sum += i;
+}
+Only sum and i used.
+
+Memory doesn't depend on n.
+
+Space = O(1)
+
+✅ Example 2 — O(n) Space:
+
+int[] newArr = new int[n];
+for (int i = 0; i < n; i++)
+{
+    newArr[i] = i * 2;
+}
+newArr size grows with n.
+
+Space = O(n)
+
+✅ Example 3 — O(n²) Space:
+
+int[,] matrix = new int[n, n];
+2D array of size n × n.
+
+Space = O(n²)
+
+✅ Example 4 — O(n) Space (Recursion):
+
+void Print(int n)
+{
+    if (n == 0) return;
+    Console.WriteLine(n);
+    Print(n - 1);
+}
+Each call waits for the next → depth = n.
+
+Stack memory grows with n.
+
+Space = O(n)
+
+✅ Example 5 — O(log n) Space (Divide and Conquer):
+
+void BinarySearch(int[] arr, int left, int right)
+{
+    if (left > right) return;
+    int mid = (left + right) / 2;
+    BinarySearch(arr, left, mid - 1);
+    BinarySearch(arr, mid + 1, right);
+}
+Each call divides problem in half.
+
+Stack depth = log n.
+
+Space = O(log n)
+
+🎯 Final Shortcuts
+
+Look for...	                                                    Likely Space
+Only primitive variables	                                         O(1)
+New array/list proportional to input	                             O(n)
+Nested structures (matrix, graph)	                            O(n²), O(n³)
+Simple recursion	                                                  O(n)
+Divide and conquer recursion	                                     O(log n)

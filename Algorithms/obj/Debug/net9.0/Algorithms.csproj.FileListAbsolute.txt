@@ -1,0 +1,15 @@
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.AssemblyInfoInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.AssemblyInfo.cs
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.csproj.CoreCompileInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.sourcelink.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/bin/Debug/net9.0/Algorithms
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/bin/Debug/net9.0/Algorithms.deps.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/bin/Debug/net9.0/Algorithms.runtimeconfig.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/bin/Debug/net9.0/Algorithms.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/bin/Debug/net9.0/Algorithms.pdb
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/refint/Algorithms.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.pdb
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/Algorithms.genruntimeconfig.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/Algorithms/obj/Debug/net9.0/ref/Algorithms.dll

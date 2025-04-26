@@ -1,0 +1,27 @@
+1. 
+- LINQ = Language integrated query
+
+- LINQ standard query operators:
+    * SELECT
+    * FROM
+    * WHERE
+    * ORDERBY
+    * JOIN
+    * GROUPBY
+
+- LINQ query using lambda expression example:
+  
+   public class Student
+   {
+       public int ID { get; set; }
+       public string Name { get; set; }
+       public string Gender { get; set; }
+
+       public static List<Student> GetAllStudents()...
+   }
+
+   Below is the lambda expression used:
+
+   IEnumerable<Student> students = Student.GetAllStudents()
+                                       .Where(student => student.Gender == "Male");
+      
