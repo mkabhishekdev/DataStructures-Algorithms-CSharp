@@ -1,6 +1,6 @@
 using System;
 
-public class SinglyLinkedListImpl
+public class DS1_SinglyLinkedListImpl
 {
     Node head;
 
@@ -114,10 +114,21 @@ public class SinglyLinkedListImpl
     }
 
 
-    // reverse a linked list
+    // reverse a linked list (if confusion, look into Jennys lecture)
     public void ReverseLinkedList()
     {
+        Node previousNode = 0;
+        Node currentNode = head;
+        Node nextNode = head;
 
+        while(nextNode != null)
+        {
+            nextNode = nextNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        head = nextNode;
     }
     
     public void PrintList()
@@ -134,3 +145,17 @@ public class SinglyLinkedListImpl
 
 
 }
+
+/*
+DS1_SinglyLinkedListImpl singlyLinkedList= new DS1_SinglyLinkedListImpl();
+        singlyLinkedList.Push(4);
+        singlyLinkedList.Push(3);
+        singlyLinkedList.Push(2);
+        singlyLinkedList.Push(1);
+        Console.WriteLine("Linked List is: ");
+        singlyLinkedList.PrintList();
+     //   singlyLinkedList.DeleteNodeFromPositon(3);
+     //   Console.WriteLine("Linked list after deletion: ");
+        singlyLinkedList.SearchElement(1);
+       // singlyLinkedList.SearchElement(2);
+*/

@@ -3,4 +3,44 @@
     - List<T> are generic, like they can be List<string>, List<int> whereas Arrays need manual declaration like int[],
       string[] etc.
 
-      
+2. Dictionaries
+   - In dictionary 'key' should always be unique.
+   - Two different keys can contain duplicate values
+   - 'NULL' key value not allowed. (whereas one null keyword allowed in hashmap[java])
+
+Dictionary<string, string> dict = new Dictionary<string, string>();
+dict["apple"] = "a fruit";
+dict["car"] = "a vehicle";
+
+   How it internally works? 
+   1. Hashing the Key:
+      When you insert a key (like "Bob"), the dictionary calculates a "hash code" for that string.
+
+   2. Bucket Storage:
+      It uses this hash code to decide where to store the key-value pair in an internal array (called buckets).
+
+   3. Collision Handling:
+      If two keys happen to have the same hash code, C# handles it using a technique like chaining 
+      (storing multiple pairs in a bucket).
+
+   4. Fast Lookup:
+      When you do ages["Bob"], it hashes "Bob" again and jumps straight to the bucket to find the value 
+      — typically in constant time O(1).
+
+
+3. HashSet
+
+HashSet<T> in C# is a collection that stores unique elements and provides very fast lookup, add, and remove operations.
+
+Key Features of HashSet<T>:
+1. Stores only unique values.
+2. Lookup (Contains) is very fast — average O(1) time.
+3. Internally, it uses a hashing mechanism to organize values.
+
+HashSet<int> numbers = new HashSet<int>();
+
+How it works internally:
+1. When you add an item (like 10), the HashSet computes a hash code.
+2. It stores the item in a "bucket" based on this hash.
+3. If another item with the same hash is added, it checks equality to avoid duplicates.
+

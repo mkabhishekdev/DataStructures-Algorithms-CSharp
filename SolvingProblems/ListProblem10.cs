@@ -19,4 +19,6 @@ myList.Add(20);
 Console.WriteLine(myList.Get(0)); // Output: 10
 Console.WriteLine(myList.Count);  // Output: 2
 
+Time Complexity:
+Space Complexity:
 */

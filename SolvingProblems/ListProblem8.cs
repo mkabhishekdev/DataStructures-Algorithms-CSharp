@@ -12,4 +12,6 @@ Expected Output:
 2: 2
 3: 3
 
+Time Complexity:
+Space Complexity:
 */
