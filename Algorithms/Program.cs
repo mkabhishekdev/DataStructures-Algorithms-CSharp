@@ -4,9 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Algo1_LinearSearchImpl lsi = new Algo1_LinearSearchImpl();
-        int[] check = {15,5,20,35,2,42,67,17};
-
-        lsi.LinearSearch(check,11);
+        Algo2_BinarySearchIterativeMethod bsi = new Algo2_BinarySearchIterativeMethod();
+        int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        bsi.BinarySearch(values,3);
     }
 }
