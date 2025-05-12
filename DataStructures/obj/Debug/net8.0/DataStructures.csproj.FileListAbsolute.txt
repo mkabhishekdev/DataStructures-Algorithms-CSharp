@@ -1,0 +1,5 @@
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.AssemblyInfoInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.AssemblyInfo.cs
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.csproj.CoreCompileInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.sourcelink.json

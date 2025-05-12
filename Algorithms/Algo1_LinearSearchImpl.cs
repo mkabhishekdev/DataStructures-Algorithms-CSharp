@@ -29,3 +29,9 @@ You are not creating any new data structures inside LinearSearch.
 You are simply reading the input array, which was already passed to the method.
 Other than a few primitive variables (i, key), no extra memory usage grows with the input size n.
 */
+/*
+ Algo1_LinearSearchImpl lsi = new Algo1_LinearSearchImpl();
+        int[] check = {15,5,20,35,2,42,67,17};
+
+        lsi.LinearSearch(check,11);
+*/
