@@ -1,0 +1,10 @@
+1. 
+dotnet clean // to clean the project
+dotnet build   //to build project
+
+2. dotnet run // to run project
+
+3. dotnet build -warnas:none // to suppress warnings while building
+
+4. dotnet run -warnas:none // to suppress warnings while running
+

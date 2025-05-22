@@ -1,5 +1,15 @@
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/bin/Debug/net8.0/DataStructures
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/bin/Debug/net8.0/DataStructures.deps.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/bin/Debug/net8.0/DataStructures.runtimeconfig.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/bin/Debug/net8.0/DataStructures.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/bin/Debug/net8.0/DataStructures.pdb
 /Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.GeneratedMSBuildEditorConfig.editorconfig
 /Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.AssemblyInfoInputs.cache
 /Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.AssemblyInfo.cs
 /Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.csproj.CoreCompileInputs.cache
 /Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.sourcelink.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/refint/DataStructures.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.pdb
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/DataStructures.genruntimeconfig.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/DataStructures/obj/Debug/net8.0/ref/DataStructures.dll

@@ -1,12 +1,14 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
+        
         {
             "name": ".NET: Launch Console App",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/DataStructures/bin/Debug/net9.0/DataStructures.dll",
+            "program": "${workspaceFolder}/DataStructures/bin/Debug/net8.0/DataStructures.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

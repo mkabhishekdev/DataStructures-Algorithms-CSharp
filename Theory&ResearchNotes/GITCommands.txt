@@ -1,4 +1,8 @@
 1. To check branch: git branch
+   To check status: git status
+   * When cloning a folder from github in loacl in the command line you should enter 'git clone <followed by 
+   the ssh link>" 
+
 2. To push changes from your local branch
        git add .
        git commit -m "enter the message"
@@ -8,4 +12,12 @@
        In command line you can enter the below -
            gh pr create --base main --head <branch-name> --title "<your message>" --body "<your message>"
        After the above line: GitHub will give you a link to view the PR.
-3. 
+
+3. If you updated your 'local branch' but not sure if you got latest from main branch
+       - Ensure your local branch is first committed
+             git add .
+             git commit -m "message"
+       - git checkout main
+       - git pull origin main
+       - git merge <your local branch>
+       - git push origin main 

@@ -67,13 +67,14 @@ public class DS1_SinglyLinkedListImpl
     // delete a node from the linked list
     public void Delete(int deleteData)
     {
-           Node temp=head,prev=null;
+        Node temp=head,prev=null;
 	      
-	      while(temp.next!=null && temp.data!=deleteData){
-	    	  prev=temp;
-	    	  temp=temp.next;
+	    while(temp.next!=null && temp.data!=deleteData)
+        {
+	    	prev=temp;
+	    	temp=temp.next;
 		}
-	      prev.next = temp.next;
+	    prev.next = temp.next;
     }
 
     // delete a node from the linked list given its position
@@ -117,7 +118,7 @@ public class DS1_SinglyLinkedListImpl
     // reverse a linked list (if confusion, look into Jennys lecture)
     public void ReverseLinkedList()
     {
-        Node previousNode = 0;
+        Node previousNode = null;
         Node currentNode = head;
         Node nextNode = head;
 
