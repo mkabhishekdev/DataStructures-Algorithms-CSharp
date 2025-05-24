@@ -1,0 +1,25 @@
+Design Instagram?
+
+Functionalities:
+
+a) postPhoto(userID, photoID, caption) — user posts a new photo with an optional caption
+b) deletePhoto(userID, photoID) — user deletes their photo
+c) likePhoto(userID, photoID) — user likes a photo
+d) unlikePhoto(userID, photoID) — user removes their like
+e) getPhotoLikes(photoID) — get count or list of users who liked a photo
+f) followUser(followerID, followeeID) — one user follows another
+g) unfollowUser(followerID, followeeID) — unfollow a user
+h) getFeed(userID) — get recent photos posted by users the user follows, sorted by time
+
+Tasks:
+Whiteboard your approach:
+
+How do you store users, photos, likes, and follows?
+
+What data structures will you use?
+
+How will you retrieve the feed efficiently?
+
+Code a prototype:
+
+Implement basic APIs for posting, liking, following, and fetching the feed.
