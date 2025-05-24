@@ -1,0 +1,21 @@
+Design Uber?
+
+Functionalities:
+
+registerDriver(driverID, location) — driver comes online and shares location
+
+registerRider(riderID, location) — rider requests a ride from location
+
+matchDriverToRider(riderID) — assign nearest available driver to rider
+
+startRide(rideID) — driver starts the ride
+
+endRide(rideID) — ride is completed, calculate fare
+
+getRideHistory(userID) — get past rides for rider or driver
+
+Task:
+
+Think through matching logic and ride lifecycle.
+
+Implement basic data structures and APIs for registering drivers/riders and managing rides.
