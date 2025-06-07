@@ -234,3 +234,29 @@ Output:
 Keyword	      Valid In	         Purpose	                               Can exit just the loop?	             Can exit method?
 break	        Loops,switch	    Exit loop or switch early	                        ✅ Yes	                             ❌ No
 return	       Methods	       Exit method (and optionally return value)	      ✅ Yes (from loop inside method)	  ✅ Yes
+
+
+7. DATA-STRUCTURE: Singly Linked List
+*****************************************
+
+// write down 3-4 main points to visualize this
+
+
+8. DATA-STRUCTURE: Doubly Linked List
+*****************************************
+
+// write down 3-4 main points to visualize this
+
+
+
+9. DATA-STRUCTURE: STACK
+*****************************************
+
+// write down 3-4 main points to visualize this
+
+
+
+10. DATA-STRUCTURE: QUEUE
+*****************************************
+
+// write down 3-4 main points to visualize this

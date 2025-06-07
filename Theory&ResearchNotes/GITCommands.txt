@@ -1,6 +1,6 @@
 1. To check branch: git branch
    To check status: git status
-   * When cloning a folder from github in loacl in the command line you should enter 'git clone <followed by 
+   * When cloning a folder from github in local in the command line you should enter 'git clone <followed by 
    the ssh link>" 
 
 2. To push changes from your local branch
