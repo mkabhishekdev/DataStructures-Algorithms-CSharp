@@ -186,3 +186,57 @@ New array/list proportional to input	                             O(n)
 Nested structures (matrix, graph)	                            O(n²), O(n³)
 Simple recursion	                                                  O(n)
 Divide and conquer recursion	                                     O(log n)
+
+4. SEARCHING
+*******************************************************
+
+- Binary Search
+  --------------
+  Main-Idea:
+  -----------
+  // write down in one or two points to remember
+
+
+- Linear Search
+  --------------
+  Main-Idea:
+  -----------
+  // write down in one or two points to remember
+
+
+
+5. SORTING
+************************************************************
+
+- Bubble Sort
+  ------------
+  Main-Idea:
+  -----------
+    // write down in one or two points to visualise
+
+
+- Insertion Sort
+  ------------
+  Main-Idea:
+  -----------
+  1. You need to visualize dividing the given unsorted array into two sublists: sorted sublist on the left &
+     unsorted sublist on the right.
+  2. Initially start the sorted sublist with just one item on the left.
+  3. Pick the first item in the unsorted list and start comparing with the sorted list and keep on moving item
+     from unsorted sublist to sorted sublist.
+
+
+- Selection Sort
+  ------------
+  Main-Idea:
+  -----------
+    // write down in one or two points to visualise
+
+
+- Quick Sort
+------------
+  Main-Idea:
+  -----------
+   // write down in one or two points to visualise
+
+  
