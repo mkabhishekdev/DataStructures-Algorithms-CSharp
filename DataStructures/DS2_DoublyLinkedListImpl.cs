@@ -150,6 +150,21 @@ public class DS2_DoublyLinkedListImpl
         }
         Console.WriteLine("head of the dll is: " + head.data);
         Console.WriteLine("tail of the dll is: " + tail.data);
-    
+
     }
 }
+
+
+/*
+  DS2_DoublyLinkedListImpl dll = new DS2_DoublyLinkedListImpl();
+        dll.Push(1);
+        dll.Push(2);
+        dll.Push(3);
+        dll.PrintDLL();
+        dll.Append(5);
+        dll.Append(7);
+        dll.PrintDLL();
+        dll.PrintDLL();
+        dll.ReverseDLL();
+        dll.PrintDLL();
+*/

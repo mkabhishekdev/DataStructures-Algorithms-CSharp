@@ -251,8 +251,10 @@ return	       Methods	       Exit method (and optionally return value)	      ✅
 
 9. DATA-STRUCTURE: STACK
 *****************************************
-
-// write down 3-4 main points to visualize this
+ - LIFO, has various applications like: reversing a string, text editor undo Feature
+ - Can do operations like Push(int data), Pop(), Peek(). Always think of having a variable say 'top'. If the stack 
+   is empty it will be -1. When the stack overflows(i.e more than the size limit), it his said stack overflow.
+ 
 
 
 
