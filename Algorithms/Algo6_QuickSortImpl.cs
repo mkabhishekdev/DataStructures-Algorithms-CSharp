@@ -1,5 +1,6 @@
 // VERY IMPORTANT SORTING TECHNIQUE DUE TO ITS BEST CASE TIME COMPLEXITY: O(nlogn) compared with other sorting techniques
 //like bubble sort, insertion sort, selection sort 
+// Quick Sort = Partition Exchange sort
 
 public class Algo6_QuickSortImpl
 {

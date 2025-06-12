@@ -4,16 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        DS2_DoublyLinkedListImpl dll = new DS2_DoublyLinkedListImpl();
-        dll.Push(1);
-        dll.Push(2);
-        dll.Push(3);
-        dll.PrintDLL();
-        dll.Append(5);
-        dll.Append(7);
-        dll.PrintDLL();
-        dll.PrintDLL();
-        dll.ReverseDLL();
-        dll.PrintDLL();
+        DS3_1_StackUsingArrayImpl ds3_1 = new DS3_1_StackUsingArrayImpl();
+
+        ds3_1.Push(1);
+        ds3_1.Push(2);
+        ds3_1.Push(3);
+        ds3_1.Push(4);
+        ds3_1.Push(5);
+        ds3_1.Pop();
+        ds3_1.DisplayStack();
+        Console.WriteLine("The peek item is: " +ds3_1.Peek());
+        
     }
 }
