@@ -29,6 +29,8 @@ public class Algo3_BubbleSortImpl
 
 }
 
+// Time Complexity: Worst Case: O(n2) ,Best Case: O(n)
+
 /*
    Algo3_BubbleSortImpl bs = new Algo3_BubbleSortImpl();
         int[] sampleData = { 1,2,3,4,5 };
