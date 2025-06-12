@@ -25,6 +25,8 @@ public class Algo4_InsertionSortImpl
 
 }
 
+// Time Complexity: Worst Case: O(n2) ,Best Case: O(n)
+
 /*
   Algo4_InsertionSortImpl a4 = new Algo4_InsertionSortImpl();
         int[] test = { 8, 3, 11, 1, 7, 5, 2 };

@@ -230,8 +230,10 @@ Divide and conquer recursion	                                     O(log n)
   ------------
   Main-Idea:
   -----------
-    // write down in one or two points to visualise
-
+  1. Select the first element as the minimum element to start with.
+  2. Compare each element present in the list and find the minimum value.
+  3. If minimum value found is not the same as the minimum element set initially(i.e first element to start with), swap the 
+     elements.
 
 - Quick Sort
 ------------
