@@ -1,0 +1,15 @@
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.AssemblyInfoInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.AssemblyInfo.cs
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.csproj.CoreCompileInputs.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.sourcelink.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/bin/Debug/net8.0/TestYourSkill
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/bin/Debug/net8.0/TestYourSkill.deps.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/bin/Debug/net8.0/TestYourSkill.runtimeconfig.json
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/bin/Debug/net8.0/TestYourSkill.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/bin/Debug/net8.0/TestYourSkill.pdb
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/refint/TestYourSkill.dll
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.pdb
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/TestYourSkill.genruntimeconfig.cache
+/Users/mkabhishek/Desktop/Repo/BOOTCAMP/bootcamp-course1-programmingbasics/TestYourSkill/obj/Debug/net8.0/ref/TestYourSkill.dll

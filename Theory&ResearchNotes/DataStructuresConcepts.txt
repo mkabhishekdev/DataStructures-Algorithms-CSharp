@@ -241,6 +241,9 @@ return	       Methods	       Exit method (and optionally return value)	      ✅
 
 // write down 3-4 main points to visualize this
 
+    * Reverse a Linked List
+      ----------------------
+      
 
 8. DATA-STRUCTURE: Doubly Linked List
 *****************************************

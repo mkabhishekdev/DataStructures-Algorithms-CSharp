@@ -2,13 +2,16 @@ Design a Youtube Playlist System?
 
 
 Design a Youtube playlist system with the following functionalities: 
-a) addSong(songID, songName) => add at the end of playlist 
-b) deleteSong(songID) => remove song if it exists 
+a) addSong(songName) => add at the end of playlist 
+b) deleteSong(songName) => remove song if it exists 
 c) moveNext() => move to next song 
 d) moveBack() => move to previous song 
-e) moveByKPositions(int k) => move by k positions 
 f) playlistSize() => give number of songs in the playlist.
 
 Task:
 1. Whiteboard and paste your approach may be as a comment
 2. Code the approach
+
+- use an arraylist
+- addSong: add song end of the arraylist
+- deleteSong: use deleteSong
