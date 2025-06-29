@@ -242,10 +242,42 @@ Divide and conquer recursion	                                     O(log n)
   1. Also known as Partition sorting, main idea is to partition the given list, than sorting each sub partitioned
      sets. 
   2. Keep variables say lowerbound,upperbound,start,end and set the first element as 'Pivot' to start with.
-  3. Outer while loop will be definitely (start < end), iside check for conditions and Swap.
+  3. Outer while loop will be definitely (start < end), inside check for conditions and Swap.
   4. Note, the Pivotal element will need to be swapped when you reach to the outer while condition if start > end, which
      is not true and hence swap it. Create first a Partition(Array, lowerbound, upperbound) function and than have the 
      Quicksort function which will handle the sub-partitioning of the elements.
+
+
+
+6. ABDUL SIR LECTURES - ALGORITHMS Notes
+**********************************************************************************************************
+(Points labelled as per lecture video sequence)
+
+1.5.1: Time Complexity 
+-----------------------
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      
 
