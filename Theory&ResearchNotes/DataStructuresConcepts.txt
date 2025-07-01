@@ -243,7 +243,39 @@ return	       Methods	       Exit method (and optionally return value)	      ✅
 
     * Reverse a Linked List
       ----------------------
-      
+      1. Visualize movements step by step.
+      2. Think of it has you are reversing the links to the addresses stored in next pointer.
+      3. What you need? You will start with currentNode = head (it points to head)
+                        - Than prev = null (because prev pointer to first node points to null)
+      4. Think here? you will loose the connection to next pointer since you are not saving it anywhere,
+        so create next = curr.next (this will keep the pointer to the next link safe before you reverse)
+      5. Now think that with the below two lined you reversed the first node,
+             next = curr.next;
+             curr.next = prev;
+      6. Think that now you moved to the second node(visualize), so whatever was your current node in the previous
+         step will become previous now:
+         prev = curr;
+      7. So now the current pointer, where will you get the value from? remember the very first step where you kept
+         the value saved in 'next' pointer.
+         curr = next;
+      8. You will write all these within a while(current != null). Also where will you find the updated head value
+         from? From the 'prev'
+      9. So writing all the above logic as a code snippet:
+         
+         Node prev = null;
+         Node curr = head;
+         Node next;
+
+         while(curr != null)
+         {
+             next = curr.next;
+             curr.next = prev;
+             prev = curr;
+             curr = next;
+         }
+         head = prev;
+
+
 
 8. DATA-STRUCTURE: Doubly Linked List
 *****************************************

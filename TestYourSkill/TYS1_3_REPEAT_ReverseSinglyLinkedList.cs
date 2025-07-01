@@ -1,4 +1,4 @@
-public class TYS1_3_ReverseSinglyLinkedList
+public class TYS1_3_REPEAT_ReverseSinglyLinkedList
 {
 
     public class Node
@@ -39,8 +39,20 @@ public class TYS1_3_ReverseSinglyLinkedList
         }
     }
 
-    public void Reverse()
+    public void Reverse(Node head)
     {
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr != null)
+        {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
 
     }
 
