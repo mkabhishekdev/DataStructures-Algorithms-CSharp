@@ -1,0 +1,312 @@
+1. WHY ADDING { GET; SET; } IS BETTER CODE PRACTICE WHILE DECLARATION?
+**************************************************************************
+
+Ex: Let us say the same line is declared in two different ways like below:
+    
+    public int data;
+    public int data { get; set; } (get-set approach)
+
+When you follow the get-set approach:
+Auto-Implemented Properties:
+------------------------------
+When you write this:
+
+public int Data { get; set; }
+C# automatically creates a private backing field (like _data) behind the scenes. You don’t see it, 
+but it exists — managed by the compiler.
+
+So internally, it's like writing this:
+
+private int _data;
+public int Data
+{
+    get { return _data; }
+    set { _data = value; }
+}
+But only if you don’t add any custom logic.
+
+What's the difference?
+👎 This is a field:
+public int data;
+A plain variable.
+
+Exposes the variable directly.
+
+No control when reading or changing it.
+
+👍 This is a property:
+
+public int Data { get; set; }
+Looks like a variable, but it’s smart.
+
+Behind the scenes, it's like:
+
+private int _data;
+
+public int Data
+{
+    get { return _data; }
+    set { _data = value; }
+}
+Now, you can control how data is accessed or changed.
+
+✅ Why is { get; set; } better?
+Feature	Field (data)	               Property                      (Data { get; set; })
+Encapsulation (control)	                ❌ None	                  ✅ You can add logic later
+Validation before setting	            ❌ Not possible easily	  ✅ Add checks in set block
+Change tracking/logging	                ❌ No	                  ✅ Possible in set block
+Compatibility with UI tools	            ❌ No	                  ✅ Yes (e.g., WPF, Blazor)
+Follows .NET best practices	            ❌ No	                  ✅ Yes
+
+************************************************************************************************************
+
+2. WHY WE USE LIST<> WHEN WE HAVE ARRAYS?
+--------------------------------------------
+    - Arrays have fixed size but List<> are dynamic in anture.
+    - List<T> are generic, like they can be List<string>, List<int> whereas Arrays need manual declaration like int[],
+      string[] etc.
+
+************************************************************************************************************
+
+3. DICTIONARIES
+-------------------------
+   - In dictionary 'key' should always be unique.
+   - Two different keys can contain duplicate values
+   - 'NULL' key value not allowed. (whereas one null keyword allowed in hashmap[java])
+
+Dictionary<string, string> dict = new Dictionary<string, string>();
+dict["apple"] = "a fruit";
+dict["car"] = "a vehicle";
+
+   How it internally works? 
+   1. Hashing the Key:
+      When you insert a key (like "Bob"), the dictionary calculates a "hash code" for that string.
+
+   2. Bucket Storage:
+      It uses this hash code to decide where to store the key-value pair in an internal array (called buckets).
+
+   3. Collision Handling:
+      If two keys happen to have the same hash code, C# handles it using a technique like chaining 
+      (storing multiple pairs in a bucket).
+
+   4. Fast Lookup:
+      When you do ages["Bob"], it hashes "Bob" again and jumps straight to the bucket to find the value 
+      — typically in constant time O(1).
+
+
+************************************************************************************************************
+
+4. HASHSET
+-------------------
+
+HashSet<T> in C# is a collection that stores unique elements and provides very fast lookup, add, and remove operations.
+
+Key Features of HashSet<T>:
+1. Stores only unique values.
+2. Lookup (Contains) is very fast — average O(1) time.
+3. Internally, it uses a hashing mechanism to organize values.
+
+HashSet<int> numbers = new HashSet<int>();
+
+How it works internally:
+1. When you add an item (like 10), the HashSet computes a hash code.
+2. It stores the item in a "bucket" based on this hash.
+3. If another item with the same hash is added, it checks equality to avoid duplicates.
+
+************************************************************************************************************
+
+5. GARBAGE COLLECTOR in C#
+---------------------------------------
+
+In C:
+------
+You manually allocate memory using malloc(), calloc(), etc.
+
+You must manually free it using free(ptr) when you're done.
+
+Failing to free memory causes memory leaks.
+
+int* arr = (int*)malloc(10 * sizeof(int));
+// use arr
+free(arr); // manually free
+
+
+In C#:
+-------
+Memory is managed automatically via the .NET Garbage Collector.
+
+When objects go out of scope and are no longer referenced, GC will eventually reclaim that memory.
+
+No need for free() or delete.
+
+You can suggest cleanup using GC.Collect(), but it's not recommended to call it manually in production code — it's best to let the runtime handle it.
+
+List<int> myList = new List<int> {1, 2, 3};
+// When myList goes out of scope and isn't used anymore, the GC will clean it up.
+
+Bottom line:
+--------------
+You don’t need to (and shouldn’t try to) manually free memory in C# like you do in C. 
+The garbage collector does that job efficiently in the background. Just focus on writing clean, maintainable code, 
+and the GC will handle the rest.
+
+
+************************************************************************************************************
+
+6. WHEN TO USE "BREAK;" AND WHEN TO USE "CONTINUE;"?
+-------------------------------------------------------
+
+✅ Golden Rule:
+-----------------
+✅ Use break in loops or switch blocks — to exit them early.
+✅ Use return in methods — to exit the method early or return a value.
+
+
+🔴 Can break be used in a method (but outside a loop)?
+No — that's a compile-time error.
+Ex:
+void MyMethod()
+{
+    break; // ❌ ERROR: CS0139 - No enclosing loop out of which to break
+}
+break must be inside a loop or a switch. It cannot be used freely in a method unless there's a loop or switch enclosing it.
+
+
+🔴 Can return be used in a loop?
+Yes — absolutely.
+You can use return inside a loop if you're inside a method, and you want to exit the method from within the loop.
+
+Ex:
+void FindFirstEven(int[] numbers)
+{
+    foreach (int n in numbers)
+    {
+        if (n % 2 == 0)
+        {
+            Console.WriteLine($"First even: {n}");
+            return; // ✅ Exit the method entirely
+        }
+    }
+
+    Console.WriteLine("No even number found");
+}
+So while return can appear inside a loop, its effect is to exit the method, not just the loop.
+
+🔄 Comparing break vs return inside loops
+---------------------------------------------
+void Demo()
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        if (i == 3)
+        {
+            break; // Exits the loop only
+        }
+        Console.WriteLine(i);
+    }
+
+    Console.WriteLine("After break");
+}
+Output:
+1
+2
+After break
+
+
+void Demo()
+{
+    for (int i = 1; i <= 5; i++)
+    {
+        if (i == 3)
+        {
+            return; // Exits the whole method
+        }
+        Console.WriteLine(i);
+    }
+
+    Console.WriteLine("After return");
+}
+Output:
+1
+2
+
+✅ Final Summary
+Keyword	      Valid In	         Purpose	                               Can exit just the loop?	             Can exit method?
+break	        Loops,switch	    Exit loop or switch early	                        ✅ Yes	                             ❌ No
+return	       Methods	       Exit method (and optionally return value)	      ✅ Yes (from loop inside method)	  ✅ Yes    
+
+***********************************************************************************************
+
+
+7. WHY MAIN() IS STATIC ?
+--------------------------
+
+public static void Main(string[] args)
+In C#, the Main method is marked as static because:
+
+🔹 It must be called by the runtime before any object of your class is created.
+
+📘 What does static mean here?
+static means the method belongs to the "CLASS ITSELF", not to any particular object (instance).
+
+Because when your program starts, no objects exist yet, the runtime (CLR) must be able to run Main() without creating an object.
+
+🧠 Easy way to remember:
+“Main is static because "IT'S THE PROGRAMS ENTRY DOOR" — it must open before anything inside can be accessed.”
+
+******************************************************************************************
+
+8. INSTANCE VARIABLE VS STATIC VARIABLE VS LOCAL VARIABLE VS CONSTANT VARIABLE ?
+--------------------------------------------------------------------------------
+
+✅1. Instance Variable (Field)
+"Belongs to each object (instance) of a class."
+
+public class Dog
+{
+    public string name; // 🟢 Instance Variable (Field)
+
+    public void Bark()
+    {
+        Console.WriteLine(name + " says Woof!");
+    }
+}
+
+
+✅ 2. Static Variable (Static Field)
+"Shared by all objects of the class."
+
+public class Dog
+{
+    public static int totalDogs = 0; // 🔵 Static Variable
+
+    public Dog()
+    {
+        totalDogs++;
+    }
+}
+
+
+✅ 3. Local Variable
+"Lives only inside the method where it is declared."
+
+public void FeedDog()
+{
+    int foodBowl = 1; // 🟠 Local Variable
+    Console.WriteLine("Dog has " + foodBowl + " bowl of food.");
+}
+
+
+✅ 4. Constant / Readonly Variable
+"Cannot be changed after being set."
+
+public class Dog
+{
+    public const string Species = "Canine"; // 🟣 Constant
+    public readonly int birthYear;          // 🟣 Readonly
+
+    public Dog(int year)
+    {
+        birthYear = year; // readonly can be set once, in constructor
+    }
+}

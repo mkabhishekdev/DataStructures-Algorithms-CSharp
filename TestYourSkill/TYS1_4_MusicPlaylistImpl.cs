@@ -3,6 +3,11 @@ using System.Collections;
 public class TYS1_4_MusicPlaylistImpl
 {
 
+}
+
+
+/*
+WRONG DESIGN THOUGHT - SHOULD USE 'LINKED LIST'
     public List<string> musicPlaylist = new List<string>();
 
     public void AddSong(string SongName)
@@ -45,4 +50,4 @@ public class TYS1_4_MusicPlaylistImpl
     {
 
     }
-}
+    */

@@ -1,10 +1,12 @@
 public class TYS1_3_REPEAT_ReverseSinglyLinkedList
 {
 
+    public Node head; 
+
     public class Node
     {
         public int data;
-        public  Node next;
+        public Node next;
 
         public Node(int x)
         {
@@ -13,18 +15,24 @@ public class TYS1_3_REPEAT_ReverseSinglyLinkedList
         }
     }
 
-    public Node head;
+
 
     public void InsertNode(int data)
     {
-        Node newNode = new Node(data);
+        Node appendData = new Node(data);
         Node temp = head;
 
-        while (temp != null)
+        if (head == null)
+        {
+            head = appendData;
+            return;
+        }
+        while (temp.next != null)
         {
             temp = temp.next;
         }
-        temp = newNode;
+        temp.next = appendData;
+        appendData.next = null;
     }
 
     public void PrintLL()
@@ -39,10 +47,10 @@ public class TYS1_3_REPEAT_ReverseSinglyLinkedList
         }
     }
 
-    public void Reverse(Node head)
+    public void Reverse()
     {
-        Node prev = null;
         Node curr = head;
+        Node prev = null;
         Node next;
 
         while (curr != null)
@@ -53,7 +61,6 @@ public class TYS1_3_REPEAT_ReverseSinglyLinkedList
             curr = next;
         }
         head = prev;
-
     }
 
 }
