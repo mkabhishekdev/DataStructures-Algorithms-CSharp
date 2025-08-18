@@ -12,6 +12,3 @@ Task:
 1. Whiteboard and paste your approach may be as a comment
 2. Code the approach
 
-- use an arraylist
-- addSong: add song end of the arraylist
-- deleteSong: use deleteSong
