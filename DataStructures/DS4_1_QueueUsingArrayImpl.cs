@@ -31,13 +31,18 @@ public class DS4_1_QueueUsingArrayImpl
 
     public void Dequeue()
     {
-        if (front == -1)
+        if ((front == -1) && (rear == -1))
         {
             Console.WriteLine("Queue Underflow");
         }
+        else if (front == rear)
+        {
+            front = rear = -1;
+        }
         else
         {
-            queue[rear] = queue[rear--];
+            Console.WriteLine("The element being removed from the queue is: " + queue[front]);
+            front++;
         }
     }
 
