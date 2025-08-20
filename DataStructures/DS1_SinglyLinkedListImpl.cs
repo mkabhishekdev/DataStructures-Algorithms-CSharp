@@ -56,7 +56,7 @@ public class DS1_SinglyLinkedListImpl
             return;
         }
 
-        while (temp != null)
+        while (temp.next != null)
         {
             temp = temp.next;
         }
