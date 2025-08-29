@@ -8,3 +8,9 @@ dotnet build   //to build project
 
 4. dotnet run -warnas:none // to suppress warnings while running
 
+5. To kill a process or terminate
+       - In terminal type: lsof -i :5062
+       - Above will show all the processes which are running
+       - type the below command to kill the process
+             kill -9 <enter the PID here>
+
