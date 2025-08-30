@@ -1,21 +1,5 @@
-Design WhatsApp Chat messaging?
+WhatsApp Design
 
-Functionalities:
+- Go through Youtube videos by Narendra & Gaurav sen
 
-sendMessage(senderID, receiverID, messageText) — send a message to a user
-
-receiveMessages(userID) — get all unread messages for a user
-
-deleteMessage(messageID) — delete a message by ID
-
-markMessageRead(messageID) — mark message as read
-
-getChatHistory(userID1, userID2) — get all messages exchanged between two users
-
-getActiveChats(userID) — list all users with whom the given user has an active chat
-
-Task:
-
-Sketch data models and flow for message storage, delivery, and read status (whiteboard).
-
-Code a simple prototype for these APIs.
+- Create a whiteboard diagram here yourself (copy paste from a whiteboard app if needed)

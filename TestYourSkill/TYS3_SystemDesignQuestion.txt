@@ -1,23 +1,5 @@
 Design Netflix?
 
-Functionalities:
+- Go through Youtube videos by Narendra & Gaurav sen
 
-addMovie(movieID, movieName, genre) — add a movie to the catalog
-
-removeMovie(movieID) — remove a movie from the catalog
-
-searchMoviesByGenre(genre) — return a list of movies in a genre
-
-playMovie(userID, movieID) — user starts playing a movie
-
-pauseMovie(userID, movieID) — user pauses a movie, save current timestamp
-
-getContinueWatchingList(userID) — get movies user started but not finished
-
-getPopularMovies() — list most watched movies
-
-Task:
-
-Design data storage for movies and user watch states.
-
-Write APIs simulating the above functionalities.
+- Create a whiteboard diagram here yourself (copy paste from a whiteboard app if needed)
