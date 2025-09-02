@@ -310,3 +310,75 @@ public class Dog
         birthYear = year; // readonly can be set once, in constructor
     }
 }
+
+***************************************************************************************************
+
+9. 'static' & 'this' used in a .NET WebAPI project
+---------------------------------------------------
+
+Example:
+
+Your StockMappers class
+
+public static class StockMappers
+{
+    public static StockDto ToStockDto(this Stock stockModel)
+    {
+        return new StockDto
+        {
+            Id = stockModel.Id,
+            Symbol = stockModel.Symbol,
+            CompanyName = stockModel.CompanyName,
+            Purchase = stockModel.Purchase,
+            LastDividend = stockModel.LastDividend,
+            Industry = stockModel.Industry,
+            MarketCap = stockModel.MarketCap
+        };
+    }
+}
+
+It’s a static class → cannot be instantiated, only contains static members.
+
+ToStockDto is a static extension method on the Stock type (because of this Stock stockModel).
+
+2. Your Controller usage
+
+[HttpGet]
+public IActionResult GetAll()
+{
+    var stocks = _context.Stocks.ToList()
+      .Select(s => s.ToStockDto());
+              
+    return Ok(stocks);
+}
+
+
+What happens step by step:
+
+1. _context.Stocks.ToList() → gets you a List<Stock>.
+
+2. .Select(s => s.ToStockDto()) → here each s is a Stock object.
+Because you defined ToStockDto(this Stock stockModel) in StockMappers, the compiler treats s.ToStockDto() as valid — as if ToStockDto were an instance method on Stock.
+
+Behind the scenes, the compiler actually rewrites it to:
+
+StockMappers.ToStockDto(s);
+
+
+Finally, you end up with an IEnumerable<StockDto> that you return as JSON.
+
+✅ Why this design is good
+
+Separation of concerns: The mapping logic is not inside your entity (Stock) or DTO (StockDto), but in a separate StockMappers utility class.
+
+Cleaner controller code: You don’t clutter your controller with mapping details.
+
+Intuitive syntax: .ToStockDto() feels natural, as if it’s built into the Stock class.
+
+🔑 Quick recap:
+
+static → required for extension methods, means no object of StockMappers is needed.
+
+this Stock stockModel → makes it an extension method of Stock. That’s why you can call it like s.ToStockDto() instead of StockMappers.ToStockDto(s).
+
+-----------------------------------------------------------------------------------------------------------

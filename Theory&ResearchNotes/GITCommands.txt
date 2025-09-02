@@ -1,7 +1,9 @@
+USE ONLY GITHUB CLI(Command line interface)
+---------------------------------------------
+
 1. To check branch: git branch
    To check status: git status
-   * When cloning a folder from github in local in the command line you should enter 'git clone <followed by 
-   the ssh link>" 
+
 
 2. To push changes from your local branch
        git add .
@@ -18,9 +20,9 @@
              git add .
              git commit -m "message"
        - git checkout main
-       - git pull origin main
-       - git merge <your local branch>
-       - git push origin main 
+         git pull origin main
+         git merge <your local branch>
+         git push origin main 
 
 4. Difference between git merge and git rebase?
 
@@ -89,3 +91,11 @@ Personal branches not yet shared with team
 You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
 
+
+
+4. How to create branch from GitCLI?
+       - make sure you are in the main parent branch & pull the latest
+             git checkout -b [branch-name] main
+             git push -u origin [branch-name]
+             gh repo view --web //command to open the web-view
+             

@@ -4,18 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        TYS1_4_MusicPlaylistImpl mpl = new TYS1_4_MusicPlaylistImpl();
-        mpl.AddSong("Dream On");
-        mpl.AddSong("Olavina Hudugore");
-        mpl.AddSong("Strawberry Letter");
-        mpl.AddSong("Swades");
-        mpl.AddSong("Jaane kya dhoondta hein");
-        int playListCount = mpl.PlaylistSize();
-        Console.WriteLine("Size of the music playlist is: " + playListCount);
-        mpl.DisplayMyPlaylist();
-        mpl.DeleteSong("Swades");
-        Console.WriteLine("Playlist after deletion of the song is: ");
-        mpl.DisplayMyPlaylist();
+       TYS2_3_ReverseSinglyLinkedList rsll = new TYS2_3_ReverseSinglyLinkedList();
+
+        rsll.AppendNode(3);
+        rsll.AppendNode(4);
+        rsll.AppendNode(5);
+        rsll.AppendNode(6);
+
+        rsll.PrintMyList();
+
+        rsll.Reverse();
+        rsll.PrintMyList();
 
     }
 }
