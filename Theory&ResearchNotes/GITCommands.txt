@@ -24,6 +24,75 @@ USE ONLY GITHUB CLI(Command line interface)
          git merge <your local branch>
          git push origin main 
 
+4. Difference between git merge and git rebase?
+
+🔹 git merge
+
+What it does: Takes another branch (say main) and merges it into your branch (feat/data-structures).
+
+It creates a new commit called a "merge commit".
+
+Keeps the full history (with all branches).
+
+Example:
+git checkout feat/data-structures
+git merge main
+
+
+Result in history:
+
+A---B---C (main)
+         \
+          D---E---M (feat/data-structures)
+
+
+M is the merge commit.
+
+Easy, safe, preserves context.
+
+But history looks more “branchy” and can get messy in big teams.
+
+
+🔹 git rebase
+
+What it does: Takes your commits and “replays” them on top of another branch (say main).
+
+Rewrites commit history to make it look like you built your feature after the latest main.
+
+Example:
+git checkout feat/data-structures
+git rebase main
+
+
+Result in history:
+
+A---B---C (main)
+             \
+              D'---E' (feat/data-structures rebased)
+
+
+No merge commit.
+
+Cleaner, linear history.
+
+But: rewrites commits (D → D’, E → E’), which can cause issues if others already pulled your branch.
+
+✅ When to Use What
+
+Merge:
+
+Collaborative work
+Safe, no commit rewriting
+Good for resolving conflicts together
+
+Rebase:
+
+Personal branches not yet shared with team
+You want a clean, linear history
+Often used before merging a PR (git rebase main then squash commits)
+
+
+
 4. How to create branch from GitCLI?
        - make sure you are in the main parent branch & pull the latest
              git checkout -b [branch-name] main
