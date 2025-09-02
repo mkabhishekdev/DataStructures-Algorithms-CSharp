@@ -59,3 +59,56 @@
 *****************************************
 
 // write down 3-4 main points to visualize this
+
+
+
+
+
+* Drawback of linear queue can be handled using Circular queue.
+  What is the drawback?
+    - In linear queue, even though if unused memory is present. If the linear queue as reached its maximum size - it
+      would not allow to insert. This problem could be solved using a circular queue.
+
+* When thinking of implementing a circular queue always think that in a usual queue: rear.next -> null at last but in
+  circular queue the: rear.next -> front i.e will point to the first node, this way circular motion is adopted.
+
+
+
+5. DATA-STRUCTURE: TREE
+*****************************************
+
+
+
+
+
+
+
+6. DATA-STRUCTURE: GRAPH
+*****************************************
+
+
+
+
+
+
+
+7. ALGORITHMS
+*****************************************
+
+
+
+
+
+
+
+8. HASHING
+*****************************************
+
+
+
+
+
+
+
+9. HUFFMAN CODING
+*****************************************
