@@ -92,8 +92,7 @@ You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
 
 
-
-4. How to create branch from GitCLI?
+5. How to create branch from GitCLI?
        - make sure you are in the main parent branch & pull the latest
              git checkout -b [branch-name] main
              git push -u origin [branch-name]
