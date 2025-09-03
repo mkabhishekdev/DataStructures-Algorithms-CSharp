@@ -256,8 +256,68 @@ Divide and conquer recursion	                                     O(log n)
 1. ALGORITHMS BASICS
 ********************************************************************************
 
-1.5.1: Time Complexity 
------------------------
+1.1-1.7 notes
+-------------
+
+
+
+
+
+
+
+
+1.8.1: Asymptotic notations
+---------------------------
+* O big-oh = upper bound
+* Omega = lower bound
+* Theta = average bound
+
+Below is always the basic complexity order in general:
+1 < logn < root(n) < n < nlogn < n2(square) < n3(cube) < ........... < 2(power of n) < 3(power of n) < ......... < n(power of n)
+
+
+1.8.2: Asymptotic notations(BigO-Omega-Theta)
+---------------------------------------------
+* For a function, when you are not able to find the average bound(omega), upperbound(bigo) and lowerbound(theta) become useful.
+  Example:
+          f(n) = n!
+          1*1*1*1 <= 1*2*3*...*n <= n*n*n*n2
+          omega(1)                  bigo(n(power of n))
+* Always average bound(theta) is preferred, if you can find than it is better.
+* An analogy here, think of you want to buy a new phone - you enquire with some of your friends. Some will say you may get around Rs 20,000
+  and some may say minimum you will get a good phone around Rs 10,000. Bestcase is Rs 20,000 and worst-case his Rs10,000. But upper-bound
+  or lowerbound are not the exact value you got. So average bound is say around Rs 15,000 and that gives a exact price point at which you
+  can buy a phone.
+
+
+1.10.1: Comparison of Functions  
+--------------------------------
+ * log ab = log a + log b 
+   log a/b = log a - log b
+   log a(power of b) = b * loga
+
+
+1.11: Best, Worst and Average case Analysis
+--------------------------------------------
+ * Average case analysis may not be always poosible in the case of algorithms. That is why worst case is always preferred. Average case is usually
+   similar to the worst case.
+ * Should not confuse best,worst and average case analysis with Asymptotic notations(big-o, omega & theta). Analysis is done on algorithms and notations
+   are modes of representing whether they are upperbound, lowerbound or average bound.
+   Example:
+   1. Linear Search
+          BestCase(n) = 1 -> O(1),Omega(1),Theta(1)
+          WorstCase(n) = n -> O(n), Omega(n), Theta(n)
+      NOTE(common misconception): Best case , Worst case can be represented using any Asymptotic notation(i.e big-o,omega & theta), It is not like the 
+                                  common misconception that best case means big-o, worst case means omega. No that is wrong.
+ 
+
+ 
+
+
+
+
+
+
 
 
 
