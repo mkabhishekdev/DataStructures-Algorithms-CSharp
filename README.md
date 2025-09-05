@@ -4,3 +4,6 @@ Bootcamp Level-1 Path: Programming and Data Structures, Algorithms Basics using 
 References:
 1. Algorithms Playlist
 2. Data Structures Playlist
+
+
+GOAL/PURPOSE BEHIND THIS: To revisit core CS/coding concepts -> To prepare a Bootcamp curriculum for 'FirstGen Project' in future.
