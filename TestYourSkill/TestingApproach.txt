@@ -1,0 +1,6 @@
+1. Have timer and solve the problem with time limits.
+2. Write the pseudocode first, talk about what you are doing. Than write the code in editor, cover test cases
+   & test the written code.
+3. Work on system design problems in the system design repo.
+4. Evaluate your solutions using chatgpt & ask it to give you the points(based on the points you have for a given
+   problem), in that way you are not giving points to yourself. Can include a second party to examine.
