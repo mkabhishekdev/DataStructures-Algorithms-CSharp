@@ -1,8 +1,17 @@
 USE ONLY GITHUB CLI(Command line interface)
 ---------------------------------------------
 
-1. To check branch: git branch
-   To check status: git status
+1. 
+   - When cloning a repo using terminal: you should first type "git clone" and than paste the repo
+
+   - How to create branch from GitCLI?
+       - make sure you are in the main parent branch & pull the latest
+             git checkout -b [branch-name] main
+             git push -u origin [branch-name]
+             gh repo view --web //command to open the web-view
+
+    - To check branch: git branch
+      To check status: git status
 
 
 2. To push changes from your local branch
@@ -91,10 +100,4 @@ Personal branches not yet shared with team
 You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
 
-
-5. How to create branch from GitCLI?
-       - make sure you are in the main parent branch & pull the latest
-             git checkout -b [branch-name] main
-             git push -u origin [branch-name]
-             gh repo view --web //command to open the web-view
              
