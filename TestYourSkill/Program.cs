@@ -4,50 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-       TYS2_3_ReverseSinglyLinkedList rsll = new TYS2_3_ReverseSinglyLinkedList();
-
-        rsll.AppendNode(3);
-        rsll.AppendNode(4);
-        rsll.AppendNode(5);
-        rsll.AppendNode(6);
-
-        rsll.PrintMyList();
-
-        rsll.Reverse();
-        rsll.PrintMyList();
+        TYS3_2_QueueUsingLinkedList tys32 = new TYS3_2_QueueUsingLinkedList();
+        tys32.Enqueue(7);
+        tys32.Enqueue(4);
+        tys32.Enqueue(8);
+        tys32.Enqueue(11);
+        tys32.Enqueue(1);
+        tys32.Display();
+        tys32.Dequeue();
+        tys32.Display();
+        tys32.Peek();
+                
+    
 
     }
 }
 
 /*
- TYS1_1_BinarySearch bs = new TYS1_1_BinarySearch();
-        int[] check = { 2, 5, 9, 11, 17, 21, 44, 50, 62 };
+    TYS3_1_LinearSearch tys31 = new TYS3_1_LinearSearch();
 
-        bs.BinarySearch(check, 99);
+        int[] input = { 8, 4, 11, 7, 2, 5, 3, 9, 6 };
 
-   TYS1_3_REPEAT_ReverseSinglyLinkedList rsll = new TYS1_3_REPEAT_ReverseSinglyLinkedList();
-
-        rsll.InsertNode(3);
-        rsll.InsertNode(4);
-        rsll.InsertNode(5);
-        rsll.InsertNode(6);
-
-        rsll.PrintLL();
-
-        rsll.Reverse();
-        rsll.PrintLL();
-
-
- TYS1_4_MusicPlaylistImpl mpl = new TYS1_4_MusicPlaylistImpl();
-        mpl.AddSong("Dream On");
-        mpl.AddSong("Olavina Hudugore");
-        mpl.AddSong("Strawberry Letter");
-        mpl.AddSong("Swades");
-        mpl.AddSong("Jaane kya dhoondta hein");
-        int playListCount = mpl.PlaylistSize();
-        Console.WriteLine("Size of the music playlist is: " + playListCount);
-        mpl.DisplayMyPlaylist();
-        mpl.DeleteSong("Swades");
-        Console.WriteLine("Playlist after deletion of the song is: ");
-        mpl.DisplayMyPlaylist();
+        tys31.LinearSearchImpl(input, 100);
 */
