@@ -72,6 +72,8 @@
 * When thinking of implementing a circular queue always think that in a usual queue: rear.next -> null at last but in
   circular queue the: rear.next -> front i.e will point to the first node, this way circular motion is adopted.
 
+* Main applications of Dequeue(Double ended queue) is in "Multiprocessor Job Scheduling"
+
 
 
 5. DATA-STRUCTURE: TREE

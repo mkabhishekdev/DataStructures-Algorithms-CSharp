@@ -77,7 +77,6 @@ public class DS4_5_QueueUsingStackImpl
             Console.WriteLine("Stack is already full");
             return;
         }
-        count++;
         top2++;
         stack2[top2] = stacktwoData;
     }
