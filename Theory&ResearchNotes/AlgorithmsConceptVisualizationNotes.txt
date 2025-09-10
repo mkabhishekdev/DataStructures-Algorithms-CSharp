@@ -299,7 +299,7 @@ Below is always the basic complexity order in general:
 
 1.11: Best, Worst and Average case Analysis
 --------------------------------------------
- * Average case analysis may not be always poosible in the case of algorithms. That is why worst case is always preferred. Average case is usually
+ * Average case analysis may not be always possible in the case of algorithms. That is why worst case is always preferred. Average case is usually
    similar to the worst case.
  * Should not confuse best,worst and average case analysis with Asymptotic notations(big-o, omega & theta). Analysis is done on algorithms and notations
    are modes of representing whether they are upperbound, lowerbound or average bound.
@@ -309,6 +309,15 @@ Below is always the basic complexity order in general:
           WorstCase(n) = n -> O(n), Omega(n), Theta(n)
       NOTE(common misconception): Best case , Worst case can be represented using any Asymptotic notation(i.e big-o,omega & theta), It is not like the 
                                   common misconception that best case means big-o, worst case means omega. No that is wrong.
+
+
+1.12: Disjoint Sets Data structure: Weighted Union and Collapsing find
+-----------------------------------------------------------------------
+  * The node with the highest weight(i.e which has more node connections) becomes the 'parent'.
+  * Find and Union are the mostly used sets properties.
+
+
+
  
 
  
