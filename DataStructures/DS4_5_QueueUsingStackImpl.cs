@@ -1,4 +1,5 @@
 
+//// NEED TO DEBUG THE PROBLEM AND FIX
 //Find Out: what problem you face if you use 'count' instead of 'top' while displaying?
 
 public class DS4_5_QueueUsingStackImpl
@@ -62,7 +63,7 @@ public class DS4_5_QueueUsingStackImpl
         }
         top1++;
         stack1[top1] = stackoneData;
-        
+
     }
 
     public int Pop1()
