@@ -13,9 +13,7 @@ public class DS5_1_BinaryTreeImpl
         }
     }
 
-    public Node root = null;
-
-
+   
 
 
 }
