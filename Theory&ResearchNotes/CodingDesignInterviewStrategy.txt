@@ -1,0 +1,10 @@
+1. Initially practice with more time. Say 1 hour for a given problem.
+   Things to cover in that one hour time:
+              - Understand the requirement clearly, ask questions if any
+              - Think and prepare a idea to tackle the problem
+              - Now write a pseudocode
+              - Once you are confident of your pseudocode, implement the program in C#
+              - Keep on practicing this approach, until it becomes intuitive.
+
+
+2. Design: Pick a Design problem. First try & apply your approach. Than watch video. Make Notes [1-1.5 hr]
