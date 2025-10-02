@@ -3,55 +3,72 @@ using System.Collections;
 
 public class ProblemOneImplementQueueUsingStack
 {
-    Stack<int> stack1 = new Stack<int>();
-    Stack<int> stack2 = new Stack<int>();
+    Stack<int> primaryStack = new Stack<int>();
+    Stack<int> helperStack = new Stack<int>();
 
-    int stack1ElementCount = 0;
-    int stack2ElementCount = 0;
+    int top = -1;
 
-    public void Enqueue(int data)
+    public void Enqueue(int inputData)
     {
-        stack1.Push(data);
-        stack1ElementCount++;
-        Console.WriteLine("Element inserted into the queue successfully.");
+        if (primaryStack.Count == 0)
+        {
+            primaryStack.Push(inputData);
+            return;
+        }
+
+        while (primaryStack.Count != 0)
+        {
+            helperStack.Push(primaryStack.Peek());
+            primaryStack.Pop();
+        }
+
+        primaryStack.Push(inputData);
+
+        while (helperStack.Count != 0)
+        {
+            primaryStack.Push(helperStack.Peek());
+            helperStack.Pop();
+        }
+        Console.WriteLine("Element inserted into the queue");
     }
 
-    public void Dequeue()
+    public int Dequeue()
     {
-        foreach (var item in stack1)
+        int toRemove = primaryStack.Peek();
+        primaryStack.Pop();
+        Console.WriteLine("Element from the Queue removed successfully");
+        return toRemove;
+    }
+
+    public int Front()
+    {
+        if (primaryStack.Count == 0)
         {
-            stack2.Push(stack1);
-            stack2ElementCount++;
+            return -1;
         }
-        Console.WriteLine("The element removed from the queue is: " + stack2.Pop());
-        while (stack1ElementCount != 0)
-        {
-            stack1.Pop();
-            stack1ElementCount--;
-        }
-        foreach (var item in stack2)
-        {
-            stack1.Push();
-        }
-        while (stack2ElementCount != 0)
-        {
-            stack2.Pop();
-            stack2ElementCount--;
-        }
+        return primaryStack.Peek();
     }
 
     public void Display()
     {
-        foreach (var item in stack1)
-        {
-            stack2.Push(stack1);
-            stack2ElementCount++;
-        }
-        Console.WriteLine("Elements in the queue are: ");
-        foreach (var item in stack2)
+        Console.WriteLine("Elements in my queue are: ");
+        foreach (var item in primaryStack)
         {
             Console.WriteLine(item);
         }
     }
 
 }
+
+/*
+ ProblemOneImplementQueueUsingStack qus = new ProblemOneImplementQueueUsingStack();
+        qus.Enqueue(1);
+        qus.Enqueue(2);
+        qus.Enqueue(3);
+        qus.Enqueue(4);
+        qus.Display();
+        Console.WriteLine("Elemet in front of the queue is: "+qus.Front());
+        qus.Dequeue();
+        Console.WriteLine("Elemet in front of the queue is: "+qus.Front());
+        qus.Display();
+*/
