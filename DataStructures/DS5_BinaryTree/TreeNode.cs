@@ -1,6 +1,4 @@
-//PreOrder traversal (Type = DFS) [root -> left -> right]
-
-public class DS5_1_PreOrderTraversalBTImpl
+namespace DataStructures.BinaryTree
 {
     public class TreeNode
     {
@@ -15,11 +13,5 @@ public class DS5_1_PreOrderTraversalBTImpl
             right = null;
         }
     }
-
-    public void PreOrderTraversal()
-    {
-        
-    }
-
-
+    
 }
