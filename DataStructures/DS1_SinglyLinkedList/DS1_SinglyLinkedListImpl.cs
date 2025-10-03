@@ -1,26 +1,16 @@
 using System;
+using DataStructures.SinglyLinkedList;
 
 public class DS1_SinglyLinkedListImpl
 {
     Node head;
 
-    public class Node
-    {
-        public int data;
-        public Node next;
-        public Node(int x)
-        {
-            data = x;
-            next = null;
-        }
-    }
-
     //To add new data in front of the list(push)
     public void Push(int inputData)
     {
-        
+
         Node inputNode = new Node(inputData);
-        
+
         inputNode.next = head;
         head = inputNode;
     }
@@ -31,9 +21,9 @@ public class DS1_SinglyLinkedListImpl
         Node newNode = new Node(newData);
         Node temp = head;
 
-        while(temp != null)
+        while (temp != null)
         {
-            if(temp == previousNode)
+            if (temp == previousNode)
             {
                 Node store = temp.next;
                 temp.next = newNode;
@@ -49,8 +39,8 @@ public class DS1_SinglyLinkedListImpl
     {
         Node appendNode = new Node(appendData);
         Node temp = head;
-        
-        if(head == null)
+
+        if (head == null)
         {
             head = new Node(appendData);
             return;
@@ -67,14 +57,14 @@ public class DS1_SinglyLinkedListImpl
     // delete a node from the linked list
     public void Delete(int deleteData)
     {
-        Node temp=head,prev=null;
-	      
-	    while(temp.next!=null && temp.data!=deleteData)
+        Node temp = head, prev = null;
+
+        while (temp.next != null && temp.data != deleteData)
         {
-	    	prev=temp;
-	    	temp=temp.next;
-		}
-	    prev.next = temp.next;
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
     }
 
     // delete a node from the linked list given its position
@@ -82,7 +72,7 @@ public class DS1_SinglyLinkedListImpl
     {
         Node temp = head;
 
-        for(int i = 0; i < position-1 ; i++)
+        for (int i = 0; i < position - 1; i++)
         {
             temp = temp.next;
         }
@@ -97,21 +87,21 @@ public class DS1_SinglyLinkedListImpl
         Node searchNode = new Node(x);
         Node temp = head;
 
-        while(temp != null)
+        while (temp != null)
         {
-            if(temp.data == searchNode.data)
+            if (temp.data == searchNode.data)
             {
                 Console.WriteLine("Element found in the linked list");
                 return;
             }
             temp = temp.next;
         }
-        if(temp == null)
+        if (temp == null)
         {
             Console.WriteLine("Element not found in the linked list");
             return;
         }
-        
+
     }
 
 
@@ -122,7 +112,7 @@ public class DS1_SinglyLinkedListImpl
         Node currentNode = head;
         Node nextNode = head;
 
-        while(nextNode != null)
+        while (nextNode != null)
         {
             nextNode = nextNode.next;
             currentNode.next = previousNode;
@@ -131,11 +121,11 @@ public class DS1_SinglyLinkedListImpl
         }
         head = nextNode;
     }
-    
+
     public void PrintList()
     {
         Node PrintMe = head;
-        while(PrintMe != null)
+        while (PrintMe != null)
         {
             Console.WriteLine(PrintMe.data + " ");
             PrintMe = PrintMe.next;

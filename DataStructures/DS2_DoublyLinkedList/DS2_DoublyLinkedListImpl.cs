@@ -1,20 +1,10 @@
 using System;
+using DataStructures.DoublyLinkedList;
 
 public class DS2_DoublyLinkedListImpl
 {
     Node head, tail;  // in DLL - you need a tail node as well
-    public class Node
-    {
-        public int data { get; set; }
-        public Node next;
-        public Node prev;
-        public Node(int x)
-        {
-            data = x;
-            next = null;
-            prev = null;
-        }
-    }
+
 
     //To add new data in front of the list(push)
     public void Push(int newData)
