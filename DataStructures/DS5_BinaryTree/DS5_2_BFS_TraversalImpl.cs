@@ -38,6 +38,7 @@ public class DS5_2_BFS_TraversalImpl
             }
             bfsResult.Add(subList);
         }
+        return bfsResult;
     }
 
 }
