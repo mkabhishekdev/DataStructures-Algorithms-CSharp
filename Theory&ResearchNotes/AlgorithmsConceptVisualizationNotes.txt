@@ -363,6 +363,13 @@ Below is always the basic complexity order in general:
         T(n) = 2T(n-1) + n   ----> O(n2(power n))
                          [LOOK INTO THE ABOVE FOR A WHILE & OBSERVE THE PATTERN]
 
+  
+  2.6.1: Binary Search Iterative Method 
+  --------------------------------------
+
+
+  
+
       
 
 
