@@ -13,6 +13,7 @@ USE ONLY GITHUB CLI(Command line interface)
     - To check branch: git branch
       To check status: git status
 
+*******************************
 
 2. To push changes from your local branch
        git add .
@@ -24,6 +25,8 @@ USE ONLY GITHUB CLI(Command line interface)
            gh pr create --base main --head <branch-name> --title "<your message>" --body "<your message>"
        After the above line: GitHub will give you a link to view the PR.
 
+******************************
+
 3. If you updated your 'local branch' but not sure if you got latest from main branch
        - Ensure your local branch is first committed
              git add .
@@ -32,6 +35,8 @@ USE ONLY GITHUB CLI(Command line interface)
          git pull origin main
          git merge <your local branch>
          git push origin main 
+
+********************************
 
 4. Difference between git merge and git rebase?
 
@@ -99,5 +104,21 @@ Rebase:
 Personal branches not yet shared with team
 You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
+
+*****************************
+
+5. MERGE Conflict: If you don’t need your local changes at all
+
+# Step 1: Discard local changes completely
+git reset --hard
+
+# Step 2: Clean up build-generated files
+git clean -fd
+
+# Step 3: Get the latest version from main
+git fetch origin
+git checkout main
+git pull origin main
+
 
              
