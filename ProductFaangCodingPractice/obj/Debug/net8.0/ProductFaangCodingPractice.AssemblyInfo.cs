@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProductFaangCodingPractice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fb3aac71054f35825b45cb5c3e18a966a24a307")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+628da69fd899ebaa6fd5ad88e84f363cb453f47f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProductFaangCodingPractice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProductFaangCodingPractice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

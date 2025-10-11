@@ -29,18 +29,34 @@ Data Structures are of 2 types:
          from? From the 'prev'
       9. So writing all the above logic as a code snippet:
          
-         Node prev = null;
+         Imagine: When you think of reversing, just think of the 'very first node'
+                  For the very first node:
+                   step 1. what is the prev i.e prev = null
+                   step 2. before even reversing, you need to definitely save the next address value or else this will 
+                        be lost after reversing.
+                        So you do what? i.e next = curr.next;
+                   step 3. In order to come back to the loop, you need to get to the next element
+                           where have you kept it?: its in next [step2 remember] i.e curr = next;
+                   step 4. you reverse i.e curr.next = prev;
+                   step 5. once you have done the reversal, prev can't be obviously null
+                           So what it will be?: it has to be the current element which just did a reversal
+                           i.e prev = curr;
+                   step 6. you need to now point the updated head, the updated head would be the last element before 
+                           current became null.
+                           So where is that, in the 'prev' i.e prev = curr [step 2], update: head = prev;
+
+         Node prev = null; [step 1]
          Node curr = head;
          Node next;
 
          while(curr != null)
          {
-             next = curr.next;
-             curr.next = prev;
-             prev = curr;
-             curr = next;
+             next = curr.next; [step 2]
+             curr.next = prev;  [step 4]
+             prev = curr;   [step 4]
+             curr = next;  [step 3]
          }
-         head = prev;
+         head = prev; [step 6]
 
 
 
