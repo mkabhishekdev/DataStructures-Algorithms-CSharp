@@ -27,7 +27,7 @@ public class ProblemOneValidPalindrome
 
         string reversedInput = new string(storeInput.ToArray());
 
-        if (reversedInput.Equals(filteredInput))
+        if (reversedInput.ToLower().Equals(filteredInput.ToLower()))
         {
             return true;
         }

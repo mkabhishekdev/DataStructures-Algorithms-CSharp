@@ -18,7 +18,7 @@ public class TYS4_2_IterativePreOrderTraversal
     }
     TreeNode root = null;
 
-    public void PreOrder(TreeNode root)
+    public List<int> PreOrder(TreeNode root)
     {
         if (root == null)
         {
@@ -30,19 +30,22 @@ public class TYS4_2_IterativePreOrderTraversal
         Stack<TreeNode> myStack = new Stack<TreeNode>();
         myStack.Push(root);
 
-        while (!myStack.Count == 0)
+        while (myStack.Count != 0)
         {
-            while (root.left != null)
+            TreeNode presentNode = myStack.Pop();
+            result.Add(presentNode.data);
+
+            if (presentNode.right != null)
             {
-                TreeNode x = myStack.Pop();
-                result.Add(x.data);
-
-                myStack.Push(root.left);
+                myStack.Push(presentNode.right);
             }
-            result.Add(myStack.Pop().data);
-
+            if (presentNode.left != null)
+            {
+                myStack.Push(presentNode.left);
+            }
         }
 
+        return result;
 
     }
 }
