@@ -23,7 +23,7 @@ public class DS5_7_BSTInsertionImpl
                 present = current;
                 current = current.left;
             }
-            if (inputData > current.Data)
+            if (inputData > current.data)
             {
                 present = current;
                 current = current.right;
@@ -31,14 +31,14 @@ public class DS5_7_BSTInsertionImpl
 
         }
 
-        if (present > inputData)
+        if (present.data > inputData)
         {
-            current.left = inputData;
+            current.left.data = inputData;
             Console.WriteLine("Data inserted to the left of the BST");
         }
-        if(present < inputData)
+        if(present.data < inputData)
         {
-            current.right = inputData;
+            current.right.data = inputData;
             Console.WriteLine("Data inserted to the right of the BST");
         }
         
