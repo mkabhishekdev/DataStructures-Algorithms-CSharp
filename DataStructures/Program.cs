@@ -5,16 +5,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        DS5_6_BinarySearchTreeImpl bst = new DS5_6_BinarySearchTreeImpl();
+        DS5_8_HeightOfBinaryTree hobt = new DS5_8_HeightOfBinaryTree();
         TreeNode root = new TreeNode(10);
-        root.left = new TreeNode(-5);
-        root.right = new TreeNode(30);
-        root.left.left = new TreeNode(-10);
-        root.left.right = new TreeNode(0);
-        root.left.right.right = new TreeNode(5);
-        root.right.right = new TreeNode(36);
+        root.left = new TreeNode(5);
+        root.right = new TreeNode(6);
+        root.right.left = new TreeNode(8);
+        root.right.right = new TreeNode(7);
+        root.right.right.right = new TreeNode(4);
 
-        bst.BinarySearchTree(root, 11);
+        int res = hobt.HeightOfTree(root);
+        Console.WriteLine("Height of the binary tree: " + res);
 
 
     }

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using DataStructures.BinaryTree;
 
-public class DS5_2_BFS_TraversalImpl
+public class DS5_2_BFS_LevelOrderTraversalImpl
 {
     public List<List<int>> BFSTraversal(TreeNode root)
     {
