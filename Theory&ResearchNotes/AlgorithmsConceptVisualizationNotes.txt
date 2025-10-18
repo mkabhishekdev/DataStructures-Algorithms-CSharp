@@ -366,9 +366,65 @@ Below is always the basic complexity order in general:
   
   2.6.1: Binary Search Iterative Method 
   --------------------------------------
+      - int BinarySearch(int[] arr, int size, int key)
+        {
+            int low = 0, high = n-1;
+
+            int mid = (low+high)/2;
+          
+            while(low < high)
+            {
+                if(key == a[mid])
+                {
+                    //return key found
+                }
+                else if(key < a[mid])
+                {
+                    high = mid-1;   //NOTE: You just add 'high' condition, no 'low' condition
+                }
+                else
+                {
+                    low = mid+1;   //NOTE: you just add 'low' condition, no 'high' condition
+                }
+            }
+
+            return -1;
+        }
 
 
-  
+  2.6.2: Binary Search Recursive Method
+  --------------------------------------
+    -  Algorithm RecursiveBSearch(low,high,key)
+       {
+           if(low == high)                                   // 1 UNIT
+           {
+               if(key == a[low])
+               {
+                   return low;
+               }
+           }
+           else
+           {
+               int mid = (low+high)/2;                        // 1 UNIT
+               
+               if(key == a[mid])                              // 1
+               {
+                  return mid;
+               }
+               if(key < a[mid])                                    // BELOW IF-ELSE: T(N/2)
+               {
+                   return RecursiveBSearch(low,mid-1,key);
+               }
+               else
+               {
+                   return RecursiveBSearch(mid+1,high,key);
+               }
+           }  
+       }
+
+       T(N) = T(N/2) + 1, N > 1
+
+       
 
       
 

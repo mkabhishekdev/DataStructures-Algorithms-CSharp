@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Text.RegularExpressions;
 
-public class ProblemOneValidPalindrome
+public class Set2ProblemOneValidPalindrome
 {
     public bool CheckPalindrome(string input)
     {
