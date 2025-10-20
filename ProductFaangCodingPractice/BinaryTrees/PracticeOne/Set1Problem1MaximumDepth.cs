@@ -9,45 +9,36 @@ public class Set1Problem1MaximumDepth
     public int MaxDepth(TreeNode root)
     {
         Queue<TreeNode> myQueue = new Queue<TreeNode>();
-        int level = 0;
 
         if (root == null)
         {
-            return -1;
+            return 0;
         }
 
-        level = 1;
-        TreeNode current = root;
+        myQueue.Enqueue(root);
+        int depth = 0;
 
-        while (current != null)
+        while(myQueue.Count > 0)
         {
-            if (current.left.data != null)
+            int levelCount = myQueue.Count;
+            depth++;    
+
+            for(int i = 0; i < levelCount; i++)
             {
-                if (current.left.left != null || current.left.right != null)
+                TreeNode removeElement = myQueue.Dequeue();
+                if (removeElement.left != null)
                 {
-                    current = current.left;
+                    myQueue.Enqueue(removeElement.left);
                 }
-                myQueue.Enqueue(current.left);
-            }
-            if (current.right.data != null)
-            {
-                if (current.right.left != null || current.right.right != null)
+                if(removeElement.right != null)
                 {
-                    current = current.right;
+                    myQueue.Enqueue(removeElement.right);
                 }
-                myQueue.Enqueue(current.right);
             }
-            while (!myQueue.Count == 0)
-            {
-                myQueue.Dequeue();
-            }
-            level++;
         }
-
-        return level;
-
+        return depth;
     }
 
 }
 
-// SCORE: 2.5/10
+// SCORE: 2.5/10, Above is reviewed code 
