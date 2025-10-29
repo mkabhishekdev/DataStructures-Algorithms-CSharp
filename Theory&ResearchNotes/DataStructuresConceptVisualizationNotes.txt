@@ -129,7 +129,10 @@ Data Structures are of 2 types:
     BFS(Breadth First Search): go through each row in the tree like 'level'(say level 0,level1, level2, level3) & write
                                down the nodes
      
-       
+    * Lowest Common Ancestor in BST
+    --------------------------------
+        - Get the Max and Min of the [firstnode, secondnode], compare them with the root: where both the conditions
+          fail is your LCA [check your code folder]   
     
 
 
