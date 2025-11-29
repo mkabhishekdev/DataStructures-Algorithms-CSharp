@@ -7,7 +7,7 @@ namespace ProductFaangCodingPractice.BinaryTrees
 {
     public class TreeNode
     {
-        public int data;
+        public int val;
 
         public TreeNode right;
 
@@ -15,7 +15,7 @@ namespace ProductFaangCodingPractice.BinaryTrees
 
         public TreeNode(int x)
         {
-            data = x;
+            val = x;
             left = null;
             right = null;
         }
