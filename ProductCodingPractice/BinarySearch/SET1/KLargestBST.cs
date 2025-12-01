@@ -7,15 +7,7 @@ namespace ProductCodingPractice.BinarySearch.SET1
 {
     public class KLargestBST
     {
-        public KthLargest(int k, int[] nums)
-        {
-
-        }
-
-        public int Add(int val)
-        {
-
-        }
+       
 
     }
 }

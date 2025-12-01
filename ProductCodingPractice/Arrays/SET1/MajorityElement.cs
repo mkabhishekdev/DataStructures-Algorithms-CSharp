@@ -8,7 +8,7 @@ namespace ProductFaangCodingPractice.Arrays.SET1
 {
     public class MajorityElement
     {
-        public int MajorityElement(int[] nums)
+        public int MajorityElementCheck(int[] nums)
         {
             int condition = (nums.Length) / 2;
 

@@ -4,13 +4,46 @@
         
         
         {
-            "name": ".NET: Launch Console App",
+            "name": ".NET: Algorithms",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Algorithms/bin/Debug/net8.0/Algorithms.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Algorithms",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": ".NET: DataStructures",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/DataStructures/bin/Debug/net8.0/DataStructures.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/DataStructures",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": ".NET: ProductCodingPractice",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/ProductCodingPractice/bin/Debug/net8.0/ProductCodingPractice.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ProductCodingPractice",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": ".NET: TestYourSkill",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/TestYourSkill/bin/Debug/net8.0/TestYourSkill.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/TestYourSkill",
             "stopAtEntry": false,
             "console": "internalConsole"
         }

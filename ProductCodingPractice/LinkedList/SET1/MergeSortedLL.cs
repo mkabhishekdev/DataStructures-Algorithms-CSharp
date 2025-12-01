@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using ProductCodingPractice.LinkedList;
 
 namespace ProductCodingPractice.LinkedList.SET1
 {
@@ -10,43 +11,35 @@ namespace ProductCodingPractice.LinkedList.SET1
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-            ListNode result = new ListNode();
+            ListNode tempNode = new ListNode(0); // to create a starting point LL initialize with 0
+            ListNode currentNode = tempNode;
 
-            ListNode temp1 = list1;
-            ListNode temp2 = list2;
-
-            if ((temp1 == null) && (temp2 == null))
+            while ((list1 != null) && (list2 != null))
             {
-                return null;
-            }
-            if ((temp1 != null) && (temp2 == null))
-            {
-                result = temp1;
-                return result;
-            }
-            if ((temp1 == null) && (temp2 != null))
-            {
-                result = temp2;
-                return result;
-            }
-
-            while (temp1.next != null)
-            {
-                if (temp1.val <= temp2.val)
+                if (list1.val < list2.val)
                 {
-                    result = temp1;
-                    result.next = temp2;
+                    currentNode.next = list1;
+                    list1 = list1.next;
                 }
-                if (temp1.val > temp2.val)
+                else
                 {
-                    result = temp2;
-                    result.next = temp1;
+                    currentNode.next = list2;
+                    list2 = list2.next;
                 }
-                temp1 = temp1.next;
-                temp2 = temp2.next;
+                currentNode = currentNode.next;
             }
 
-            return result;
+            if (list1 != null)
+            {
+                currentNode.next = list1;
+                list1 = list1.next;
+            }
+            if(list2 != null)
+            {
+                currentNode.next = list2;
+                list2 = list2.next;
+            }
+            return tempNode.next;
         }
         
     }

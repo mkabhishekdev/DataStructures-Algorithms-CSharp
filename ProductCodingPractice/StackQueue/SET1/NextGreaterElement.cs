@@ -7,7 +7,7 @@ namespace ProductFaangCodingPractice.StackQueue.SET1
 {
     public class NextGreaterElement
     {
-        public int[] NextGreaterElement(int[] nums1, int[] nums2)
+        public int[] NextGreaterElementImpl(int[] nums1, int[] nums2)
         {
             List<int> result = new List<int>();
 
