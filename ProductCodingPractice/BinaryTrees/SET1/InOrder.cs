@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductFaangCodingPractice.BinaryTrees;
+using ProductCodingPractice.BinaryTrees;
 
 
 namespace ProductFaangCodingPractice.BinaryTrees.SET1
@@ -19,7 +19,7 @@ namespace ProductFaangCodingPractice.BinaryTrees.SET1
             }
 
             InorderTraversal(root.left);
-            result.Add(root.data);
+            result.Add(root.val);
             InorderTraversal(root.right);
 
             return result;

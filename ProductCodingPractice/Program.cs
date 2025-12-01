@@ -1,11 +1,14 @@
 ﻿using System;
+using ProductCodingPractice.Strings.SET1;
 
 class Program
 {
     static void Main(string[] args)
     {
-        ProblemOneValidPalindrome povp = new ProblemOneValidPalindrome();
-        povp.CheckPalindrome("A man, a plan, a canal: Panama");
-   
+        LongestCommonPrefix lcp = new LongestCommonPrefix();
+        string[] input = { "flower", "flow", "flight" };
+
+        Console.WriteLine(lcp.LongestCommonPrefixCheck(input));
+
     }
 }

@@ -7,10 +7,7 @@ namespace ProductCodingPractice.Arrays.SET1
 {
     public class RepeatMissingNumber
     {
-        public int[] FindMissingAndRepeatedValues(int[][] grid)
-        {
-        
-        }
+   
         
     }
 }

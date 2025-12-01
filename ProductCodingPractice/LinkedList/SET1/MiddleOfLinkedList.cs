@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductFaangCodingPractice.LinkedList;
+using ProductCodingPractice.LinkedList;
 
 namespace ProductFaangCodingPractice.LinkedList.SET1
 {

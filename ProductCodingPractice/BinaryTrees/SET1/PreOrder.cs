@@ -11,24 +11,31 @@ namespace ProductCodingPractice.BinaryTrees.SET1
         {
             IList<int> result = new List<int>();
 
-            TreeNode temp = root;
-
-            if (temp == null)
+            if (root == null)
             {
-                return null;
+                return new List<int>();
             }
 
-            while (temp != null)
+            Stack<TreeNode> myStack = new Stack<TreeNode>();
+            myStack.Push(root);
+
+            while (myStack.Count != 0)
             {
-                if (temp.left != null)
+                TreeNode currentNode = myStack.Pop();
+                result.Add(currentNode.val);
+
+                if (currentNode.right != null)
                 {
-                    result.Add(temp.data);
-                    PreOrder(temp.left);
+                    myStack.Push(currentNode.right);
                 }
-                temp = temp.right;
+                if (currentNode.left != null)
+                {
+                    myStack.Push(currentNode.left);
+                }
             }
 
             return result;
+           
         }
     }
 }
