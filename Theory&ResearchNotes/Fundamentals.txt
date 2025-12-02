@@ -381,4 +381,138 @@ static → required for extension methods, means no object of StockMappers is ne
 
 this Stock stockModel → makes it an extension method of Stock. That’s why you can call it like s.ToStockDto() instead of StockMappers.ToStockDto(s).
 
------------------------------------------------------------------------------------------------------------
+*********************************************************************************************************
+
+10. What does this.k = k; mean?
+---------------------------------
+
+Think of a program like below:
+
+public class KthLargest {
+    private readonly int k;
+    private readonly PriorityQueue<int, int> pq;
+
+    public KthLargest(int k, int[] nums) {
+        this.k = k;
+        pq = new PriorityQueue<int, int>();
+
+        foreach (var n in nums) {
+            Add(n);
+        }
+    }
+
+    public int Add(int val) {
+        pq.Enqueue(val, val); // element = val, priority = val
+
+        if (pq.Count > k)
+            pq.Dequeue();      // remove smallest
+
+        return pq.Peek();       // kth largest = smallest in heap
+    }
+}
+
+Inside your class, you have a member variable named k:
+
+private readonly int k;
+
+
+Inside your constructor, you also have a parameter named k:
+
+public KthLargest(int k, int[] nums)
+
+
+So both have the same name → k.
+
+To avoid confusion, C# uses this.k to mean:
+
+the class-level variable (member field)
+
+And plain k means:
+
+the parameter passed to the constructor
+
+🔍 So what exactly happens?
+
+When you write:
+
+this.k = k;
+
+
+It means:
+
+Take the k value passed from outside,
+
+and store it inside this object’s own variable k.
+
+👍 Simple analogy
+
+Imagine you have:
+
+A box inside the object → this.k
+
+A value someone hands to the constructor → k
+
+this.k = k; means:
+
+“Put the value you gave me into my box.”
+
+📦 Visual representation
+Constructor receives: k = 3
+
+Object's internal field   Parameter
+----------------------   ----------
+this.k (empty)      =     k (3)
+
+After this.k = k:
+this.k ---> 3
+
+🧠 Why do we even need this?
+
+Because without this., C# won’t know which k you mean—they have the same name.
+
+this. always refers to the current object's variable.
+
+🟢 If you renamed the parameter, you wouldn’t need this.
+
+Say you changed the above program like below:
+
+public class KthLargest {
+    private readonly int check;                        // renamed from k
+    private readonly PriorityQueue<int, int> pq;
+
+    public KthLargest(int k, int[] nums) {
+        check = k;                                     // now clear and not confusing
+        pq = new PriorityQueue<int, int>();
+
+        foreach (var n in nums) {
+            Add(n);
+        }
+    }
+
+    public int Add(int val) {
+        pq.Enqueue(val, val);
+
+        if (pq.Count > check)                          // use new name here
+            pq.Dequeue();
+
+        return pq.Peek();
+    }
+}
+
+check is the number that tells us how many elements the heap should keep.
+
+The value you pass in k becomes the value stored in check.
+
+So:
+
+check = k;
+
+
+means:
+
+“Store the constructor input k inside the object’s field called check.”
+
+Now there is zero confusion, because the field and the parameter have different names.
+
+*******************************************************************************************************************
+
