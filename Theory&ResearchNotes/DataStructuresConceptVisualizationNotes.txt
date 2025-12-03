@@ -134,6 +134,14 @@ Data Structures are of 2 types:
         - Get the Max and Min of the [firstnode, secondnode], compare them with the root: where both the conditions
           fail is your LCA [check your code folder]   
     
+    * AVL Trees
+    ------------------
+        - AVL trees are a special form of Binary Search Trees.
+        - A Binary search tree is a AVL tree, if the difference of (leftside - rightside) of a 'node' is not greater than 1
+        - Why we need AVL tree? In general insertion to a Binary Search tree also takes O(n) this is the same as an array or
+          a linked list.
+          AVL tree takes O(logn)
+          
 
 
 
