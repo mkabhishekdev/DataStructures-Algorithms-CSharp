@@ -126,6 +126,10 @@ Data Structures are of 2 types:
     - PreOrder traversal = root -> left -> right
     - PostOrder traversal = left -> right -> root
 
+    - Pre → Root comes first
+      In → Root in the middle
+      Post → Root comes last
+
     BFS(Breadth First Search): go through each row in the tree like 'level'(say level 0,level1, level2, level3) & write
                                down the nodes
      
