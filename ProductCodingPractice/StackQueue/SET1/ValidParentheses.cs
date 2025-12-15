@@ -10,7 +10,49 @@ namespace ProductCodingPractice.StackQueue.SET1
     {
         public bool IsValid(string s)
         {
-            Stack myStack = new Stack();
+            if(((s.Length)%2) != 0)
+            {
+                return false;
+            }
+
+            Stack<char> store = new Stack<char>();
+
+            foreach (char c in s)
+            {
+                if ((c == '(') || (c == '{') || (c == '['))
+                {
+                    store.Push(c);
+                }
+                else if ((c == ')') && (store.Count() != 0) && (store.Peek() == '('))
+                {
+                    store.Pop();
+                }
+                else if ((c == ']') && (store.Count() != 0) && (store.Peek() == '['))
+                {
+                    store.Pop();
+                }
+                else if ((c == '}') && (store.Count() != 0) && (store.Peek() == '{'))
+                {
+                    store.Pop();
+                }
+            }
+
+            if (store.Count() == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
+
+
+ 
+/*
+Stack myStack = new Stack();
 
             List<char> store = s.ToList();
 
@@ -19,6 +61,4 @@ namespace ProductCodingPractice.StackQueue.SET1
                 myStack.Push(c);
                 
             }
-        }
-    }
-}
+*/
