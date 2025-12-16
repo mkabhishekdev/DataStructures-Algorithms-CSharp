@@ -35,6 +35,10 @@ namespace ProductCodingPractice.StackQueue.SET1
                 {
                     store.Pop();
                 }
+                else
+                {
+                    return false;
+                }
             }
 
             if (store.Count() == 0)
