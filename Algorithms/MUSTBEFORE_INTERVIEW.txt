@@ -1,0 +1,2 @@
+1. Practice All the Sorting Algorithms.
+       - Should be in a position to remember & explain the concept. Than Code.
