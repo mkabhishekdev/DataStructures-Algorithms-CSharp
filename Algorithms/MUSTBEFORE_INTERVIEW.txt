@@ -1,2 +1,73 @@
-1. Practice All the Sorting Algorithms.
+* Practice All the Sorting Algorithms.
        - Should be in a position to remember & explain the concept. Than Code.
+
+  The Sorting techniques & how to talk about their Whys:
+
+       1. QUICK SORT (THE BEST)
+            WHY?  - The best, uses Best case = O(nlogn), Worst case = O(n2) time 
+                  - No extra space
+                  - https://www.youtube.com/watch?v=-qOVVRIZzao&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=37
+               
+              * Key mental model (Algorithm)
+
+                 1. Pivot you start with assuming the first element, i = leftmost element & j = rightmost element
+                 2. Move i right: while(A[i] <= Pivot). If condition fail, stop i there
+                 3. Move j left: while(A[j] > Pivot). If condition fail, stop j there
+                 4. If(i < j). Swap. But remember i & j indexes & also Pivot remains the same
+                 5. If(i >= j). Swap with the Pivot element. Here very important, once the Pivot is sorted, the left
+                    elements to it becomes a sub-array & also right elements become a sub array.
+
+     ---------------------------------------------------------------------
+
+       2. MERGE SORT (THE BEST)
+            WHY?  - 
+                  -  
+            
+              * Key mental model (Algorithm)
+
+                
+
+     -----------------------------------------------------------------------
+
+       3. HEAP SORT (THE BEST)
+            WHY?  - 
+                  -  
+            
+              * Key mental model (Algorithm)
+
+                
+     ------------------------------------------------------------------------
+
+       4. INSERTION SORT (FOUNDATIONAL)
+            WHY?  - 
+                  -  
+            
+              * Key mental model (Algorithm)
+
+                
+
+     -------------------------------------------------------------------------
+        
+        5.  SELECTION SORT (FOUNDATIONAL)
+            WHY?  - 
+                  -  
+            
+              * Key mental model (Algorithm)
+
+              
+     
+     -------------------------------------------------------------------------
+
+         6. BUBBLE SORT (FOUNDATIONAL)
+            WHY?  - 
+                  -  
+            
+              * Key mental model (Algorithm)
+
+          
+
+
+
+
+              
+                    

@@ -482,8 +482,14 @@ Below is always the basic complexity order in general:
 
       }
 
-    
+    * Key mental model (Algorithm)
 
+      1. Pivot you start with assuming the first element, i = leftmost element & j = rightmost element
+      2. Move i right: while(A[i] <= Pivot). If condition fail, stop i there
+      3. Move j left: while(A[j] > Pivot). If condition fail, stop j there
+      4. If(i < j). Swap. But remember i & j indexes & also Pivot remains the same
+      5. If(i >= j). Swap with the Pivot element. Here very important, once the Pivot is sorted, the left
+         elements to it becomes a sub-array & also right elements become a sub array.
 
   
    
