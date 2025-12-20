@@ -6,10 +6,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Algo6_QuickSort_AbdulSir alg6 = new Algo6_QuickSort_AbdulSir();
+        Algo7_MergeSortImpl_AbdulSir alg6 = new Algo7_MergeSortImpl_AbdulSir();
         int[] test = { 8, 3, 6, 1, 4, 5, 2 };
 
-        int[] result = alg6.QuickSort(test);
+        int[] result = alg6.MergeSort(test);
 
         Console.WriteLine("The sorted array is: ");
         for (int i = 0; i < result.Length; i++)
