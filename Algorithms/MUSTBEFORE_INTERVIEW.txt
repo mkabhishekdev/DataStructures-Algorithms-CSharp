@@ -6,9 +6,10 @@
        1. QUICK SORT (THE BEST)
             WHY?  - The best, uses Best case = O(nlogn), Worst case = O(n2) time 
                   - No extra space
+                  - Fastest on average, cache-friendly, used conceptually in many standard libraries
                   - https://www.youtube.com/watch?v=-qOVVRIZzao&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=37
                
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): QuickSort → “Pick pivot, partition, fix pivot forever”
 
                  1. Pivot you start with assuming the first element, i = leftmost element & j = rightmost element
                  2. Move i right: while(A[i] <= Pivot). If condition fail, stop i there
@@ -16,53 +17,167 @@
                  4. If(i < j). Swap. But remember i & j indexes & also Pivot remains the same
                  5. If(i >= j). Swap with the Pivot element. Here very important, once the Pivot is sorted, the left
                     elements to it becomes a sub-array & also right elements become a sub array.
+             
+            * Example mental replay (no code)
+           
+              Given array
+              [8, 3, 6, 1, 4, 5, 2]
 
-     ---------------------------------------------------------------------
+              Step 1 Pick pivot
+
+                     Pivot = 8 (first element)
+
+                     Think:
+
+                     “Everything smaller goes left, bigger goes right”
+
+              Step 2️⃣ Partition around pivot
+
+                     After partition:
+
+                     [2, 3, 6, 1, 4, 5 | 8]
+
+
+                     ✔ Pivot 8 is fixed forever
+
+             Step 3️⃣ Recurse on left sub-array
+                      [2, 3, 6, 1, 4, 5]
+
+
+                      Pivot = 2
+
+                      After partition:
+
+                      [1 | 2 | 6, 3, 4, 5]
+
+
+                       ✔ Pivot 2 fixed
+
+            Step 4️⃣ Recurse on right sub-array
+                      [6, 3, 4, 5]
+
+
+                      Pivot = 6
+
+                    After partition:
+
+                     [5, 3, 4 | 6]
+
+
+                    ✔ Pivot 6 fixed
+
+            Step 5️⃣ Continue recursively
+                     [5, 3, 4]
+
+
+                     Pivot = 5
+
+                     After partition:
+
+                    [4, 3 | 5]
+
+
+                    ✔ Pivot 5 fixed
+
+           Step 6️⃣ Final small partition
+                    [4, 3]
+
+
+                   Pivot = 4
+
+                  After partition:
+
+                  [3 | 4]
+
+
+                  ✔ Pivot 4 fixed
+
+            ✅ Final sorted array
+            [1, 2, 3, 4, 5, 6, 8]
+            
+-----------------------------------------------------------------------------------------------------------------
 
        2. MERGE SORT (THE BEST)
-            WHY?  - 
-                  -  
+            WHY?  - Guaranteed O(nlogn)
+                  - Stable
+                  - Backbone of external sorting and linked list sorting, Suitable for 'linked list'
+                  - Drawback: Extra Space is needed (Not In Place sorting like 'Quick Sort')
+                  - https://www.youtube.com/watch?v=ak-pz7tS5DE&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=35
             
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): MergeSort → “Divide completely, then merge cleanly”
+                1 Divide step (Recursion)
 
+                  - Always divide the array into two halves using mid
+                  - Keep dividing until each sub-array has only one element
+                  - One element is already sorted — no work needed
+
+                 📌 Important: MergeSort does nothing useful until the divide is complete
+
+                2 Merge step (Where sorting actually happens)
+
+                  - Take two sorted sub-arrays (left & right)
+                  - Compare elements one by one
+                  - Copy the smaller element first into the original array
+                  - Continue until one sub-array is exhausted
+                  - Copy the remaining elements as-is (already sorted)
+
+                3 Index mental model (very important)
+
+                  - Left and Right arrays start at index 0
+                  - Original array writing starts at index low
+                  - Merge only happens in the range low → high
                 
+            🧪 Example mental replay (no code)
 
-     -----------------------------------------------------------------------
+                  For array:
+
+                 [8, 3, 6, 1]
+
+
+                 MergeSort thinks:
+
+                  Split → [8,3] & [6,1]
+                  Split → [8][3] & [6][1]
+                  Merge → [3,8] & [1,6]
+                  Merge → [1,3,6,8]
+
+     ----------------------------------------------------------------------------------------------------------------
 
        3. HEAP SORT (THE BEST)
-            WHY?  - 
-                  -  
+            WHY?  - Guaranteed O(nlogn)
+                  - In place
+                  - Good when worst case matters 
             
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): HeapSort → “Use max-heap, extract largest repeatedly”
 
                 
-     ------------------------------------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------
 
        4. INSERTION SORT (FOUNDATIONAL)
-            WHY?  - 
-                  -  
+            WHY?  - Very fast for small or nearly sorted data
+                  - Used internally by real algorithms (hybrid sorts) 
             
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): InsertionSort → “Insert element into sorted left part”
 
                 
 
-     -------------------------------------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------
         
         5.  SELECTION SORT (FOUNDATIONAL)
-            WHY?  - 
-                  -  
+            WHY?  - Predictable but inefficient
+                  - Rarely used in real systems 
             
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): SelectionSort → “Select minimum and fix it”
 
               
      
-     -------------------------------------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------
 
          6. BUBBLE SORT (FOUNDATIONAL)
-            WHY?  - 
-                  -  
+            WHY?  - Just educational
+                  - Never used in production
             
-              * Key mental model (Algorithm)
+              * Key mental model (Algorithm): BubbleSort → “Big values bubble to the end”
 
           
 
