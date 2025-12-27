@@ -212,7 +212,25 @@
 
               * Key mental model (Algorithm): BubbleSort → “Big values bubble to the end”
 
-          
+                 - You will use two for loops.
+                 - The outer loop will keep the count of number of passes
+                 - The inner loop will consists of adjacent comparisons until the 'largest' element bubbles to the end
+
+              Algorithm:
+
+                  for(int i = 0 ; i < n-1 ; i++)
+                  {
+                      for(int j = 0; j < n-1-i; j++)  [NOTE: you will have 'i' also here, why since with wach pass the last 'i' elements will already be sorted]
+                      {
+                          if(a[j] > a[j+1])
+                          {
+                              temp = a[j];
+                              a[j] = a[j+1];
+                              a[j+1] = temp;
+                          }
+                      }
+                  }
+
 
 
 
