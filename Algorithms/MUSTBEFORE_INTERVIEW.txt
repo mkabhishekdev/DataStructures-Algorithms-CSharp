@@ -148,17 +148,45 @@
                   - In place
                   - Good when worst case matters 
             
-              * Key mental model (Algorithm): HeapSort → “Use max-heap, extract largest repeatedly”
+            Just Watch this: https://www.youtube.com/watch?v=Q_eia3jC9Ts&t=4s
 
+              * Key mental model (Algorithm): HeapSort → “Use max-heap, extract largest repeatedly”
                 
      ----------------------------------------------------------------------------------------------------------------
 
        4. INSERTION SORT (FOUNDATIONAL)
             WHY?  - Very fast for small or nearly sorted data
                   - Used internally by real algorithms (hybrid sorts) 
-            
+                  - https://www.youtube.com/watch?v=yCxV0kBpA6M&list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU&index=98
               * Key mental model (Algorithm): InsertionSort → “Insert element into sorted left part”
+                
+                1. The basic idea is to start with considering left side, first start with just 1 element and think of
+                   this side as the 'sorted sublist'.
+                2. The right side as the 'Unsorted sublist. Now consider the first element on the unsorted list to be the
+                    the element to start comparing with the left sorted sublist.
+                3. So what you have to check? Is the left sublist value greater than the element being compared. Than 
+                   obviously you have to move the element to the left side before the existing left sublist element since
+                   the right sublist element is lesser than the that.
+                4. Keep this comparison logic, until you get the left sublist completely sorted. At the end, this will be the
+                   sorted list.
+                
+                Algorithm:
 
+                    for(int i = 1; i < n ; i++)
+                    {
+                      temp = a[i];
+                      j = i - 1;
+
+                      while(j >= 0 && a[j] > temp)
+                      {
+                        a[j+1] = a[j];
+                        j--;
+                      }
+                      a[j+1] = temp;
+                    }    
+
+                    Time complexity: Best case =  O(n), Worst case = O(n2) 
+                    Space complexity: O(1) [when space usage is just 'Constant']
                 
 
      ----------------------------------------------------------------------------------------------------------------
@@ -166,7 +194,10 @@
         5.  SELECTION SORT (FOUNDATIONAL)
             WHY?  - Predictable but inefficient
                   - Rarely used in real systems 
-            
+                  - Time complexity: O(n2) [both best and worst case]
+                  - Space complexity: O(n)
+                  - https://www.youtube.com/watch?v=9oWd4VJOwr0&list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU&index=99
+
               * Key mental model (Algorithm): SelectionSort → “Select minimum and fix it”
 
               
@@ -176,7 +207,9 @@
          6. BUBBLE SORT (FOUNDATIONAL)
             WHY?  - Just educational
                   - Never used in production
-            
+                  - Watch the video: https://www.youtube.com/watch?v=o4bAoo_gFBU
+
+
               * Key mental model (Algorithm): BubbleSort → “Big values bubble to the end”
 
           
