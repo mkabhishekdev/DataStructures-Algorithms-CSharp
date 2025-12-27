@@ -146,7 +146,107 @@ Data Structures are of 2 types:
           a linked list.
           AVL tree takes O(logn)
           
+    * Why Height of a Tree(i.e balanced tree) is 'logn' ?
+    -----------------------------------------------------
+    First: what is “height” of a binary tree?
 
+    Height = number of levels from root to the deepest leaf
+
+    Example:
+
+        Level 1:        1
+        Level 2:      2   3
+        Level 3:    4  5 6  7
+
+        Height here = 3
+
+        Key idea (no logs yet)
+
+        In a binary tree,
+        👉 each level can have at most double the nodes of the previous level
+
+     Level	Max nodes at that level
+     1	1
+     2	2
+     3	4
+     4	8
+     5	16
+
+    This doubling is the core reason logs appear.
+
+    Imagine building the tree step by step
+      Suppose you keep adding levels:
+
+      After 1 level → 1 node
+      After 2 levels → 1 + 2 = 3 nodes
+      After 3 levels → 1 + 2 + 4 = 7 nodes
+      After 4 levels → 1 + 2 + 4 + 8 = 15 nodes
+    
+      So roughly:
+
+      Height 1 → ~1 node
+      Height 2 → ~2 nodes
+      Height 3 → ~4 nodes
+      Height 4 → ~8 nodes
+      Height 5 → ~16 nodes
+
+
+      Every time you increase height by 1, nodes roughly double
+
+      Now reverse the thinking (this is the key mental flip)
+
+      Instead of asking:
+      “If height is H, how many nodes?”
+
+       Ask:
+
+      “If I have N nodes, how many levels do I need?”
+
+      Example:
+
+      8 nodes → need 3 levels
+
+      16 nodes → need 4 levels
+
+      32 nodes → need 5 levels
+
+      Notice something?
+
+    👉 To reach big numbers of nodes, height grows very slowly
+
+    This “how many times do I double to reach N?” is exactly log₂(N)
+
+    Let’s say:
+
+    1 → 2 → 4 → 8 → 16 → 32
+
+
+    Count how many steps (levels) it took:
+
+      To reach 8 → 3 steps
+
+      To reach 16 → 4 steps
+
+      To reach N → log₂(N) steps
+
+    So:
+
+    Height ≈ log₂(N)
+
+    Why people say “height of binary tree is log n”
+
+    This statement is true ONLY for a balanced binary tree.
+
+    Balanced means:
+
+    Left and right subtrees are roughly equal
+
+    Tree grows wide, not tall
+
+    Balanced tree:
+    Height = O(log n)
+
+  
 
 
 

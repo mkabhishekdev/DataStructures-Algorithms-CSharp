@@ -25,7 +25,8 @@ public class Algo4_InsertionSortImpl
 
 }
 
-// Time Complexity: Worst Case: O(n2) ,Best Case: O(n)
+//  Time complexity: Best case =  O(n), Worst case = O(n2) 
+                //    Space complexity: O(1) [when space usage is just 'Constant']
 
 /*
   Algo4_InsertionSortImpl a4 = new Algo4_InsertionSortImpl();
