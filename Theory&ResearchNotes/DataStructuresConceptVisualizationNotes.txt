@@ -138,9 +138,15 @@ Data Structures are of 2 types:
         - Get the Max and Min of the [firstnode, secondnode], compare them with the root: where both the conditions
           fail is your LCA [check your code folder]   
     
+    * Binary Search Tree(BST)
+    --------------------------
+        - BST are trees in which left of a 'node' is lesser than the node and right of a 'node' is greater than the node.
+        - 'Duplicate elements' are not allowed in a BST. Important point.
+
     * AVL Trees
     ------------------
-        - AVL trees are a special form of Binary Search Trees.
+        - AVL trees are a special form of 'Binary Search Trees'.
+        - The balance factor(i.e left - right) should be either -1,0,1. If >1, the tree is unbalanced and you need to balance it. 
         - A Binary search tree is a AVL tree, if the difference of (leftside - rightside) of a 'node' is not greater than 1
         - Why we need AVL tree? In general insertion to a Binary Search tree also takes O(n) this is the same as an array or
           a linked list.
