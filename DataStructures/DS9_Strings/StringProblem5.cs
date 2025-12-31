@@ -1,9 +1,0 @@
-/*
-
-5. String Compression
-Problem: Compress a string using counts of repeated characters.
-E.g., "aabcccccaaa" becomes "a2b1c5a3".
-
-Time Complexity:
-Space Complexity:
-*/
