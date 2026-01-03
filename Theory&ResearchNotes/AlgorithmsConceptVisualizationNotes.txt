@@ -1,4 +1,5 @@
-Algorithm Notes:
+Algorithm Notes: [WHEN GENERATING A PDF USING CHATGPT, FIRST GO THROUGH THE NOTES AND ADD SOME MORE DETAILS REFERRING
+                  CHATGPT LIKE HOW TO REMEMBER SOME OF THE CONCEPTS WHEN EXPLAINED IN SIMPLER OR VISUAL WAY]
 
 1. Introduction to Algorithms
 *********************************************
@@ -679,10 +680,10 @@ Below is always the basic complexity order in general:
       2. Dynamic Programming
       3. Branch and Bound
 
-* What is Greedy method? Think of an example of buying a car. You have set of specifications on the basic of which you are 
-  looking say 'reliability, maintenance, looks' so you with honda. Than within honda, you have a model in mind like upperbound
-  do not want a hatchback/SUV but you you want a sedan. Than once, you select a sedan you want the latest model. Notice,
-  how your 'optimizing' the solution based upon your own needs. This may not be true to everyone but you have figured outer
+* What is Greedy method? Think of an example of buying a car. You have set of specifications on the basis of which you are 
+  looking say 'reliability, maintenance, looks' so you with honda. Than within honda, you have a model in mind like you
+  do not want a hatchback/SUV but you want a sedan. Than once, you select a sedan you want the latest model. Notice,
+  how your 'optimizing' the solution based upon your own needs. This may not be true to everyone but you have figured out
   this is the optimal solution for you. This is called 'Greedy Method'.
 
 
@@ -693,9 +694,30 @@ Below is always the basic complexity order in general:
   no slots available discard the remaining jobs, calculate the total profit.
 
 
-3.3: Greedy Method: Optimal Merge Pattern
+3.3: Greedy Method: Optimal Merge Pattern 
 ------------------------------------------
+- Bit representation:
+  ASCII Codes = 8 bits
+  Ex:
+    1. Say, alphabet A:65 - 01000001
+                     B:66 - 01000010 & so on.
+- A Bit can be represented only as 0 or 1.
+- In short, always select the two minimum values in a list of values and keep merging.
 
+
+3.4: Greedy Method: Huffman Coding
+-----------------------------------
+- You use ASCII codes to encode and decode values.
+- In Huffman coding, the application is in compressing/decompressing a file. Think of it like when you are sending a file
+  over internet and you want to compress/decompress(reduce the file size). You can think of this approach.
+- Lets take an example: Message = 'BCCABBDDAECCBB....'
+      * Intention here is to reduce the size of the message(i.e compress) and send the message over.
+      * Count the occurence of the characters, you generate the code and calculate.
+
+
+3.5: Greedy Method: Prims and Kruskals Algorithm
+-------------------------------------------------
+ 
 
 
 
