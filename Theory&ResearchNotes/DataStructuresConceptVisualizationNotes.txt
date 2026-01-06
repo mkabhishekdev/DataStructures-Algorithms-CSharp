@@ -137,18 +137,18 @@ Data Structures are of 2 types:
                                down the nodes
      
     * Lowest Common Ancestor in BST
-    --------------------------------
+    ----------------------------------------------------
         - Get the Max and Min of the [firstnode, secondnode], compare them with the root: where both the conditions
           fail is your LCA [check your code folder]   
     
     * Binary Search Tree(BST)
-    --------------------------
+    -----------------------------------------------------
         - BST are trees in which left of a 'node' is lesser than the node and right of a 'node' is greater than the node.
         - 'Duplicate elements' are not allowed in a BST. Important point.
 
     * AVL Trees
-    ------------------
-        - AVL trees are a special form of 'Binary Search Trees'.
+    -------------------------------------------------------------
+        - AVL trees are a special form of 'Binary Search Trees'. It is a 'Self BALANCING' BST. (STRICTLY BALANCED)
         - The balance factor(i.e left - right) should be either -1,0,1. If >1, the tree is unbalanced and you need to balance it. 
         - A Binary search tree is a AVL tree, if the difference of (leftside - rightside) of a 'node' is not greater than 1
         - Why we need AVL tree? In general insertion to a Binary Search tree also takes O(n) this is the same as an array or
@@ -255,7 +255,34 @@ Data Structures are of 2 types:
     Balanced tree:
     Height = O(log n)
 
+
+Red Black Tree
+-------------------------------------------------------------------------
+    
+  * Rules to be a Red black tree
+    - Red black tree is a 'Self BALANCING' BST. Every node is either black or red. (STRICTLY BALANCED)
+    - Root is always 'Black'.
+    - Every leaf node which is NIL is black. 
+    - If node is 'Red' then its children are 'black'.
+    - Every path from a node to any of its descendant NIL node has same number of black nodes.
   
+
+Splay Tree
+---------------------------------------------------------------------------
+
+  - Splay tree is a 'Self ADJUSTING' BST. (ROUGHLY BALANCED)
+  - In general, BST in worst case as time complexity: O(n). Trees like AVL, RedBlack make the time complexity: O(logn)[that is their major importance]
+  - Splay tree is applied to reduce the time complexity further more.
+  - In Splay trees, you first search for the element(using BST) + than do Splaying.
+  - Splaying is a process in which each operation on a element will rearrange the tree, so that it will become 'root' of the tree.
+  - After splaying process, the time complexity can be O(1) since the element being checked could be the root/node 'nearer' to the root.
+  - Major application of Splay tree: Implementation of 'CACHES'.
+  - Fastest type of BST for many practical application.
+
+
+B-Tree
+----------------------------------------------------------------------------
+
 
 
 
@@ -274,23 +301,9 @@ Data Structures are of 2 types:
 
 
 
-7. RECURSION & BACKTRACKING
-*********************************************************************************************************************
 
 
 
 
 
 
-
-8. HASHING
-*****************************************
-
-
-
-
-
-
-
-9. HUFFMAN CODING
-*****************************************
