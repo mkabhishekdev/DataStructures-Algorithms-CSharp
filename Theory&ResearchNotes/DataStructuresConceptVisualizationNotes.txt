@@ -1,5 +1,9 @@
 [WHEN GENERATING A PDF USING CHATGPT, FIRST GO THROUGH THE NOTES AND ADD SOME MORE DETAILS REFERRING
-                  CHATGPT LIKE HOW TO REMEMBER SOME OF THE CONCEPTS WHEN EXPLAINED IN SIMPLER OR VISUAL WAY]
+                  CHATGPT LIKE HOW TO REMEMBER SOME OF THE CONCEPTS WHEN EXPLAINED IN SIMPLER OR VISUAL WAY,
+                  ALSO GO THROUGH YOUR NOTES BEFORE GENERATING PDF TO PRINT - USE SOME CHATGPT THINGS LIKE
+                  ADDING SOME MORE INFORMATION FOR YOU TO REMEMBER THE CONCEPTS ALWAYS. LIKE REVISIT A 
+                  SECTION BELOW - ASK IT TO GENERATE SOMETHING VISUALLY TO UNDERSTAND WELL OR TELL THE 
+                  CONCEPT IN VERY SIMPLE WORDS]
 
 Data Structures are of 2 types:
     - Linear Data Structures = Array, Linked List, Stack, queue [i.e they follow a sequential order]
@@ -280,22 +284,31 @@ Splay Tree
   - Fastest type of BST for many practical application.
 
 
-B-Tree
-----------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 6. DATA-STRUCTURE: GRAPH
 *********************************************************************************************************************
 
+  * Graph Representation
+  ----------------------- 
+    - Graphs can be represented as: Adjacency Matrix or Adjacency List.
+    - In general, Dense graphs are represented using Adjacency Matrix.
+    - Sparse graphs are represented using Adjacency List.
+    - Two kinds of traversals in Graph: BFS(Breadth first search) and DFS(Depth first search)
+    - In BFS:
+          - Use a 'Queue' to store the elements
+          - The logic is you start from the an element, and start adding all the connected nodes to the particular
+            element into the queue.
+    - In DFS:
+          - Use a 'Stack' to store the elements
+          - In this you start from an element, find the connecting nodes, you can select any of those nodes and keep
+            going in depth path on that node till the end.
+          - You reached the end and you still have a some nodes which you haven't traversed - In DFS you could use the 
+            technique of 'Backtracking' to return backwards and keep finding the element which has not yet been 
+            traversed.
 
+      
+ 
+ 
 
 
 
