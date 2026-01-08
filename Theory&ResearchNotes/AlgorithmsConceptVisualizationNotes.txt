@@ -721,13 +721,128 @@ Below is always the basic complexity order in general:
 
 3.5: Greedy Method: Prims and Kruskals Algorithm
 -------------------------------------------------
+- Minimum Cost Spanning Tree
+  --------------------------
+
+What is a Spanning Tree?
+
+A spanning tree of a graph is: A structure that connects all the vertices
+  - Uses exactly (V − 1) edges
+  - Has no cycles
+
+Think of it like:
+
+Connecting all cities with roads so that you can travel between any two cities,
+with no loops, and using the minimum number of roads.
+
+
+What is a Minimum Cost Spanning Tree?
+--------------------------------------
+Now imagine every road has a cost (distance, money, weight).
+
+A Minimum Cost Spanning Tree (MST) is: A spanning tree with the "lowest total cost" among all possible spanning trees.
+
+So:
+- Connect all nodes 
+- No cycles 
+- Use minimum number of edges 
+- Total weight is minimal 
+
+Why do we want MST?
+--------------------
+  - Because it saves resources:
+  - Cheapest network design
+  - Least cost cable layout
+  - Minimum road construction cost
+  - Efficient pipeline / electrical network
+
+🧩 Example (very simple)
+
+Graph:
+
+   (2)
+A ----- B
+ \     /
+ (3) (1)
+   \ /
+    C
+
+
+Edges and costs:
+
+A–B = 2
+
+B–C = 1
+
+A–C = 3
+
+To choose MST:
+
+1️⃣ Connect the cheapest edge first → B–C (cost 1)
+2️⃣ Next cheapest → A–B (cost 2)
+3️⃣ A–C is more expensive (3), skip it because it creates a cycle
+
+So MST edges:
+
+B–C (1)
+
+A–B (2)
+
+Total cost = 3
+
+That’s the MST.
+
+
+MST Properties (easy to remember)
+---------------------------------
+
+- Uses V − 1 edges
+- No cycles
+- Total weight is minimal
+
+If all edge weights are different → MST is unique
+
+⚙️ How to find MST?
+
+There are two famous algorithms:
+
+1. Kruskal’s Algorithm
+
+- Sort edges by weight
+- Pick the smallest edge
+- Add it unless it makes a cycle
+
+2. Prim’s Algorithm
+
+- Start from any vertex
+- Keep adding the cheapest edge that expands the tree
+- Both produce the same MST.
+
+A Minimum Cost Spanning Tree is: A set of edges that connects all vertices with no cycles and minimum total cost.
+
+PRIMS ALGORITHM
+---------------
+- From the given graph, start with selecting the edge with the lowest weight.
+- The idea is here to form a spanning tree with the 'least cost', so you have to keep on picking lowest weights.
+- There is a Condition but: The condition is the next 'lowest weight' edge you pick should be connected to the 
+  previously picked edge.[Important condition]
+
+KRUSKALS ALGORITHM
+------------------ 
+- From the given graph, start with selecting the edge with the lowest weight. 
+- Keep on selecting edges with the lowest weights even if the edges remain disconnected.
+- But when selecting make sure, you are not forming any 'cycles'. That is the rule to keep in mind.
+
+
+3.6: Greedy Method - Dijkstra Algorithm: Single Source Shortest Path
+----------------------------------------------------------------------
+-    
+
+
+
+
+
  
-
-
-
-
-
-
 
 
 
