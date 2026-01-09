@@ -259,7 +259,7 @@ Divide and conquer recursion	                                     O(log n)
 (Points labelled as per lecture video sequence)
 
 1. ALGORITHMS BASICS
-*****************************************************************************************************************
+*********************************************************************************************************************************
 
 1.1-1.7 notes
 -------------
@@ -324,7 +324,7 @@ Below is always the basic complexity order in general:
 
 
 2. DIVIDE AND CONQUER Strategy
-************************************************************************************************************
+********************************************************************************************************************************************************
   * Idea:
     DAC(problem)
     {
@@ -665,7 +665,7 @@ Below is always the basic complexity order in general:
   
 
 3. GREEDY METHOD
-********************************************************************************
+******************************************************************************************************************************************************************
 
 3.1: Introduction
 ------------------
@@ -836,9 +836,26 @@ KRUSKALS ALGORITHM
 
 3.6: Greedy Method - Dijkstra Algorithm: Single Source Shortest Path
 ----------------------------------------------------------------------
--    
+-  If a weighted graph is given, we need to find the shortest path from any vertex to all the other vertices.
+-  This is a minimization problem, thus a Optimization problem. So optimization problems can be solved using Greedy method.
+-  Greedy method states that a problem should be solved in stages taking one step at a time & considering one input a time
+   to get a optimal solution. In greedy method, there are predefined peocedures and we follow the procedures to get the 
+   optimal solution.
+-  In Dijkstra algorithm, selects the vertice with the shorted path & than update the shortest path to other vertices if 
+   possible.
 
 
+
+4.1: Dynamic Programming - Principle of OPTIMALITY
+****************************************************************************************************************************************************
+- Greedy method and Dynamic programming are optimization techniques.
+- In greedy method, decision is taken one time that we will do like this and we just follow that procedure.
+- In Dynamic programming, every stage we will take a decision.
+- Principle of optimality states that a problem can be solved by taking sequence of decisions.
+
+Multistage Graph
+----------------
+  -  
 
 
 
