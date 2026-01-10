@@ -853,10 +853,17 @@ KRUSKALS ALGORITHM
 - In Dynamic programming, every stage we will take a decision.
 - Principle of optimality states that a problem can be solved by taking sequence of decisions.
 
-Multistage Graph
-----------------
-  -  
 
+4.2: Dynamic Programming: All Pairs Shortest Path (Floyd - Warshall)
+------------------------------------------------------------------------------------------
+  - Floyd Warshall is different from Dijkstra. Firstly, Dijkstra is a greedy method of optimizing a problem. It finds
+    shortest path from a 'single source'.
+  - However, Floyd Warshall applies dynamic programming approach of optimizing a problem. You will find the shortest path
+    from 'multiple sources'. Like you will traverse through each node & keep updating the original matrices.
+
+
+4.3: Matrix Chain Multiplication using Dynamic Programming Formula
+-------------------------------------------------------------------
 
 
  
