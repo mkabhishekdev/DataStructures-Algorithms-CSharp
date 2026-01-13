@@ -1,0 +1,6 @@
+TREES
+********************************************************************************************************
+- In interview don't think too much that you have to use iterative approach, if a problem can be solved in recursive way do it
+
+Problem2_SameTree: Do Breadth First Search(BFS), first handle basic cases. Than use recursion 
+ 

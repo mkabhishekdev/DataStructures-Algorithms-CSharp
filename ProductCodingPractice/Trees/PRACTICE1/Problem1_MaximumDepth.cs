@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using ProductCodingPractice.BinaryTrees;
 
-public class Set1Problem1MaximumDepth
+public class Problem1_MaximumDepth
 {
     public int MaxDepth(TreeNode root)
     {
