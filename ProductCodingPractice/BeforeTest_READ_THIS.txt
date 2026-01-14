@@ -8,6 +8,29 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
          paper to discuss what is the actual problem firstly. Irrespective of you know how to solve or not on the first go,
          put question on the paper and brainstorm/ask questions.
 
+- Start solving first on 'YourThinkingWork' folder. Solve through your original thought, don't care about time or Space
+  in this stage. Goal is to find a way to get to the solution. 
+      * plot the strategy
+      * first if possible code through self
+      * Research in web but you should try to find the 'step' to solve the problem, not the solution to the answer itself.
+      [NOTE: This approach will help you when you as a Lead try to help a junior in the team or collaboration coding. Your 
+      GOAL is to leatn solving problems in your own thoughts aand not just follow any youtube approach or standard approach. Ofcourse 
+      you can refer that later]
+      * In your class file, create a head section with below comment to write down your approach even if it is rough
+        of what you are trying
+        Ex:
+        /*
+        MY APPROACH:
+
+        */
+
+        Below the working code, also write down your failed approaches of any like below
+        /* FAILED APPROACH & WHY
+
+        */ [This is important as well, to make you identify what was wrong in your thinking]
+  
+
+
 1. ON THE PAPER/BOARD -> represent the problem & than in just plain english words write down what is your approach. You don't
    have to explain. You could say you are processing what needs to be done. Than talk out loud what you are thinking &
    keep up the discussion. Once you feel confident to some extent. CODE next
