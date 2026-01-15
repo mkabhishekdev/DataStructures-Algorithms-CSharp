@@ -5,6 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ProductCodingPractice.BinaryTrees;
 
+/*
+APPROACH I CAME UP WITH:
+1. Use a Queue 
+2. First push the corresponding elements from both p and q in the form Queue<(TreeNode,TreeNode)> into the queue
+3. Check if condition for all failing conditions
+4. If not, Enqueue the next left,right sub tree nodes
+*/
+
 namespace ProductCodingPractice.Trees.PRACTICE1
 {
     public class Problem2_SameTree
@@ -15,19 +23,42 @@ namespace ProductCodingPractice.Trees.PRACTICE1
             {
                 return true;
             }
-            if ((p == null && q != null) || (p != null && q == null))
+            if (p == null && (q != null))
             {
                 return false;
             }
-            if (p.val != q.val)
+            if (p != null && (q == null))
             {
                 return false;
             }
-            if (IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right))
+      
+            
+            Queue<(TreeNode, TreeNode)> myQueue = new Queue<(TreeNode, TreeNode)>();
+
+            myQueue.Enqueue((p, q));
+
+            while (myQueue.Count > 0)
             {
-                return true;
+                var (nodeP, nodeQ) = myQueue.Dequeue();
+
+                if (nodeP == null && nodeQ == null)
+                {
+                    continue;
+                }
+                if (nodeP == null || nodeQ == null)
+                {
+                    return false;
+                }
+                if(nodeP.val != nodeQ.val)
+                {
+                    return false;
+                }
+
+                myQueue.Enqueue((nodeP.left, nodeQ.left));
+                myQueue.Enqueue((nodeP.right, nodeQ.right));
+                
             }
-            return false;
+          return true;              
         }
     }
 }

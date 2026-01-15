@@ -12,15 +12,15 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
   in this stage. Goal is to find a way to get to the solution. 
       * plot the strategy
       * first if possible code through self
-      * Research in web but you should try to find the 'step' to solve the problem, not the solution to the answer itself.
+      * Research in web but you should try to find the 'step' to solve the problem, not the solution to the problem itself.
       [NOTE: This approach will help you when you as a Lead try to help a junior in the team or collaboration coding. Your 
-      GOAL is to leatn solving problems in your own thoughts aand not just follow any youtube approach or standard approach. Ofcourse 
+      GOAL is to learn solving problems in your own thoughts aand not just follow any youtube approach or standard approach. Ofcourse 
       you can refer that later]
       * In your class file, create a head section with below comment to write down your approach even if it is rough
         of what you are trying
         Ex:
         /*
-        MY APPROACH:
+       APPROACH I CAME UP WITH::
 
         */
 
