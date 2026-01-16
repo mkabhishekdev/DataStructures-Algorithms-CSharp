@@ -20,7 +20,7 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
         of what you are trying
         Ex:
         /*
-       APPROACH I CAME UP WITH::
+       APPROACH I CAME UP WITH:
 
         */
 
