@@ -12,7 +12,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/Algorithms",
             "stopAtEntry": false,
-            "console": "internalConsole"
+            "console": "internalConsole",
+            "requireExactSource": false
         },
         {
             "name": ".NET: DataStructures",
@@ -23,7 +24,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/DataStructures",
             "stopAtEntry": false,
-            "console": "internalConsole"
+            "console": "internalConsole",
+            "requireExactSource": false
         },
         {
             "name": ".NET: ProductCodingPractice",
@@ -34,7 +36,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/ProductCodingPractice",
             "stopAtEntry": false,
-            "console": "internalConsole"
+            "console": "internalConsole",
+            "requireExactSource": false
         },
         {
             "name": ".NET: TestYourSkill",
@@ -45,7 +48,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/TestYourSkill",
             "stopAtEntry": false,
-            "console": "internalConsole"
+            "console": "internalConsole",
+            "requireExactSource": false
         }
     ]
 }

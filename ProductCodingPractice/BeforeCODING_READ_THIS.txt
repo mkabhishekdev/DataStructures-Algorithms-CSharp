@@ -22,9 +22,13 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
         /*
        APPROACH I CAME UP WITH::
 
+
+       Time Complexity:
+       Space Complexity:
         */
 
         Below the working code, also write down your failed approaches of any like below
+        // If all test cases not clearing, PRACTICE DEBUGGING
         /* FAILED APPROACH & WHY
 
         */ [This is important as well, to make you identify what was wrong in your thinking]

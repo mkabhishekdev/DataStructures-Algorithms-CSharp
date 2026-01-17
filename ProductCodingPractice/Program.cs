@@ -1,14 +1,14 @@
 ﻿using System;
-using ProductCodingPractice.Strings.SET1;
+using ProductCodingPractice.Arrays.YourTHINKINGWork;
+using ProductCodingPractice.Strings.YourTHINKINGWork;
 
 class Program
 {
     static void Main(string[] args)
     {
-        LongestCommonPrefix lcp = new LongestCommonPrefix();
-        string[] input = { "flower", "flow", "flight" };
 
-        Console.WriteLine(lcp.LongestCommonPrefixCheck(input));
+        LongestSubstring ls = new LongestSubstring();
+        Console.WriteLine(ls.LengthOfLongestSubstring("aab"));
 
     }
 }
