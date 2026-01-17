@@ -192,8 +192,131 @@ Nested structures (matrix, graph)	                            O(n²), O(n³)
 Simple recursion	                                                  O(n)
 Divide and conquer recursion	                                     O(log n)
 
+Space complexity depends on whether extra memory grows with input size.
+Fixed variables are O(1); data structures that scale with input are O(n).
+
+✅ O(1) Space (Constant Extra Memory)
+
+Memory usage does NOT change with input size.
+
+Examples
+
+Primitive variables
+
+int min, max, sum;
+
+
+Fixed number of variables
+
+int a, b, c;
+
+
+Pointers / references
+
+Node current;
+
+
+Loop variables
+
+for (int i = 0; i < n; i++) { }
+
+
+In-place operations
+
+Array.Reverse(arr);
+
+
+Iterative traversal without extra DS
+
+Two-pointer technique
+
+Sliding window
+
+Single-pass max/min tracking (like Best Time to Buy & Sell Stock)
+
+📌 Key idea:
+Same memory used whether input has 10 elements or 1,000,000.
+
+⚠️ O(n) Space (Grows With Input Size)
+
+Memory usage increases proportionally with input.
+
+Examples
+
+Arrays created inside algorithm
+
+int[] temp = new int[n];
+
+
+Lists
+
+List<int> list = new List<int>();
+
+
+Stacks
+
+Stack<int> stack = new Stack<int>();
+
+
+Queues
+
+Queue<int> queue = new Queue<int>();
+
+
+Hash-based structures
+
+Dictionary<int, int> map;
+HashSet<int> set;
+
+
+Recursion (call stack)
+
+void dfs(Node n)
+{
+    dfs(n.left);
+    dfs(n.right);
+}
+
+
+Depth = n → O(n)
+
+Tree height = h → O(h)
+
+📌 Key idea:
+Memory grows as input grows.
+
+🚨 Common Interview Clarifications
+❌ Input arrays do NOT count
+public int Solve(int[] arr)
+
+
+Input is given
+
+Not counted in space complexity
+
+⚠️ Sorting caveat
+Array.Sort(arr);
+
+
+Space depends on sorting algorithm:
+
+QuickSort → O(log n)
+
+MergeSort → O(n)
+
+🧠 Quick Mental Rule
+If you allocate…	Space
+Fixed variables only	O(1)
+Data structure that stores elements	O(n)
+Recursion	O(depth)
+Multiple structures	Add them
+🎯 One-line interview answer (memorize)
+
+“Space complexity is O(1) if we only use a fixed number of variables, and O(n) if we use data structures like arrays, lists, stacks, queues, maps, or recursion that grow with input size.”
+
+
 4. SEARCHING
-*******************************************************
+********************************************************************************************************************
 
 - Binary Search
   --------------
