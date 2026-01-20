@@ -306,9 +306,27 @@ Splay Tree
             technique of 'Backtracking' to return backwards and keep finding the element which has not yet been 
             traversed.
 
+
+  * 6.8: Cycle Detection in Directed Graph
+  -----------------------------------------
       
+       - In a directed graph, if -1 = unvisited, 0 = visited and in stack, 1= = visited and popped out from stack(DFS uses 'Stack' remember).
+         If any vertex connects to a vertex which has '0' (i.e it was already visited and is presently in the stack)
+         Than that signifies a 'Cycle'.
+  
+
+  * 6.9: Detect Cycle in Undirected graph
+  ----------------------------------------
+       
+       - On a graph in BFS(you use a 'Queue' remember), if a node as -1 = unvisited, 0 = visited and in queue, 1 = visited
+       - If any vertex finds its adjacent vertex with Flag = 0, the n it contains a Cycle
+
  
  
+
+
+    
+
 
 
 
