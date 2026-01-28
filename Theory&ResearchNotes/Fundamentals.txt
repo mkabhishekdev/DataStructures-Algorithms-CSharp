@@ -524,3 +524,264 @@ Now there is zero confusion, because the field and the parameter have different 
 
 *******************************************************************************************************************
 
+11. C# 'Dictionary' = Java 'HashMap' and C# 'HashSet' = Java 'HashSet'
+----------------------------------------------------------------------
+
+Java	                C#	                  What it is
+HashMap<K,V>	   Dictionary<TKey, TValue>	  Key → Value map
+HashSet<T>	       HashSet<T>	              Unique values only
+Hashtable (legacy) Hashtable (legacy)	      Non-generic, avoid in modern code
+
+Core idea
+----------
+Java HashMap ≈ C# Dictionary
+
+Java HashSet ≈ C# HashSet
+
+So yes — in C#, Dictionary is the HashMap equivalent, but HashSet still exists separately (same name as Java).
+
+********************************************************************************************************************
+
+12. BIT MANIPULATION
+--------------------------------------------------------
+
+12.1: How Binary Addition works? (Have you thought how hardware adders work,i.e what happens behind '+')
+----------------------------------------------------------------------------------------------------------
+
+1️⃣ Start from normal addition (base-10 analogy)
+
+When you add two digits in school:
+
+7 + 8 = 15
+
+
+You automatically split it into:
+
+5 → result digit
+
+1 → carry to the next place
+
+So mathematically:
+
+7 + 8 = (sum without carry) + (carry × 10)
+That idea is universal, not base-10 specific.
+
+
+2️⃣ Binary addition is the same idea (base-2)
+
+Binary digits can only be 0 or 1.
+
+Let’s list all possibilities for adding two bits:
+
+a	b	a + b	resultbit	carry
+0	0	0	       0	      0
+0	1	1	       1	      0
+1	0	1	       1	      0
+1	1	2	       0	      1
+
+Now here’s the key realization:
+
+🔹 The “result bit” column is exactly XOR
+🔹 The “carry” column is exactly AND
+This is not coincidence.
+
+
+3️⃣ Why XOR = sum without carry (mathematical view)
+
+XOR answers the question:
+
+“Are the two bits different?”
+
+Mathematically:
+
+XOR = (a + b) mod 2
+
+So:
+
+If a + b = 0 → 0
+
+If a + b = 1 → 1
+
+If a + b = 2 → 0 (because mod 2)
+That’s exactly what we want for the digit at that position.
+
+
+4️⃣ Why AND = carry generation
+
+Carry happens only when:
+
+1 + 1 = 2
+
+AND answers:
+
+“Are both bits 1?”
+
+Mathematically:
+
+AND = floor((a + b) / 2)
+
+So:
+Only when a = 1 and b = 1 do we get a carry
+
+
+5️⃣ Why we shift carry left (<< 1)
+
+A carry from:
+
+2⁰ place
+must move to:
+
+2¹ place
+That is multiplying by 2, which in binary is:
+
+<< 1
+So mathematically:
+
+carry contribution = carry × 2
+
+
+6️⃣ Put it all together (pure math)
+
+For any two integers a and b:
+
+a + b =
+(a XOR b)        // sum without carry
++ ((a AND b) << 1)  // carry contribution
+
+
+This identity is always true.
+
+
+7️⃣ Why we repeat the process
+
+Problem:
+The carry itself may create new carries.
+
+Example:
+
+a = 5  (101)
+b = 3  (011)
+
+Step 1
+sum   = 101 ^ 011 = 110  (6)
+carry = (101 & 011) << 1
+      = 001 << 1
+      = 010  (2)
+
+
+Now we still have:
+
+6 + 2
+
+
+So we repeat the same math again.
+
+8️⃣ When do we stop?
+
+When:
+
+b == 0
+
+WHY?
+----
+When you add any two numbers, you are always doing two separate things:
+
+1️⃣ Decide the value at the current position
+
+“What digit should stay here if I IGNORE carry?”
+
+That is handled by:
+
+XOR
+
+
+Example:
+
+1 + 1 → 0 (ignore carry)
+1 + 0 → 1
+0 + 1 → 1
+
+
+That’s exactly XOR.
+
+2️⃣ Decide whether to carry to the next position
+
+“Do I need to add something to the next higher place?”
+
+That is handled by:
+
+AND, then shift left
+
+
+Example:
+
+1 + 1 → carry 1 to next position
+
+So the sentence means this (plain English)
+
+Addition is actually:
+
+One operation to compute the digit (XOR)
+
+One operation to compute the carry (AND + shift)
+
+And you repeat this until there is no carry left.
+
+Tiny concrete example
+
+Add:
+
+3 + 3
+
+
+Binary:
+
+3 = 011
+3 = 011
+
+Step 1: digit part
+XOR → 000
+
+Step 2: carry part
+AND → 011
+<<1 → 110
+
+
+Now you still have:
+
+000 + 110
+
+
+Repeat → you’ll finally get 110 (which is 6).
+
+The real takeaway (this is the key)
+
+“+” is not primitive.
+It is built from simpler rules:
+
+XOR decides what stays
+
+AND + shift decides what moves forward
+
+-----------
+Meaning:
+
+There is no carry left
+
+The sum is complete
+
+At that point:
+
+a = final result
+
+9️⃣ Final mental model (lock this in 🔐)
+
+Addition is not one operation — it is two.
+
+XOR → adds without carry
+
+AND + shift → computes carry
+
+Repeat until carry disappears
+
+This is exactly how hardware adders work
