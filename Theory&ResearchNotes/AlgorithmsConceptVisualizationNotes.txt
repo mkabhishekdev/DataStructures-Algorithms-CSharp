@@ -1016,8 +1016,24 @@ KRUSKALS ALGORITHM
     lot of time.
     The idea in DP is - you will 'indirectly' try all of them with the use of an established formula to arrive at an optimal solution.
 
-    
- 
+
+5.1: Graph Traversals - BFS(Breadth First Search) & DFS(Depth First Search)
+-----------------------------------------------------------------------------
+
+BFS:
+----
+  - In BFS, First you select a vertex.And than we explore the vertex. So in BFS, we explore a particular vertex and than go to the next vertex to explore.
+  - By exploration, we mean checking all the other connected vertex to this particular vertex
+  - Like you explore the 'breadth' of that vertex (understand the word in this way)
+
+DFS:
+----
+  - In DFS, once you move from vertex '1' to vertex '2'. You suspend exploration of vertex '1' and start exploring vertex '2'.
+  - Once the vertex '2' exploration is done, you get back to vertex '1' and perform the exploration here.
+  - In this approach, you go in depth of a particular 'vertex' which is presently in your attention.
+
+
+
   
 
  
