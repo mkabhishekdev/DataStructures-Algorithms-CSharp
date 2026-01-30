@@ -20,17 +20,23 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
         of what you are trying
         Ex:
         /*
-       APPROACH I CAME UP WITH::
+       REFERRED APPROACH/APPROACH I CAME UP WITH::
 
 
-       Time Complexity:
-       Space Complexity:
+
         */
 
-        Below the working code, also write down your failed approaches of any like below
-        // If all test cases not clearing, PRACTICE DEBUGGING
+        /*
+        Time Complexity:
+        Space Complexity:
+        */
+
+        Below the working code, also write down your failed approaches of any like below:
+        
+        // If all test cases not clearing or You did not arrive at the solution on own, PRACTICE DEBUGGING MUST
         /* FAILED APPROACH & WHY
 
+       
         */ [This is important as well, to make you identify what was wrong in your thinking]
   
 
