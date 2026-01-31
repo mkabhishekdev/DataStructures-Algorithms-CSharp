@@ -1,28 +1,50 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 using ProductCodingPractice.BinaryTrees;
 
 namespace ProductCodingPractice.Trees.YourTHINKINGWork
 {
     /*
-    REFERRED APPROACH/APPROACH I CAME UP WITH::
-
-
-
+    REFERRED APPROACH:
+    1. You have to use Recursion in sub trees firstly.
+    2. Create a max path sum variable which keeps getting updated with the max sum value.
+    3. Use Math.Max(x,y) to find the max in left node and max in right node in each subtree.
+    4. Compare max path sum value with (left+right+node) value and store whichever is greater in max path sum value.
+    5. Return max path sum value
     */
 
     /*
-    Time Complexity:
-    Space Complexity:
+    Time Complexity: O(n)
+    Space Complexity: O(h)
     */
 
     public class MaximumPathSum
     {
+        int max_path_sum;
+
         public int MaxPathSumImpl(TreeNode root)
         {
-          
+            max_path_sum = int.MinValue;
+            MaxSum(root);
+            return max_path_sum;
+
+        }
+
+        public int MaxSum(TreeNode node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+
+            int leftNode = Math.Max(0, MaxSum(node.left));
+            int rightNode = Math.Max(0, MaxSum(node.right));
+            max_path_sum = Math.Max(max_path_sum, leftNode + rightNode + node.val);
+
+            return Math.Max(leftNode, rightNode) + node.val;
         }
     }
 }
@@ -48,3 +70,15 @@ namespace ProductCodingPractice.Trees.YourTHINKINGWork
             return 0;
         }
   */ 
+  
+  /*
+MaximumPathSum mps = new MaximumPathSum();
+        TreeNode root = new TreeNode(-10);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        Console.WriteLine(mps.MaxPathSumImpl(root));
+
+  */
