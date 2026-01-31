@@ -313,6 +313,37 @@ Multiple structures	Add them
 🎯 One-line interview answer (memorize)
 
 “Space complexity is O(1) if we only use a fixed number of variables, and O(n) if we use data structures like arrays, lists, stacks, queues, maps, or recursion that grow with input size.”
+ 
+NOTE: The above in case of trees even though you did not use data structures like arrays, lists etc. it can be 'O(h)' where h is the height of the tree.
+Why space is NOT O(1) below read: 
+
+Even though:
+
+You’re not using arrays
+
+You’re not creating extra data structures
+
+'Recursion' itself consumes stack space
+
+What’s on the stack?
+
+Each recursive call stores:
+node
+leftNode
+rightNode
+return address
+
+That stack grows with tree depth.
+
+Best vs Worst case
+🌱 Best case (balanced tree)
+Height ≈ log n
+Space = O(log n)
+
+🌲 Worst case (skewed tree)
+Height = n
+Space = O(n)
+
 
 
 4. SEARCHING

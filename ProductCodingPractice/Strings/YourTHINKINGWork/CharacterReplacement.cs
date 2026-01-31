@@ -5,23 +5,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.XPath;
 
-/*
-     
-
-*/
+    /*
+    REFERRED APPROACH
 
 
-namespace ProductCodingPractice.Strings.YourTHINKINGWork
+
+    */
+
+    /*
+    Time Complexity:
+    Space Complexity:
+    */
+
+public class CharacterReplacementImpl
 {
-    public class CharacterReplacement
+    public int CharacterReplacementImpl(string s, int k)
     {
-        public int CharacterReplacementImpl(string s, int k)
-        {
-          
-        }
+
     }
-    
 }
+
+
+
+
 
 // If all test cases not clearing or You did not arrive at the solution on own, PRACTICE DEBUGGING MUST
 /* FAILED APPROACH & WHY(Need to use 'Sliding Window' technique)
