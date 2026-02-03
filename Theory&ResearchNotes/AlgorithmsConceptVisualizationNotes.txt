@@ -1076,10 +1076,22 @@ DFS:
 -------------------------------------------------------------------------------
   - In Brute force approach, for any given problem you should try all the possible solutions and pick up the desired solution.
   - Backtracking follows DFS, Branch and bound follows BFS.
+  - State space tree
 
 
+6.4: Backtracking - Hamiltonian cycle
+------------------------------------------
+  - A graph is said to be in a hamiltonian cycle, when you start from a vertex say 'x' and are able to reach
+    back to the vertex 'x' traversing through all the vertexes and forming a cycle.
+  - Think of F1 racer Levis hamilton finishing a race circuit, like starting from point 'a' and
+    coming back to the point 'a' finishing the circuit cycle.
 
--------------------------------------
+
+7: Branch and Bound(Problem solving strategy) - Introduction
+-------------------------------------------------------------
+  -  Branch and bound we use BFS approach, you divide the problem level by level
+
+
 
 
 
