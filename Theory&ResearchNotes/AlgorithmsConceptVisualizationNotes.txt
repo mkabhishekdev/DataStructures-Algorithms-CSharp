@@ -1089,7 +1089,13 @@ DFS:
 
 7: Branch and Bound(Problem solving strategy) - Introduction
 -------------------------------------------------------------
-  -  Branch and bound we use BFS approach, you divide the problem level by level
+  - Branch and bound we use BFS approach, you divide the problem level by level
+  - Branch and bound problem applications - Job sequencing with deadline, 0/1 Knapsack problem,
+                                            Traveling salesman problem
+
+
+8. NP-Hard and NP-Complete problems
+-------------------------------------
 
 
 
