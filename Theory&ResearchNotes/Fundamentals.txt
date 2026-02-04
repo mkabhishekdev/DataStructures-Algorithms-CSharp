@@ -532,6 +532,8 @@ HashMap<K,V>	   Dictionary<TKey, TValue>	  Key → Value map
 HashSet<T>	       HashSet<T>	              Unique values only
 Hashtable (legacy) Hashtable (legacy)	      Non-generic, avoid in modern code
 
+NOTE: A Dictionary<int, int> cannot have duplicate "keys". Remember this.
+
 Core idea
 ----------
 Java HashMap ≈ C# Dictionary
