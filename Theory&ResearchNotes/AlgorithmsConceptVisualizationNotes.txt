@@ -1097,8 +1097,23 @@ DFS:
 8. NP-Hard and NP-Complete problems
 -------------------------------------
 
+  - Polynomial Time
+  ------------------
+    * Linear search = n
+    * Binary search = logn
+    * InsertionSort = n2
+    * MergeSort = nlogn
+    * Matrix Multiplication = n3
 
+  - Exponential Time
+  ------------------
+    * 0/1 knapsack = 2(power of n)
+    * Travelling salesman = 2(power of n)
+    * Sum of subsets = 2(power of n)
+    * Graph coloring = 2(power of n)
+    * Hamiltonian cycle = 2(power of n)
 
+ 
 
 
 
