@@ -1113,8 +1113,17 @@ DFS:
     * Graph coloring = 2(power of n)
     * Hamiltonian cycle = 2(power of n)
 
- 
+ - P: Deterministic time taking Polynomial
+   NP: Non-deterministic time taking polynomial
+       - This are research oriented concepts in general. Deterministic means you know what would be the output. Non deterministic means we do not
+         know the exact final solution but yet we gather all the research related steps which have been previously performed on this specific 
+         problem.
+   Cookes theorem: P is a Subset of NP. Logically it is like saying the 'Deterministic' solution is a subset of 'Non-Deterministic' approaches, like
+                  one of the research approaches would have given the deterministic solution and there are still many approaches in the non-deterministic
+                  way.
+                  Cookes theorem states that P is approximately equal to NP.
 
+ 
 
 
   
