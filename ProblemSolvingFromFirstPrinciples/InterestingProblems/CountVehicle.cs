@@ -50,7 +50,7 @@ namespace ProblemSolvingFromFirstPrinciples.InterestingProblems
             int occupiedSpaceSedan = 0.5;
             int occupiedSpaceTruck = 1;
             int rejectCount = 0;
-            int parkingSpotSum = 0;
+            
 
             Queue<string> carArrivals = new Queue<string>();
             for(int i = 0; i < inputCars.size; i++)
@@ -67,12 +67,31 @@ namespace ProblemSolvingFromFirstPrinciples.InterestingProblems
                 string carType = words[0];   // "sedan","truck"
                 string carId   = words[1];   // "s1","s2"
                 string action  = words[2];   // "enters","leaves"
+                int parkingSpotSum = 0;
 
                 while(parkingSpotSum < 1)
                 {
-                
-                   
+                    if(action.Equals("enters"))
+                    {
+                        if(carType.Equals("sedan"))
+                        {
+                            parkingSpotSum += 0.5;
+                        }
+                        else
+                        {
+                            if(parkingSpotSum == 0)
+                            {
+                                parkingSpotSum += 1;
+                            }
+                            else
+                            {
+                                rejectCount++;
+                                break;
+                            }
+                        }
+                    }
                 }
+
 
             }
         }
