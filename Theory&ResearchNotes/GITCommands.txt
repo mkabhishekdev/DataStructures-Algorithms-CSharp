@@ -20,10 +20,10 @@ USE ONLY GITHUB CLI(Command line interface)
     - To check branch: git branch
       To check status: git status
 
-*******************************
+*******************************************************************************
 
 2. To push changes from your local branch
-       git add .
+    -  git add .
        git commit -m "enter the message"
        git push --set-upstream origin <branch-name>
        * check now in github it will ask to create PR
@@ -31,10 +31,206 @@ USE ONLY GITHUB CLI(Command line interface)
        In command line you can enter the below -
            gh pr create --base main --head <branch-name> --title "<your message>" --body "<your message>"
        After the above line: GitHub will give you a link to view the PR.
+    - To check previous commit histories
+      git log
+      git log --stat
+      git log --oneline --graph --all
 
-******************************
+*********************************************************************************
 
-3. If you updated your 'local branch' but not sure if you got latest from main branch
+3. UNDERSTANDING 'MERGE' VS 'REBASE' DIFFERENCE CLEARLY (VERY IMPORTANT CONCEPT)
+
+Lets simulate a practical example:
+
+Team setup
+-------------
+Team Lead
+Dev-1, Dev-2, Dev-3
+
+Repo setup
+-------------
+One main repo
+From main, three feature branches:
+feature-1 → Dev-1
+feature-2 → Dev-2
+feature-3 → Dev-3
+
+Commits (as per your notes)
+--------------------------------
+Let’s name commits clearly:
+
+C1 = initial commit on main
+Dev-1 does work → C2, C3
+Dev-2 does work → C2
+Dev-3 does work → C1
+
+So mentally:
+main:     C1
+
+
+Branches diverge from main.
+
+USING MERGE SCENARIO NOW (shared branches, audit trail)
+---------------------------------------------------------
+What merge means (in one line)
+
+“Bring another branch’s history as-is and create a merge commit.”
+
+Visual: before merge
+main
+ |
+ C1
+ |
+ o------------------- (feature-1) Dev-1
+ |                    C2 → C3
+ |
+ o----------- (feature-2) Dev-2
+ |              C2
+ |
+ o----- (feature-3) Dev-3
+        C1
+
+
+Each branch has its own history.
+
+Step-by-step merge into main
+Merge feature-1
+main
+ |\
+ | C2 → C3   (feature-1)
+ |/
+ M1   ← merge commit
+ |
+ C1
+
+Merge feature-2
+main
+ |\
+ | C2        (feature-2)
+ |/
+ M2
+ |
+ M1
+ |
+ C1
+
+Merge feature-3
+main
+ |\
+ | C1        (feature-3)
+ |/
+ M3
+ |
+ M2
+ |
+ M1
+ |
+ C1
+
+What just happened?
+Nothing was rewritten
+Each merge created a merge commit (M1, M2, M3). THIS IS IMPORTANT, 'MERGE COMMITS' GET CREATED IN MERGE WHICH HELP IN AUDIT LOGGING/TRACING.
+You can see who merged what, when, and from where
+
+Why teams use MERGE
+✔ Branch is shared (For example, you created a branch from main. And now 2-3 devs are working on 'that branch'. You cannot use 'rebase' here)
+✔ Multiple devs committing
+✔ Full audit trail
+✔ Safer for teams
+
+💬 Thinking:
+“I want to preserve reality, not rewrite history.”
+
+
+* USING REBASE SCENARIO(clean history, linear)
+What rebase means
+“Replay my commits on top of the latest base.”
+
+⚠️ Important: Rebase rewrites history
+
+Rebase example: feature-1 onto main
+Before rebase
+main:      C1
+feature-1: C1 → C2 → C3
+
+After rebase
+main:      C1
+feature-1: C1 → C2' → C3'
+
+
+Same changes, new commit IDs.
+
+Rebase all branches 
+----------------------
+After rebasing feature-1, feature-2, feature-3 onto updated main:
+
+main
+ |
+ C1
+ |
+ C2'   (feature-1)
+ |
+ C3'
+ |
+ C2''  (feature-2)
+ |
+ C1''' (feature-3)
+
+Then fast-forward merge
+main
+ |
+ C1
+ |
+ C2'
+ |
+ C3'
+ |
+ C2''
+ |
+ C1'''
+
+
+🎯 Perfect straight line
+
+What changed?
+No merge commits
+History looks like one dev worked cleanly
+Original commit IDs are gone
+
+Why teams use REBASE
+✔ Branch is yours alone
+✔ Before opening PR
+✔ Clean, readable history
+
+💬 Thinking:
+“I want reviewers to read logic, not fight history.”
+
+
+✅ Use MERGE when
+
+Branch is shared (multiple devs)
+You want audit trail
+Safety > cleanliness
+This is why develop, release, main usually do NOT rebase. THEY USE 'MERGE'(RELEASE,MAIN,DEVELOP)
+
+✅ Use REBASE when
+
+Branch is yours alone
+You want clean commits
+Before opening PR
+
+This is why feature branches often get rebased before review
+
+One goldenrule (remember this)
+--------------------------------
+Never rebase a branch that someone else has pulled.
+Merge → “Show me what really happened.”
+Rebase → “Pretend it happened cleanly.”
+
+
+*****************************************************************************************************
+
+4. If you updated your 'local branch' but not sure if you got latest from main branch
        - Ensure your local branch is first committed
              git add .
              git commit -m "message"
@@ -45,7 +241,7 @@ USE ONLY GITHUB CLI(Command line interface)
 
 ********************************
 
-4. Difference between git merge and git rebase?
+5. Difference between git merge and git rebase?
 
 🔹 git merge
 
