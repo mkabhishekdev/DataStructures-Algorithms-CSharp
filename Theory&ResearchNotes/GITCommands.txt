@@ -22,7 +22,115 @@ USE ONLY GITHUB CLI(Command line interface)
 
 *******************************************************************************
 
-2. To push changes from your local branch
+2. PRACTICE 'REBASE' WAY OF WORKING IN GIT FOR CLARITY TO KNOW WHAT YOU ARE DOING EVERYTIME WITH REPO
+
+DO BELOW DAILY!!
+STEPS:
+--------
+
+To Start work, open git command line:
+
+FIRST Align your working branch to main
+git checkout <your-branch>
+git fetch origin
+git reset --hard origin/main
+“Start today from exactly where main is.”
+
+<---- Now you work in the branch, next you want to do the process of updating it to main -->
+
+1️⃣ Before committing (sanity check)
+git status
+
+2️⃣ Stage and commit your work
+git add .
+git commit -m "my message"
+
+3️⃣ VISUAL CHECK #1 – before syncing with main
+git log --oneline --graph --decorate -5
+
+What you are training your eyes to see:
+----------------------------------------
+Where your branch diverged
+Whether history is already messy
+How far you are from main
+💬 Mental note:
+-----------------
+“This is the before picture.”
+
+4️⃣ Sync using rebase
+git fetch origin
+git rebase origin/main
+
+If conflict:
+---------------
+# fix files
+git add <file>
+git rebase --continue
+
+If something feels wrong:
+---------------------------
+git rebase --abort
+
+5️⃣ VISUAL CHECK #2 – after rebase (MOST IMPORTANT)
+git log --oneline --graph --decorate -5
+
+
+What success looks like:
+* fd59309 (HEAD -> my-branch)
+* ef4ebe2 (main)
+* c83ddd6
+✔ Straight line
+✔ No side branches
+✔ Your commit is now “sitting on” main
+
+This is how rebase proves itself.
+
+
+6️⃣ Push your branch
+First push:
+git push --set-upstream origin <my-branch> [ONLY ONCE WHEN YOU INITIALLY CREATED BRANCH!!]
+
+AFTER THAT:
+After rebasing again later:
+git push --force-with-lease (OR JUST git push: depending entirely on the situational judgement)
+
+
+7️⃣ OPTIONAL but powerful – final visual check (PR-ready)
+git log --oneline --graph --decorate -7
+
+
+Ask yourself:
+Would I enjoy reviewing this?
+If yes → open PR.
+
+🧠 Your new muscle memory (repeat this)
+Commit → Graph → Rebase → Graph → Push
+This is the exact loop lead engineers run subconsciously.
+
+🔍 What you’re training (and why it matters)
+
+By doing this daily, you will:
+Instantly spot bad merges
+Immediately detect accidental rebases
+Stop fearing Git history forever
+
+Practice REBASE when:
+--------------------------
+branch is yours
+before PR
+cleaning history
+syncing frequently
+
+Use MERGE when:
+-------------------------
+branch is shared
+preserving audit trail matters
+release branches
+long-running integration branches
+
+This decision-making is what makes you senior — not the command itself.
+
+(To push changes from your local branch [THIS WAS PREVIOUS 'MERGE' APPROACH]
     -  git add .
        git commit -m "enter the message"
        git push --set-upstream origin <branch-name>
@@ -30,7 +138,7 @@ USE ONLY GITHUB CLI(Command line interface)
        Another option:
        In command line you can enter the below -
            gh pr create --base main --head <branch-name> --title "<your message>" --body "<your message>"
-       After the above line: GitHub will give you a link to view the PR.
+       After the above line: GitHub will give you a link to view the PR.)
     - To check previous commit histories
       git log
       git log --stat
