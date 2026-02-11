@@ -28,13 +28,13 @@
             "requireExactSource": false
         },
         {
-            "name": ".NET: ProductCodingPractice",
+            "name": ".NET: ProblemSolvingFromFirstPrinciples",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ProductCodingPractice/bin/Debug/net8.0/ProductCodingPractice.dll",
+            "program": "${workspaceFolder}/ProblemSolvingFromFirstPrinciples/bin/Debug/net8.0/ProblemSolvingFromFirstPrinciples.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ProductCodingPractice",
+            "cwd": "${workspaceFolder}/ProblemSolvingFromFirstPrinciples",
             "stopAtEntry": false,
             "console": "internalConsole",
             "requireExactSource": false

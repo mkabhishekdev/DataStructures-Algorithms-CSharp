@@ -18,19 +18,7 @@ Parking garage has 2 spots say input
 
 /*
 APPROACH:
-1. Create a List<List<string>> to declare ParkingGarage
-2. Assign the size of the garage given in the problem to ParkingGarage
-3. Now you have the list with the exact size needed
-4. input string example:["sedan S1 enters","sedan s2 enters","sedan s3 enters","truck t1 enters","sedan s2 leaves",
-"truck t2 enters"]
-5. sedan = 0.5
-   truck = 1
-6. List<string> = ParkingSpot
-7. int parkingSpotSum = 0;
-   int whatHappened = +0.5,-0.5,+1,-1
-   parkingSpotSum += whatHappened; //0.5, 1
-   based on these, increment the rejectCount variable
-8. return the rejectCount
+
 */
 
 namespace ProblemSolvingFromFirstPrinciples.InterestingProblems
@@ -43,31 +31,29 @@ namespace ProblemSolvingFromFirstPrinciples.InterestingProblems
             {
                 return 0;
             }
-
-            List<List<string>> parkingGarage = new List<List<string>>();
-            parkingGarage.size = garageSize;
-
-            int occupiedSpaceSedan = 0.5;
+           
+            double occupiedSpaceSedan = 0.5;
             int occupiedSpaceTruck = 1;
             int rejectCount = 0;
-            
+            double parkingSpotSum = 0;
 
             Queue<string> carArrivals = new Queue<string>();
-            for(int i = 0; i < inputCars.size; i++)
+            for(int i = 0; i < inputCars.Length; i++)
             {
                 carArrivals.Enqueue(inputCars[i]);
             }
+            
+            Queue<string> carParkedOrder = new Queue<string>();
 
-            for(int i = 1; i <= parkingGarage.size; i++)
+            for(int i = 1; i <= inputCars.Length; i++)
             {
-                List<string> spot = parkingGarage[i];  //accessing each parking spot1, spot2 etc. now
                 
                 string presentCar = carArrivals.Dequeue();
                 string[] words = presentCar.Trim().Split(' ');
                 string carType = words[0];   // "sedan","truck"
                 string carId   = words[1];   // "s1","s2"
                 string action  = words[2];   // "enters","leaves"
-                int parkingSpotSum = 0;
+
 
                 while(parkingSpotSum < 1)
                 {
@@ -76,24 +62,40 @@ namespace ProblemSolvingFromFirstPrinciples.InterestingProblems
                         if(carType.Equals("sedan"))
                         {
                             parkingSpotSum += 0.5;
+                            carParkedOrder.Enqueue(carId);
+                            
                         }
                         else
                         {
                             if(parkingSpotSum == 0)
                             {
                                 parkingSpotSum += 1;
+                                carParkedOrder.Enqueue(carId);
+                              
                             }
                             else
                             {
                                 rejectCount++;
-                                break;
+                               
                             }
                         }
                     }
+                    if(action.Equals("leaves"))
+                    {
+                        if(carType.Equals("sedan") && carParkedOrder.Contains(carId))
+                        {
+                            parkingSpotSum -= 0.5;
+                          
+                        }
+                    }
+                    if(parkingSpotSum == 1)
+                    {
+                        parkingSpotSum = 0;
+                    }
+                    break;
                 }
-
-
             }
+            return rejectCount;
         }
     }
 }
