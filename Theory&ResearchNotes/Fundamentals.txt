@@ -70,7 +70,7 @@ Follows .NET best practices	            ❌ No	                  ✅ Yes
 
 2. WHY WE USE LIST<> WHEN WE HAVE ARRAYS?
 --------------------------------------------
-    - Arrays have fixed size but List<> are dynamic in anture.
+    - Arrays have fixed size but List<> are dynamic in nature.
     - List<T> are generic, like they can be List<string>, List<int> whereas Arrays need manual declaration like int[],
       string[] etc.
 
@@ -787,3 +787,82 @@ AND + shift → computes carry
 Repeat until carry disappears
 
 This is exactly how hardware adders work
+
+*****************************************************************************************************************************
+
+13. REVISITING: BREAK,RETURN,CONTINUE (Difference)
+---------------------------------------------------
+BREAK:
+------
+if (action)
+{
+    for (...)
+    {
+        if (condition)
+        {
+            break;  <-- jump out of this loop only
+        }
+    }
+
+    // Execution continues here
+}
+
+- A break statement brings you out of the first loop it is inside.
+- break = "Stop looping, but stay inside the method."
+- Some think break exits the entire if block.
+It doesn’t.
+If you wanted to exit the whole method, you’d use: "return"
+
+RETURN:
+--------
+public void Test()
+{
+    Console.WriteLine("Start");
+
+    for(int i = 0; i < 5; i++)
+    {
+        if(i == 2)
+        {
+            return;
+        }
+
+        Console.WriteLine(i);
+    }
+
+    Console.WriteLine("End");
+}
+OUTPUT:
+Start
+0
+1
+
+-It never prints 2, It never prints "End", Because return exits the method entirely.
+- return = "Stop everything. Exit the method completely."
+
+CONTINUE:
+---------
+for(int i = 0; i < 5; i++)
+{
+    if(i == 2)
+    {
+        continue;
+    }
+
+    Console.WriteLine(i);
+}
+
+OUTPUT:
+0
+1
+3
+4
+
+Why?
+
+When i == 2:
+- It hits continue
+- It skips Console.WriteLine(i)
+- Goes to next iteration
+
+*******************************************************
+
