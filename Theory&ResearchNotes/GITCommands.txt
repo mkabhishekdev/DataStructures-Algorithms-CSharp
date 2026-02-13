@@ -20,7 +20,9 @@ USE ONLY GITHUB CLI(Command line interface)
     - To check branch: git branch
       To check status: git status
 
-*******************************************************************************
+    - To check the branch a 'sub-branch' was created from: git reflog show <branch>
+
+************************************************************************************************
 
 2. PRACTICE 'REBASE' WAY OF WORKING IN GIT FOR CLARITY TO KNOW WHAT YOU ARE DOING EVERYTIME WITH REPO
 
