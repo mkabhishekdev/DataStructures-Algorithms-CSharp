@@ -416,7 +416,7 @@ Personal branches not yet shared with team
 You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
 
-*****************************
+*********************************************************************************
 
 5. MERGE Conflict: If you don’t need your local changes at all
 
@@ -431,14 +431,141 @@ git fetch origin
 git checkout main
 git pull origin main
 
-********************************
+*************************************************************************************
 
 6. To Switch to Another Branch ignoring changes in the present branch which you don't want
 
    git restore .
    git checkout main
 
-********************************
+***********************************************************************************************
+
+7. Maintaining Repo & commit discipline as a LEAD
+
+As a lead, lets say I have 3 devs working under me. Ideal and correct way of repo management
+
+🧭 Final Lead Workflow (Multi-dev same feature)
+----------------------------------------------------
+Branch Structure
+main
+ └── feature-payment        (shared integration branch)
+      ├── payment-api-dev1
+      └── payment-ui-dev2
+
+
+🔁 Day-to-Day Developer Flow
+---------------------------------
+Dev1 (payment-api-dev1)
+git checkout payment-api-dev1
+git fetch origin
+git rebase origin/feature-payment   <-- keep updated with teammate changes
+git push
+
+
+Dev2 (payment-ui-dev2)
+----------------------------
+git checkout payment-ui-dev2
+git fetch origin
+git rebase origin/feature-payment
+git push
+
+
+Why rebase here?
+------------------
+
+Because these are private sub-branches, so:
+Clean commit history
+Linear personal work
+Easy conflict resolution early
+This is safe because they are "NOT REBASING A SHARED BRANCH".
+
+
+🔀 Integration Step (Important)
+-----------------------------------
+Once a logical chunk is done:
+
+payment-api-dev1  \
+                    --> MERGE --> feature-payment
+payment-ui-dev2  /
+
+We use merge, not rebase, into the "SHARED FEATURE BRANCH".
+
+Why merge here?
+-----------------
+Because this merge represents:
+
+“Dev1’s work integrated with Dev2’s work”
+That’s a meaningful collaboration checkpoint.
+
+🚀 Final Integration to Main
+-----------------------------
+After full feature is stable:
+feature-payment  --->  PR ---> merge ---> main
+
+
+This merge commit tells release history:
+------------------------------------------
+“Feature Payment delivered”
+
+⚠️ The Subtle But Critical Rule
+
+You said:
+
+“let them rebase from feature branch, then merge to feature”
+✔️ Correct
+But add this leadership rule:
+
+❗ After a sub-branch "IS MERGED" into feature,
+"DO NOT rebase that sub-branch again".
+Because rebasing after merge will rewrite history that already exists in feature.
+
+This causes:
+Duplicate commits
+Confusing graphs
+Potential lost work
+
+🧠 Mental Model 
+
+Think of branches like layers of ownership:
+
+Branch	                        Ownership	              Allowed Operation
+dev sub-branch	               Individual dev	            Rebase freely
+feature branch	              Team collaboration	          Merge only
+main branch	                   Product history	              Merge only
+
+So:
+Rebase inside personal scope
+Merge at collaboration boundaries
+
+🔍 What This Gives You Visually:
+----------------------------------
+Your git graph becomes semantically meaningful:
+
+main
+  *
+  |\
+  | * feature-payment merge
+  | |\
+  | | * dev1 work
+  | | * dev2 work
+  |/
+  *
+
+
+From just the graph, you can infer:
+Two devs worked in parallel
+Their work integrated
+Feature released as one unit
+That’s powerful leadership-level traceability.
+
+🏁 Final Refined Answer (Your Exact Statement Improved)
+
+Dev1 and Dev2 work on their own sub-feature branches.
+They regularly rebase their branches on top of the shared feature branch to stay updated.
+Once their work is ready, they merge their branches into the shared feature branch.
+Finally, the feature branch is merged into main after validation.
+
+That is a textbook senior engineering workflow used in real product companies.
 
 
              
