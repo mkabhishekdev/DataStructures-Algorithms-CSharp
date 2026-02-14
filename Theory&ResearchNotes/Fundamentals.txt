@@ -864,5 +864,219 @@ When i == 2:
 - It skips Console.WriteLine(i)
 - Goes to next iteration
 
-*******************************************************
+*************************************************************************************************
 
+14. What is the difference in these calls:
+    List<Node> neighbor = new List<Node>(); 
+    IList<Node> neighbor = new List<Node>();
+
+    List<Node> neighbor = new List<Node>();
+    -----------------------------------------
+    What this means:
+    Reference type: List<Node>
+    Object type: List<Node>
+    Both are concrete implementation.
+    So you can use all List<T> specific methods:
+        neighbor.Add(node);
+        neighbor.Sort();     // ✅ available
+        neighbor.Capacity;   // ✅ available
+
+
+    IList<Node> neighbor = new List<Node>();
+    ----------------------------------------
+    What this means:
+    Reference type: IList<Node> (interface)
+    Object type: List<Node>
+    You are saying:
+    "I don’t care what the concrete implementation is.
+    I just need something that behaves like a list."
+    Now you can only access members defined in IList<T>:
+        neighbor.Add(node);   // ✅ allowed
+        neighbor[0];          // ✅ allowed
+        neighbor.Sort();      // ❌ NOT allowed (not in IList)
+        neighbor.Capacity;    // ❌ NOT allowed
+    Even though the object is a List<Node>, the compiler only allows what the interface exposes.
+    Why Do This?
+    ------------
+    This is about abstraction & flexibility.
+    IList<Node> neighbor = new List<Node>();
+    Later you can change it to:
+    IList<Node> neighbor = new ObservableCollection<Node>();
+    or IList<Node> neighbor = new NodeCollection(); Without changing the rest of your code.
+
+    When designing systems:
+    ------------------------
+    Depend on abstractions (interfaces)
+    Not on concrete implementations
+    This principle is part of:
+
+        D in SOLID → Dependency Inversion Principle
+
+    Instead of saying:
+    "I need a List"
+    You say:
+    "I need something that behaves like a list"
+ 
+    That makes your code:
+    More testable
+    More flexible
+    Easier to refactor
+    Easier to mock in unit tests
+
+    Practical Rule of Thumb
+    Scenario	                                  Use
+    Inside method (local variable)	        var or List<T> is fine
+    Method parameter	                  IEnumerable<T> or IList<T>
+    Class property	                         Usually interface
+    Public API	                             Always interface 
+
+   
+    🔎 Small Analogy
+   Think of it like this:
+   IList<Node> neighbor = new List<Node>();
+
+   Is like saying:
+
+   "I need a vehicle" 🚗
+   (I don't care if it's a car, bike, or truck)
+
+   Instead of:
+   Car vehicle = new Car();
+   Which says:
+   "I specifically want a Toyota Corolla."
+
+   Why use IList instead of List?
+   You answer:
+       To program against abstraction
+       To reduce tight coupling
+       To improve maintainability and testability
+       To follow SOLID principles
+
+***************************************************************************************************************
+
+15. IEnumerable<T> vs ICollection<T> vs IList<T> difference
+
+The Hierarchy (Very Important)
+--------------------------------
+IEnumerable<T>
+      ↑
+ICollection<T>
+      ↑
+IList<T>
+- Each level adds more capability.
+
+1️⃣ IEnumerable<T> – "You can only look"
+---------------------------------------
+What it allows:
+foreach
+LINQ queries
+Sequential access only
+
+What it does NOT allow:
+Add / Remove
+Index access
+Count (directly)
+
+Simple Meaning:
+“You can go through items one by one.”
+
+📦 Practical Analogy: Buffet Line 🍽️
+You’re standing in a buffet queue.
+You can move forward.
+You can see dishes one by one.
+You cannot jump to dish #5 directly.
+You cannot add new dishes.
+You're just walking past items.
+
+Example
+IEnumerable<string> names = new List<string>();
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+That’s it. Just iteration.
+
+
+2️⃣ ICollection<T> – "You can manage the collection"
+-------------------------------------------------------
+What it adds:
+Add()
+Remove()
+Count
+Clear()
+
+Still NOT allowed:
+Index access (no [0])
+
+Simple Meaning:
+“You can manage the group, but not jump to position.”
+
+
+📦 Practical Analogy: Basket 🧺
+Now you have a basket:
+You can add fruits
+Remove fruits
+Check how many fruits
+Empty it
+
+But you cannot say:
+“Give me fruit at position 3”
+
+Because order is not guaranteed.
+
+Example
+ICollection<string> names = new List<string>();
+names.Add("John");
+Console.WriteLine(names.Count);
+
+3️⃣ IList<T> – "Full control with order"
+-----------------------------------------
+What it adds:
+Index access → list[0]
+Insert at position
+RemoveAt(position)
+
+Simple Meaning:
+“You can access items by position.”
+
+
+📦 Practical Analogy: Bookshelf 📚
+Now you have a bookshelf:
+Add books
+Remove books
+Count books
+AND:
+
+Access book at position 2
+Insert at position 3
+You now have ordered access.
+
+Example
+IList<string> names = new List<string>();
+names.Add("John");
+Console.WriteLine(names[0]); // direct index access
+
+Side-by-Side Comparison
+Feature	           IEnumerable	       ICollection	        IList
+foreach	               ✅	              ✅	                ✅
+Count	               ❌	              ✅	                ✅
+Add / Remove	       ❌	              ✅             	✅
+Index access [0]	   ❌	              ❌              	✅
+Ordered access	       ❌	          Not guaranteed	     ✅
+
+Difference between them?
+------------------------
+IEnumerable allows only iteration.
+ICollection allows modification and counting.
+IList adds ordered, index-based access.
+
+When designing APIs:
+If caller only needs iteration → return IEnumerable<T>
+If caller needs Count & modification → return ICollection<T>
+If caller needs index access → return IList<T>
+
+Always return the least powerful interface necessary.
+
+That’s clean architecture thinking.
+
+****************************************************************************************************************
