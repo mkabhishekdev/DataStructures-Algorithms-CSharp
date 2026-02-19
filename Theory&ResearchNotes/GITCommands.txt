@@ -22,7 +22,7 @@ USE ONLY GITHUB CLI(Command line interface)
 
     - To check the branch a 'sub-branch' was created from: git reflog show <branch>
 
-************************************************************************************************
+****************************************************************************************************************
 
 2. PRACTICE 'REBASE' WAY OF WORKING IN GIT FOR CLARITY TO KNOW WHAT YOU ARE DOING EVERYTIME WITH REPO
 
@@ -146,7 +146,7 @@ This decision-making is what makes you senior — not the command itself.
       git log --stat
       git log --oneline --graph --all
 
-*********************************************************************************
+****************************************************************************************************************
 
 3. UNDERSTANDING 'MERGE' VS 'REBASE' DIFFERENCE CLEARLY (VERY IMPORTANT CONCEPT)
 
@@ -338,7 +338,7 @@ Merge → “Show me what really happened.”
 Rebase → “Pretend it happened cleanly.”
 
 
-*****************************************************************************************************
+**************************************************************************************************************
 
 4. If you updated your 'local branch' but not sure if you got latest from main branch
        - Ensure your local branch is first committed
@@ -349,7 +349,7 @@ Rebase → “Pretend it happened cleanly.”
          git merge <your local branch>
          git push origin main 
 
-********************************
+***************************************************************************************************************
 
 5. Difference between git merge and git rebase?
 
@@ -418,7 +418,7 @@ Personal branches not yet shared with team
 You want a clean, linear history
 Often used before merging a PR (git rebase main then squash commits)
 
-*********************************************************************************
+**************************************************************************************************************
 
 5. MERGE Conflict: If you don’t need your local changes at all
 
@@ -433,14 +433,14 @@ git fetch origin
 git checkout main
 git pull origin main
 
-*************************************************************************************
+***************************************************************************************************************
 
 6. To Switch to Another Branch ignoring changes in the present branch which you don't want
 
    git restore .
    git checkout main
 
-***********************************************************************************************
+****************************************************************************************************************
 
 7. Maintaining Repo & commit discipline as a LEAD
 
@@ -568,6 +568,223 @@ Once their work is ready, they merge their branches into the shared feature bran
 Finally, the feature branch is merged into main after validation.
 
 That is a textbook senior engineering workflow used in real product companies.
+
+***************************************************************************************************************
+
+8. Git Repo Hygiene SOP (bin/obj/.gitignore Cleanup Guide)
+ 
+PART 1 — Understand the Core Rule
+--------------------------------------------
+🔹 Important Truth
+
+.gitignore prevents NEW junk files from being tracked.
+It does NOT remove files that were already committed earlier.
+
+So if a repo was created before .gitignore existed, junk files may already be tracked.
+
+PART 2 — First Audit (Never Guess)
+------------------------------------------
+
+Before touching anything, check what Git is currently tracking.
+
+Step 1 — Check if .gitignore is tracked
+git ls-files | grep .gitignore
+
+
+If it prints .gitignore → good.
+If nothing → commit it first.
+
+Step 2 — Check if junk is already tracked
+git ls-files | grep '/bin/'
+git ls-files | grep '/obj/'
+git ls-files | grep -E '\.(dll|pdb|exe|cache)$'
+
+
+If nothing prints → repo is clean ✅
+If files print → hygiene needed ❌
+
+
+PART 3 — Safe Cleanup Strategy (Professional Way)
+----------------------------------------------------
+✅ Always create a cleanup branch
+
+Never clean directly on main.
+
+git checkout -b chore/repo-hygiene-cleanup
+
+✅ Ensure .gitignore has proper rules
+
+For .NET projects, minimum:
+
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+
+Commit if updated:
+
+git add .gitignore
+git commit -m "chore: ensure proper gitignore rules"
+
+✅ Perform Full Index Rebuild (Most Reliable Method)
+
+This is the safest complete cleanup method.
+
+git rm -r --cached .
+git add .
+
+
+What this does:
+
+Removes everything from Git tracking (not disk)
+
+Re-adds only files allowed by .gitignore
+
+Think of it as:
+
+“Rebuild Git tracking from scratch using .gitignore rules.”
+
+✅ Verify Before Commit
+git ls-files | grep '/bin/'
+git ls-files | grep '/obj/'
+git ls-files | grep -E '\.(dll|pdb|exe|cache)$'
+
+
+Nothing should print.
+
+If clean → proceed.
+
+✅ Commit Cleanup
+git commit -m "cleanup: enforce repository hygiene via gitignore"
+
+✅ Push Cleanup Branch
+git push origin chore/repo-hygiene-cleanup
+
+✅ Merge Into Main
+
+Option A (Recommended):
+Create PR → Review → Merge
+
+Option B (CLI):
+
+git checkout main
+git pull
+git merge chore/repo-hygiene-cleanup
+git push
+
+✅ Delete Cleanup Branch (Optional)
+git branch -d chore/repo-hygiene-cleanup
+git push origin --delete chore/repo-hygiene-cleanup
+
+
+PART 4 — Handling Modify/Delete Conflicts (If They Appear)
+------------------------------------------------------------------------
+If you see:
+
+CONFLICT (modify/delete): file deleted in branch and modified in HEAD
+
+
+It means:
+
+main still has junk
+
+your cleanup deleted junk
+
+Git is asking what to keep
+
+Solution:
+
+Accept deletion:
+
+git rm <file_or_folder>
+git commit
+
+
+Push again.
+
+
+PART 5 — Advanced Repo Health (Optional Polishing)
+---------------------------------------------------------------------
+🔹 Shrink Repo Size
+
+After large deletions:
+
+git gc
+
+
+This cleans and compresses Git objects.
+
+🔹 Remove Large Files from Entire History (Advanced)
+
+If huge binaries were committed long ago:
+
+Use:
+
+git filter-repo
+
+
+(Only if necessary — this rewrites history.)
+
+🔹 Prevent Future Junk (Pre-Commit Hook)
+
+Create file:
+
+.git/hooks/pre-commit
+
+
+Add:
+
+#!/bin/sh
+if git diff --cached --name-only | grep -E '\.(dll|pdb|exe)$'; then
+  echo "❌ Build artifacts cannot be committed."
+  exit 1
+fi
+
+
+Make executable:
+
+chmod +x .git/hooks/pre-commit
+
+
+Now Git blocks accidental junk commits.
+
+🧭 Quick Mental Model (Save This)
+Problem	Root Cause	Fix
+bin/obj in repo	committed before .gitignore	rebuild index
+rebase conflicts on obj	tracked build artifacts	remove from tracking
+modify/delete conflict	cleanup vs old main	accept deletion
+large repo size	old binaries in history	git gc or filter-repo
+🧑‍💼 Lead Engineer Principle
+
+When cleaning repo:
+
+Audit first
+
+Never guess
+
+Work in branch
+
+Rebuild index
+
+Verify before commit
+
+Merge cleanly
+
+🧠 Simple Analogy
+
+Think of Git tracking like:
+
+.gitignore = Security guard at the door
+
+Old tracked files = People already inside the building
+
+Adding a guard doesn’t remove people already inside.
+
+Index rebuild = Evacuate building and let guard allow only correct people back in.
+
+*****************************************************************************************************************
 
 
              
