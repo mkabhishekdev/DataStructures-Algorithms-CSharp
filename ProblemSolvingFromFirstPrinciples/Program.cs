@@ -1,13 +1,22 @@
 ﻿using System;
 using ProblemSolvingFromFirstPrinciples.InterestingProblems;
+using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
+using ProductCodingPractice.BinaryTrees;
 
 class Program
 {
     static void Main(string[] args)
     {
-        CountVehicle cv = new CountVehicle();
-        string[] carSequence = ["sedan S1 enters","sedan S2 enters","sedan S3 enters","truck T1 enters","sedan S2 leaves","truck T2 enters"];
-        Console.WriteLine(cv.CountVehicleImpl(carSequence,2));
+        LevelOrder lo = new LevelOrder();
+
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        Console.WriteLine(lo.LevelOrderImpl(root));
+
         
     }
 }
