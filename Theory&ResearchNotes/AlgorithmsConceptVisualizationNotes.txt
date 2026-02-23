@@ -1123,6 +1123,18 @@ DFS:
                   way.
                   Cookes theorem states that P is approximately equal to NP.
 
+
+8.1: NPHard Graph Problem - Clique Decision Problem 
+-------------------------------------------------------
+   * Complete graph: It is a graph which is complete, means each vertice in the graph is connected to the other vertices in the graph
+         - If n is the number of vertices in the graph
+         - Than a complete graph, satisfies the formula: |V| = n, |E|(no. of edges) = n(n-1)/2
+
+   * Clique decision problem(CDP)
+        - A subgraph of a complete graph is termed has 'Clique decision problem'
+
+   * 
+
  
 
 
