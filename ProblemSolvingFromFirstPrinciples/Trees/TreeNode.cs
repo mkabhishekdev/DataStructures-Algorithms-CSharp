@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.BinaryTrees
+namespace ProblemSolvingFromFirstPrinciples.BinaryTrees
 {
     public class TreeNode
     {

@@ -322,7 +322,196 @@ Splay Tree
        - If any vertex finds its adjacent vertex with Flag = 0, the n it contains a Cycle
 
  
- 
+
+ 7. DATA-STRUCTURE: HEAP ('Priority Queue' in .NET)
+ ********************************************************************************************************************
+
+ 🧠 What Is a Heap?
+
+A Heap is a special type of binary tree with 2 rules:
+
+1️⃣ Shape Property
+It must be a Complete Binary Tree
+Filled left → right
+No gaps in between
+
+2️⃣ Heap Property
+There are 2 types:
+---------------------
+Type	               Rule
+Min Heap	       Parent ≤ Children
+Max Heap	       Parent ≥ Children
+
+Example:
+-----------
+
+        2
+      /   \
+     5     8
+    / \   /
+   10 12 15
+
+Notice:
+2 ≤ 5,8
+5 ≤ 10,12
+8 ≤ 15
+Tree is filled left to right
+That’s a valid Min Heap.
+
+
+🧮 Important Concept: Array Representation
+--------------------------------------------
+
+Heap is almost always stored in an array, not actual tree nodes.
+
+If array is:
+[2, 5, 8, 10, 12, 15]
+
+Index relationships:
+--------------------------
+Parent index = i
+Left child = 2i + 1
+Right child = 2i + 2
+Parent of node = (i - 1) / 2
+- That’s why heaps are memory efficient.
+- No explicit pointers needed.
+
+🔥 Core Operations
+----------------------------------------
+
+1️⃣ Insert (Heapify Up)
+---------------------------
+Insert at the end → bubble up.
+
+Example:
+------------
+
+Insert 1:
+
+Before:
+        2
+      /   \
+     5     8
+
+Add 1 at bottom:
+
+        2
+      /   \
+     5     8
+    /
+   1
+
+Now bubble up:
+
+        1
+      /   \
+     2     8
+    /
+   5
+
+Time Complexity: O(log n)
+
+
+2️⃣ Remove Min (Heapify Down)
+-------------------------------------
+Always remove the root.
+
+Steps:
+-------
+Replace root with last element
+Bubble down
+
+Example:
+
+        2
+      /   \
+     5     8
+    / \
+   10 12
+
+Remove 2.
+
+Replace with 12:
+
+        12
+      /    \
+     5      8
+    /
+   10
+
+Now bubble down:
+
+        5
+      /   \
+    10     8
+
+Time Complexity: O(log n)
+
+📊 Why Heap Is Powerful
+
+Because it gives:
+------------------------
+Operation	            Time
+Insert	              O(log n)
+Remove Min/Max	      O(log n)
+Peek	                O(1)
+
+Compared to:
+---------------
+Sorted array → insert O(n)
+Linked list → find min O(n)
+Heap balances both.
+
+🎯 Real World Usage
+------------------------
+Heaps are used in:
+--------------------
+Dijkstra’s Algorithm
+Merge K Sorted Lists
+Task Scheduling
+Priority Queues
+Top K problems
+
+Event simulation systems
+🧠 Intuition(Very Important)
+Think of Heap like:
+
+“A machine that always keeps the smallest (or largest) item ready at the top.”
+
+You don’t care about total sorting.
+You only care about the top priority element.
+
+That’s why:
+Heap ≠ Sorted Tree
+Heap ≠ Binary Search Tree
+
+-> Heap only guarantees parent relation, not full order.
+
+⚡ Heap vs BST (Very Common Confusion)
+---------------------------------------
+Heap	                        BST
+Only parent rule	     Full left < root < right
+Fast min/max	             Fast search
+Array-based	                 Node-based
+Not fully sorted	     Inorder gives sorted
+
+🏗 In C# (Modern .NET)
+-------------------------
+C# gives built-in:
+
+PriorityQueue<TElement, TPriority>
+
+Which internally uses a binary heap.
+
+Example:
+var pq = new PriorityQueue<int, int>();
+pq.Enqueue(5, 5);
+pq.Enqueue(2, 2);
+pq.Enqueue(8, 8);
+
+Console.WriteLine(pq.Dequeue()); // 2
+
+*****************************************************************************************************************************
 
 
     

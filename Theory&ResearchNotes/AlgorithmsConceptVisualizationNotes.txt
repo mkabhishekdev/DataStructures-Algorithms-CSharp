@@ -1133,7 +1133,10 @@ DFS:
    * Clique decision problem(CDP)
         - A subgraph of a complete graph is termed has 'Clique decision problem'
 
-   * 
+
+9.1: Kruth-Morris-Pratt(KMP) String matching algorithm
+---------------------------------------------------------
+
 
  
 
@@ -1159,102 +1162,6 @@ DFS:
 
 
 
-
-
-
-
-5. GRAPH TRAVERSALS - BREADTH FIRST SEARCH(BFS) & DEPTH FIRST SEARCH(DFS)
-********************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6. INTRODUCTION TO BACKTRACKING - BRUTE FORCE APPROACH
-********************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7. BRANCH AND BOUND INTRODUCTION
-********************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8. NP-HARD & NP-COMPLETE PROBLEMS
-********************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9. STRING MATCHING ALGORITHMS
-********************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10. AVL TREES - INSERTION & ROTATIONS
-********************************************************************************
- 
 
 
 
