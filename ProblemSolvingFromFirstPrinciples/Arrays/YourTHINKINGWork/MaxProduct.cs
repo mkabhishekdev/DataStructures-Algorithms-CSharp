@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
   /*
-  APPROACH I CAME UP WITH:
+  REFERRED APPROACH:
    1. Create two variables, leftProduct and rightProduct
    2. LeftProduct iterate from leftside of the array and rightProduct iterate from the right side
    3. If a product is 0, just not to break the flow keep it as '1'
