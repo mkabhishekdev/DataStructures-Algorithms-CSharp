@@ -19,10 +19,16 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
       * In your class file, create a head section with below comment to write down your approach even if it is rough
         of what you are trying
         Ex:
+
         /*
        REFERRED APPROACH/APPROACH I CAME UP WITH:
 
 
+
+        */
+
+        /*
+        Any Optimization question while thinking through?/Any already learnt pattern you can remember?
 
         */
 
