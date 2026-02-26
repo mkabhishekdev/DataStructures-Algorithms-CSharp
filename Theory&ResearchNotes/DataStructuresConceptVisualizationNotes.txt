@@ -154,6 +154,9 @@ Data Structures are of 2 types:
     -------------------------------------------------------------
         - AVL trees are a special form of 'Binary Search Trees'. It is a 'Self BALANCING' BST. (STRICTLY BALANCED)
         - The balance factor(i.e left - right) should be either -1,0,1. If >1, the tree is unbalanced and you need to balance it. 
+        - Balance factor = height of left subtree - height of right subtree
+              bf = hl - hr = {-1, 0, 1}
+             |bf| = |hl - hr| <= 1
         - A Binary search tree is a AVL tree, if the difference of (leftside - rightside) of a 'node' is not greater than 1
         - Why we need AVL tree? In general insertion to a Binary Search tree also takes O(n) this is the same as an array or
           a linked list.
@@ -282,7 +285,6 @@ Splay Tree
   - After splaying process, the time complexity can be O(1) since the element being checked could be the root/node 'nearer' to the root.
   - Major application of Splay tree: Implementation of 'CACHES'.
   - Fastest type of BST for many practical application.
-
 
 
 6. DATA-STRUCTURE: GRAPH

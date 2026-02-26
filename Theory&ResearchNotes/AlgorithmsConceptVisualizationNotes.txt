@@ -1134,8 +1134,6 @@ DFS:
         - A subgraph of a complete graph is termed has 'Clique decision problem'
 
 
-9.1: Kruth-Morris-Pratt(KMP) String matching algorithm
----------------------------------------------------------
 
 
  
