@@ -995,6 +995,14 @@ Before merge → polish history like a product release
 Think:
 “Development is chaotic. History should be clean.”
 
+After deleting branch in github web(i.e origin/), you need to delete in local for maintaining a 
+clean repo discipline:
+Below command:
+git checkout main
+git pull
+git fetch --prune
+git branch -d feature/branch-name
+
 ***************************************************************************************************************************************************
 
 10. REAL PRODUCTION-GRADE GIT SKILLS
