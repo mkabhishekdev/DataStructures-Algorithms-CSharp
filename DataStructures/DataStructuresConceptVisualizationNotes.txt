@@ -1,0 +1,531 @@
+[WHEN GENERATING A PDF USING CHATGPT, FIRST GO THROUGH THE NOTES AND ADD SOME MORE DETAILS REFERRING
+                  CHATGPT LIKE HOW TO REMEMBER SOME OF THE CONCEPTS WHEN EXPLAINED IN SIMPLER OR VISUAL WAY,
+                  ALSO GO THROUGH YOUR NOTES BEFORE GENERATING PDF TO PRINT - USE SOME CHATGPT THINGS LIKE
+                  ADDING SOME MORE INFORMATION FOR YOU TO REMEMBER THE CONCEPTS ALWAYS. LIKE REVISIT A 
+                  SECTION BELOW - ASK IT TO GENERATE SOMETHING VISUALLY TO UNDERSTAND WELL OR TELL THE 
+                  CONCEPT IN VERY SIMPLE WORDS]
+
+Data Structures are of 2 types:
+    - Linear Data Structures = Array, Linked List, Stack, queue [i.e they follow a sequential order]
+    - Non Linear Data Structures = Tree, Graph [i.e they follow a heirarchy]
+
+
+1. DATA-STRUCTURE: Singly Linked List
+*****************************************************************************************************************
+
+// write down 3-4 main points to visualize this
+
+    * Reverse a Linked List
+      ----------------------
+      1. Visualize movements step by step.
+      2. Think of it has you are reversing the links to the addresses stored in next pointer.
+      3. What you need? You will start with currentNode = head (it points to head)
+                        - Than prev = null (because prev pointer to first node points to null)
+      4. Think here? you will loose the connection to next pointer since you are not saving it anywhere,
+        so create next = curr.next (this will keep the pointer to the next link safe before you reverse)
+      5. Now think that with the below two lined you reversed the first node,
+             next = curr.next;
+             curr.next = prev;
+      6. Think that now you moved to the second node(visualize), so whatever was your current node in the previous
+         step will become previous now:
+         prev = curr;
+      7. So now the current pointer, where will you get the value from? remember the very first step where you kept
+         the value saved in 'next' pointer.
+         curr = next;
+      8. You will write all these within a while(current != null). Also where will you find the updated head value
+         from? From the 'prev'
+      9. So writing all the above logic as a code snippet:
+         
+         Imagine: When you think of reversing, just think of the 'very first node'
+                  For the very first node:
+                   step 1. what is the prev i.e prev = null
+                   step 2. before even reversing, you need to definitely save the next address value or else this will 
+                        be lost after reversing.
+                        So you do what? i.e next = curr.next;
+                   step 3. In order to come back to the loop, you need to get to the next element
+                           where have you kept it?: its in next [step2 remember] i.e curr = next;
+                   step 4. you reverse i.e curr.next = prev;
+                   step 5. once you have done the reversal, prev can't be obviously null
+                           So what it will be?: it has to be the current element which just did a reversal
+                           i.e prev = curr;
+                   step 6. you need to now point the updated head, the updated head would be the last element before 
+                           current became null.
+                           So where is that, in the 'prev' i.e prev = curr [step 2], update: head = prev;
+
+         Node prev = null; [step 1]
+         Node curr = head;
+         Node next;
+
+         while(curr != null)
+         {
+             next = curr.next; [step 2]
+             curr.next = prev;  [step 4]
+             prev = curr;   [step 4]
+             curr = next;  [step 3]
+         }
+         head = prev; [step 6]
+
+
+
+2. DATA-STRUCTURE: Doubly Linked List
+*******************************************************************************************************************
+
+// write down 3-4 main points to visualize this
+
+
+
+3. DATA-STRUCTURE: STACK
+********************************************************************************************************************
+
+ - LIFO, has various applications like: reversing a string, text editor undo Feature
+ - Can do operations like Push(int data), Pop(), Peek(). Always think of having a variable say 'top'. If the stack 
+   is empty it will be -1. When the stack overflows(i.e more than the size limit), it his said stack overflow.
+ 
+
+
+
+4. DATA-STRUCTURE: QUEUE
+*********************************************************************************************************************
+
+// write down 3-4 main points to visualize this
+
+
+
+
+
+* Drawback of linear queue can be handled using Circular queue.
+  What is the drawback?
+    - In linear queue, even though if unused memory is present. If the linear queue as reached its maximum size - it
+      would not allow to insert. This problem could be solved using a circular queue.
+
+* When thinking of implementing a circular queue always think that in a usual queue: rear.next -> null at last but in
+  circular queue the: rear.next -> front i.e will point to the first node, this way circular motion is adopted.
+
+* Main applications of Dequeue(Double ended queue) is in "Multiprocessor Job Scheduling"
+
+
+
+5. DATA-STRUCTURE: TREE
+*********************************************************************************************************************
+
+    - Parent node = Immediate predecessor of a given node
+    - Child node= Immediate successor of a given node
+    - Leaf node = Nodes which do not have any child node
+    - Non Leaf node(internal nodes) = Nodes which have atleast one child
+    - Path = Sequence of consecutive edges from source node to destination node 
+    - Ancestor = any predecessor node on the path from the root to that node
+    - Descendant = any successor node on the path from that node to the leaf node
+    - Sibling = Children of the same Parent
+    - Degree = Degree of node is number of children of that node (the degree of the 'leaf node' is always 0)
+          * Maximum degree among all nodes
+    - Depth of a node = Length of Path from "root" to "that node"(the length to the specific node is what differs 'Depth' of a node from 'Height' of a node)
+    - Height of a node = Number of edges in the longest path from that "node" to the "leaf node"
+    - Level of a node =  number of edges from the "root" to the "given node" (Depth = Level)
+    - 'n' nodes = '(n-1)' edges
+ 
+    * Binary-Tree
+    -------------
+        - In a binary tree, each node can have atmost 2 childrens (i.e they can have 0, 1, 2 but not more than 2 childrens)
+        - Types of Binary tree = Full/Proper/Strict binary tree, Complete binary tree, Perfect binary tree, Degenerate binary tree
+    
+    DFS(Depth First Search) below:
+    - InOrder traversal = left -> root -> right
+    - PreOrder traversal = root -> left -> right
+    - PostOrder traversal = left -> right -> root
+
+    - Pre → Root comes first
+      In → Root in the middle
+      Post → Root comes last
+
+    BFS(Breadth First Search): go through each row in the tree like 'level'(say level 0,level1, level2, level3) & write
+                               down the nodes
+     
+    * Lowest Common Ancestor in BST
+    ----------------------------------------------------
+        - Get the Max and Min of the [firstnode, secondnode], compare them with the root: where both the conditions
+          fail is your LCA [check your code folder]   
+    
+    * Binary Search Tree(BST)
+    -----------------------------------------------------
+        - BST are trees in which left of a 'node' is lesser than the node and right of a 'node' is greater than the node.
+        - 'Duplicate elements' are not allowed in a BST. Important point.
+
+    * AVL Trees
+    -------------------------------------------------------------
+        - AVL trees are a special form of 'Binary Search Trees'. It is a 'Self BALANCING' BST. (STRICTLY BALANCED)
+        - The balance factor(i.e left - right) should be either -1,0,1. If >1, the tree is unbalanced and you need to balance it. 
+        - Balance factor = height of left subtree - height of right subtree
+              bf = hl - hr = {-1, 0, 1}
+             |bf| = |hl - hr| <= 1
+        - A Binary search tree is a AVL tree, if the difference of (leftside - rightside) of a 'node' is not greater than 1
+        - Why we need AVL tree? In general insertion to a Binary Search tree also takes O(n) this is the same as an array or
+          a linked list.
+          AVL tree takes O(logn)
+          
+    * Why Height of a Tree(i.e balanced tree) is 'logn' ?
+    -----------------------------------------------------
+    First: what is “height” of a binary tree?
+
+    Height = number of levels from root to the deepest leaf
+
+    Example:
+
+        Level 1:        1
+        Level 2:      2   3
+        Level 3:    4  5 6  7
+
+        Height here = 3
+
+        Key idea (no logs yet)
+
+        In a binary tree,
+        👉 each level can have at most double the nodes of the previous level
+
+     Level	Max nodes at that level
+     1	1
+     2	2
+     3	4
+     4	8
+     5	16
+
+    This doubling is the core reason logs appear.
+
+    Imagine building the tree step by step
+      Suppose you keep adding levels:
+
+      After 1 level → 1 node
+      After 2 levels → 1 + 2 = 3 nodes
+      After 3 levels → 1 + 2 + 4 = 7 nodes
+      After 4 levels → 1 + 2 + 4 + 8 = 15 nodes
+    
+      So roughly:
+
+      Height 1 → ~1 node
+      Height 2 → ~2 nodes
+      Height 3 → ~4 nodes
+      Height 4 → ~8 nodes
+      Height 5 → ~16 nodes
+
+
+      Every time you increase height by 1, nodes roughly double
+
+      Now reverse the thinking (this is the key mental flip)
+
+      Instead of asking:
+      “If height is H, how many nodes?”
+
+       Ask:
+
+      “If I have N nodes, how many levels do I need?”
+
+      Example:
+
+      8 nodes → need 3 levels
+
+      16 nodes → need 4 levels
+
+      32 nodes → need 5 levels
+
+      Notice something?
+
+    👉 To reach big numbers of nodes, height grows very slowly
+
+    This “how many times do I double to reach N?” is exactly log₂(N)
+
+    Let’s say:
+
+    1 → 2 → 4 → 8 → 16 → 32
+
+
+    Count how many steps (levels) it took:
+
+      To reach 8 → 3 steps
+
+      To reach 16 → 4 steps
+
+      To reach N → log₂(N) steps
+
+    So:
+
+    Height ≈ log₂(N)
+
+    Why people say “height of binary tree is log n”
+
+    This statement is true ONLY for a balanced binary tree.
+
+    Balanced means:
+
+    Left and right subtrees are roughly equal
+
+    Tree grows wide, not tall
+
+    Balanced tree:
+    Height = O(log n)
+
+
+Red Black Tree
+-------------------------------------------------------------------------
+    
+  * Rules to be a Red black tree
+    - Red black tree is a 'Self BALANCING' BST. Every node is either black or red. (STRICTLY BALANCED)
+    - Root is always 'Black'.
+    - Every leaf node which is NIL is black. 
+    - If node is 'Red' then its children are 'black'.
+    - Every path from a node to any of its descendant NIL node has same number of black nodes.
+  
+
+Splay Tree
+---------------------------------------------------------------------------
+
+  - Splay tree is a 'Self ADJUSTING' BST. (ROUGHLY BALANCED)
+  - In general, BST in worst case as time complexity: O(n). Trees like AVL, RedBlack make the time complexity: O(logn)[that is their major importance]
+  - Splay tree is applied to reduce the time complexity further more.
+  - In Splay trees, you first search for the element(using BST) + than do Splaying.
+  - Splaying is a process in which each operation on a element will rearrange the tree, so that it will become 'root' of the tree.
+  - After splaying process, the time complexity can be O(1) since the element being checked could be the root/node 'nearer' to the root.
+  - Major application of Splay tree: Implementation of 'CACHES'.
+  - Fastest type of BST for many practical application.
+
+
+6. DATA-STRUCTURE: GRAPH
+*********************************************************************************************************************
+
+  * Graph Representation
+  ----------------------- 
+    - Graphs can be represented as: Adjacency Matrix or Adjacency List.
+    - In general, Dense graphs are represented using Adjacency Matrix.
+    - Sparse graphs are represented using Adjacency List.
+    - Two kinds of traversals in Graph: BFS(Breadth first search) and DFS(Depth first search)
+    - In BFS:
+          - Use a 'Queue' to store the elements
+          - The logic is you start from the an element, and start adding all the connected nodes to the particular
+            element into the queue.
+    - In DFS:
+          - Use a 'Stack' to store the elements
+          - In this you start from an element, find the connecting nodes, you can select any of those nodes and keep
+            going in depth path on that node till the end.
+          - You reached the end and you still have a some nodes which you haven't traversed - In DFS you could use the 
+            technique of 'Backtracking' to return backwards and keep finding the element which has not yet been 
+            traversed.
+
+
+  * 6.8: Cycle Detection in Directed Graph
+  -----------------------------------------
+      
+       - In a directed graph, if -1 = unvisited, 0 = visited and in stack, 1= = visited and popped out from stack(DFS uses 'Stack' remember).
+         If any vertex connects to a vertex which has '0' (i.e it was already visited and is presently in the stack)
+         Than that signifies a 'Cycle'.
+  
+
+  * 6.9: Detect Cycle in Undirected graph
+  ----------------------------------------
+       
+       - On a graph in BFS(you use a 'Queue' remember), if a node as -1 = unvisited, 0 = visited and in queue, 1 = visited
+       - If any vertex finds its adjacent vertex with Flag = 0, the n it contains a Cycle
+
+ 
+
+ 7. DATA-STRUCTURE: HEAP ('Priority Queue' in .NET)
+ ********************************************************************************************************************
+
+ 🧠 What Is a Heap?
+
+A Heap is a special type of binary tree with 2 rules:
+
+1️⃣ Shape Property
+It must be a Complete Binary Tree
+Filled left → right
+No gaps in between
+
+2️⃣ Heap Property
+There are 2 types:
+---------------------
+Type	               Rule
+Min Heap	       Parent ≤ Children
+Max Heap	       Parent ≥ Children
+
+Example:
+-----------
+
+        2
+      /   \
+     5     8
+    / \   /
+   10 12 15
+
+Notice:
+2 ≤ 5,8
+5 ≤ 10,12
+8 ≤ 15
+Tree is filled left to right
+That’s a valid Min Heap.
+
+
+🧮 Important Concept: Array Representation
+--------------------------------------------
+
+Heap is almost always stored in an array, not actual tree nodes.
+
+If array is:
+[2, 5, 8, 10, 12, 15]
+
+Index relationships:
+--------------------------
+Parent index = i
+Left child = 2i + 1
+Right child = 2i + 2
+Parent of node = (i - 1) / 2
+- That’s why heaps are memory efficient.
+- No explicit pointers needed.
+
+🔥 Core Operations
+----------------------------------------
+
+1️⃣ Insert (Heapify Up)
+---------------------------
+Insert at the end → bubble up.
+
+Example:
+------------
+
+Insert 1:
+
+Before:
+        2
+      /   \
+     5     8
+
+Add 1 at bottom:
+
+        2
+      /   \
+     5     8
+    /
+   1
+
+Now bubble up:
+
+        1
+      /   \
+     2     8
+    /
+   5
+
+Time Complexity: O(log n)
+
+
+2️⃣ Remove Min (Heapify Down)
+-------------------------------------
+Always remove the root.
+
+Steps:
+-------
+Replace root with last element
+Bubble down
+
+Example:
+
+        2
+      /   \
+     5     8
+    / \
+   10 12
+
+Remove 2.
+
+Replace with 12:
+
+        12
+      /    \
+     5      8
+    /
+   10
+
+Now bubble down:
+
+        5
+      /   \
+    10     8
+
+Time Complexity: O(log n)
+
+📊 Why Heap Is Powerful
+
+Because it gives:
+------------------------
+Operation	            Time
+Insert	              O(log n)
+Remove Min/Max	      O(log n)
+Peek	                O(1)
+
+Compared to:
+---------------
+Sorted array → insert O(n)
+Linked list → find min O(n)
+Heap balances both.
+
+🎯 Real World Usage
+------------------------
+Heaps are used in:
+--------------------
+Dijkstra’s Algorithm
+Merge K Sorted Lists
+Task Scheduling
+Priority Queues
+Top K problems
+
+Event simulation systems
+🧠 Intuition(Very Important)
+Think of Heap like:
+
+“A machine that always keeps the smallest (or largest) item ready at the top.”
+
+You don’t care about total sorting.
+You only care about the top priority element.
+
+That’s why:
+Heap ≠ Sorted Tree
+Heap ≠ Binary Search Tree
+
+-> Heap only guarantees parent relation, not full order.
+
+⚡ Heap vs BST (Very Common Confusion)
+---------------------------------------
+Heap	                        BST
+Only parent rule	     Full left < root < right
+Fast min/max	             Fast search
+Array-based	                 Node-based
+Not fully sorted	     Inorder gives sorted
+
+🏗 In C# (Modern .NET)
+-------------------------
+C# gives built-in:
+
+PriorityQueue<TElement, TPriority>
+
+Which internally uses a binary heap.
+
+Example:
+var pq = new PriorityQueue<int, int>();
+pq.Enqueue(5, 5);
+pq.Enqueue(2, 2);
+pq.Enqueue(8, 8);
+
+Console.WriteLine(pq.Dequeue()); // 2
+
+*****************************************************************************************************************************
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+

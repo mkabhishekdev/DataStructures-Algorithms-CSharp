@@ -1,0 +1,1189 @@
+Algorithm Notes: [WHEN GENERATING A PDF USING CHATGPT, FIRST GO THROUGH THE NOTES AND ADD SOME MORE DETAILS REFERRING
+                  CHATGPT LIKE HOW TO REMEMBER SOME OF THE CONCEPTS WHEN EXPLAINED IN SIMPLER OR VISUAL WAY,
+                  ALSO GO THROUGH YOUR NOTES BEFORE GENERATING PDF TO PRINT - USE SOME CHATGPT THINGS LIKE
+                  ADDING SOME MORE INFORMATION FOR YOU TO REMEMBER THE CONCEPTS ALWAYS. LIKE REVISIT A 
+                  SECTION BELOW - ASK IT TO GENERATE SOMETHING VISUALLY TO UNDERSTAND WELL OR TELL THE 
+                  CONCEPT IN VERY SIMPLE WORDS]
+
+1. Introduction to Algorithms
+*********************************************
+    Priori Analysis & Posteriori testing
+    ----------------------------------------
+    [Priori Analysis]: This Analysis is done on Algorithms, Independent of language, hardware
+    independent, Time and space function.
+
+    [Posteriori Testing]: This testing is done on Program, language dependent, hardware dependent,
+    watch time and bytes.
+
+
+    How to Analyze an Algorithm
+    -----------------------------
+    1. Time : how much time it is taking, we get a time function
+       - Every single statement in an algorithm takes '1 unit' of time
+       Algorithm Swap(a,b)
+       {
+        temp = a;   // 1 unit
+        a = b;      //1 unit
+        b = temp;   // 1 unit
+       }
+       f(n) = 3   
+    2. Space: how much memory space it will consume
+    3. Network consumption: how much data transfer is being done
+    4. Power consumption: how much power is being consumed
+    5. CPU Registers: how much cpu processing units(registers) it is consuming
+
+
+
+
+2. How to Analyze Time Complexity in a Code Snippet
+****************************************************
+
+Ask yourself these key questions:
+
+1. How many times does each line run?
+Look at each loop (for, while, foreach)
+
+Nested loops? Multiply the iterations.
+
+🔁 A single loop from 0 to n → O(n)
+🔁 Nested loop → O(n²), O(n³), etc.
+
+2. Are there recursive calls?
+Count how many times the function recurses, and how the input shrinks.
+
+Example:
+BinarySearch(arr, left, right) → halves input each time → O(log n)
+Fibonacci(n) → calls itself twice → exponential → O(2ⁿ)
+
+3. Look at the input size (n)
+Does the running time depend on input size?
+If you're iterating over an array of n items, it’s probably O(n).
+
+4. Ignore constants and lower-order terms
+O(2n) → O(n)
+O(n + log n) → O(n)
+
+Just focus on the highest growing term.
+
+🔍 Quick Examples:
+✅ Example 1 – O(n):
+
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(i);
+}
+Runs n times → O(n)
+
+✅ Example 2 – O(n²):
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        Console.WriteLine(i + j);
+    }
+}
+Runs n * n times → O(n²)
+
+✅ Example 3 – O(log n):
+
+while (n > 1)
+{
+    n = n / 2;
+}
+Divides n every time → O(log n)
+
+🔑 Summary:
+
+Code Pattern	                                 Time Complexity
+Single loop over n	                               O(n)
+Nested loops	                                     O(n²), O(n³), etc.
+Divide by 2 each time	                            O(log n)
+Loop inside loop over different inputs	             O(n * m)
+Recursion doubling calls	                         O(2ⁿ)
+
+
+
+
+3. How to Analyze Space Complexity (Simple Way)
+************************************************************
+👉 Ask:
+
+How much extra memory is being used as input size (n) grows?
+
+📋 Common Patterns for Space Complexity:
+
+Code Pattern	                                  Space Complexity	                        Reason
+Just a few variables (int, bool, etc.)	              O(1)	                          Constant memory
+New array or list of size n	                       O(n)	                       Space grows with input
+2D array (n x n)	                                   O(n²)	                    Space grows as square of input
+Recursion (depth = n)	                             O(n)	                     Stack memory for each call
+Divide and conquer recursion	                      O(log n)	                  Stack depth based on halves
+
+
+🔥 Simple Examples:
+
+✅ Example 1 — O(1) Space:
+
+int sum = 0;
+for (int i = 0; i < n; i++)
+{
+    sum += i;
+}
+Only sum and i used.
+
+Memory doesn't depend on n.
+
+Space = O(1)
+
+✅ Example 2 — O(n) Space:
+
+int[] newArr = new int[n];
+for (int i = 0; i < n; i++)
+{
+    newArr[i] = i * 2;
+}
+newArr size grows with n.
+
+Space = O(n)
+
+✅ Example 3 — O(n²) Space:
+
+int[,] matrix = new int[n, n];
+2D array of size n × n.
+
+Space = O(n²)
+
+✅ Example 4 — O(n) Space (Recursion):
+
+void Print(int n)
+{
+    if (n == 0) return;
+    Console.WriteLine(n);
+    Print(n - 1);
+}
+Each call waits for the next → depth = n.
+
+Stack memory grows with n.
+
+Space = O(n)
+
+✅ Example 5 — O(log n) Space (Divide and Conquer):
+
+void BinarySearch(int[] arr, int left, int right)
+{
+    if (left > right) return;
+    int mid = (left + right) / 2;
+    BinarySearch(arr, left, mid - 1);
+    BinarySearch(arr, mid + 1, right);
+}
+Each call divides problem in half.
+
+Stack depth = log n.
+
+Space = O(log n)
+
+🎯 Final Shortcuts
+
+Look for...	                                                    Likely Space
+Only primitive variables	                                         O(1)
+New array/list proportional to input	                             O(n)
+Nested structures (matrix, graph)	                            O(n²), O(n³)
+Simple recursion	                                                  O(n)
+Divide and conquer recursion	                                     O(log n)
+
+Space complexity depends on whether extra memory grows with input size.
+Fixed variables are O(1); data structures that scale with input are O(n).
+
+✅ O(1) Space (Constant Extra Memory)
+
+Memory usage does NOT change with input size.
+
+Examples
+
+Primitive variables
+
+int min, max, sum;
+
+
+Fixed number of variables
+
+int a, b, c;
+
+
+Pointers / references
+
+Node current;
+
+
+Loop variables
+
+for (int i = 0; i < n; i++) { }
+
+
+In-place operations
+
+Array.Reverse(arr);
+
+
+Iterative traversal without extra DS
+
+Two-pointer technique
+
+Sliding window
+
+Single-pass max/min tracking (like Best Time to Buy & Sell Stock)
+
+📌 Key idea:
+Same memory used whether input has 10 elements or 1,000,000.
+
+⚠️ O(n) Space (Grows With Input Size)
+
+Memory usage increases proportionally with input.
+
+Examples
+
+Arrays created inside algorithm
+
+int[] temp = new int[n];
+
+
+Lists
+
+List<int> list = new List<int>();
+
+
+Stacks
+
+Stack<int> stack = new Stack<int>();
+
+
+Queues
+
+Queue<int> queue = new Queue<int>();
+
+
+Hash-based structures
+
+Dictionary<int, int> map;
+HashSet<int> set;
+
+
+Recursion (call stack)
+
+void dfs(Node n)
+{
+    dfs(n.left);
+    dfs(n.right);
+}
+
+
+Depth = n → O(n)
+
+Tree height = h → O(h)
+
+📌 Key idea:
+Memory grows as input grows.
+
+🚨 Common Interview Clarifications
+❌ Input arrays do NOT count
+public int Solve(int[] arr)
+
+
+Input is given
+
+Not counted in space complexity
+
+⚠️ Sorting caveat
+Array.Sort(arr);
+
+
+Space depends on sorting algorithm:
+
+QuickSort → O(log n)
+
+MergeSort → O(n)
+
+🧠 Quick Mental Rule
+If you allocate…	Space
+Fixed variables only	O(1)
+Data structure that stores elements	O(n)
+Recursion	O(depth)
+Multiple structures	Add them
+🎯 One-line interview answer (memorize)
+
+“Space complexity is O(1) if we only use a fixed number of variables, and O(n) if we use data structures like arrays, lists, stacks, queues, maps, or recursion that grow with input size.”
+ 
+NOTE: The above in case of trees even though you did not use data structures like arrays, lists etc. it can be 'O(h)' where h is the height of the tree.
+Why space is NOT O(1) below read: 
+
+Even though:
+
+You’re not using arrays
+
+You’re not creating extra data structures
+
+'Recursion' itself consumes stack space
+
+What’s on the stack?
+
+Each recursive call stores:
+node
+leftNode
+rightNode
+return address
+
+That stack grows with tree depth.
+
+Best vs Worst case
+🌱 Best case (balanced tree)
+Height ≈ log n
+Space = O(log n)
+
+🌲 Worst case (skewed tree)
+Height = n
+Space = O(n)
+
+
+
+4. SEARCHING
+********************************************************************************************************************
+
+- Binary Search
+  --------------
+  Main-Idea:
+  -----------
+  // write down in one or two points to remember
+
+
+- Linear Search
+  --------------
+  Main-Idea:
+  -----------
+  // write down in one or two points to remember
+
+
+
+5. SORTING
+************************************************************
+
+- Bubble Sort
+  ------------
+  Main-Idea:
+  -----------
+    // write down in one or two points to visualise
+
+
+- Insertion Sort
+  ------------
+  Main-Idea:
+  -----------
+  1. You need to visualize dividing the given unsorted array into two sublists: sorted sublist on the left &
+     unsorted sublist on the right.
+  2. Initially start the sorted sublist with just one item on the left.
+  3. Pick the first item in the unsorted list and start comparing with the sorted list and keep on moving item
+     from unsorted sublist to sorted sublist.
+
+
+- Selection Sort
+  ------------
+  Main-Idea:
+  -----------
+  1. Select the first element as the minimum element to start with.
+  2. Compare each element present in the list and find the minimum value.
+  3. If minimum value found is not the same as the minimum element set initially(i.e first element to start with), swap the 
+     elements.
+
+- Quick Sort
+------------
+  Main-Idea:
+  -----------
+  1. Also known as Partition sorting, main idea is to partition the given list, than sorting each sub partitioned
+     sets. 
+  2. Keep variables say lowerbound,upperbound,start,end and set the first element as 'Pivot' to start with.
+  3. Outer while loop will be definitely (start < end), inside check for conditions and Swap.
+  4. Note, the Pivotal element will need to be swapped when you reach to the outer while condition if start > end, which
+     is not true and hence swap it. Create first a Partition(Array, lowerbound, upperbound) function and than have the 
+     Quicksort function which will handle the sub-partitioning of the elements.
+
+
+
+6. ABDUL SIR LECTURES - ALGORITHMS Notes
+-------------------------------------------------------------------------------------------------------------------
+(Points labelled as per lecture video sequence)
+
+1. ALGORITHMS BASICS
+*********************************************************************************************************************************
+
+1.1-1.7 notes
+-------------
+
+
+
+
+
+
+
+
+1.8.1: Asymptotic notations
+---------------------------
+* O big-oh = upper bound
+* Omega = lower bound
+* Theta = average bound
+
+Below is always the basic complexity order in general:
+1 < logn < root(n) < n < nlogn < n2(square) < n3(cube) < ........... < 2(power of n) < 3(power of n) < ......... < n(power of n)
+
+
+1.8.2: Asymptotic notations(BigO-Omega-Theta)
+---------------------------------------------
+* For a function, when you are not able to find the average bound(omega), upperbound(bigo) and lowerbound(theta) become useful.
+  Example:
+          f(n) = n!
+          1*1*1*1 <= 1*2*3*...*n <= n*n*n*n2
+          omega(1)                  bigo(n(power of n))
+* Always average bound(theta) is preferred, if you can find than it is better.
+* An analogy here, think of you want to buy a new phone - you enquire with some of your friends. Some will say you may get around Rs 20,000
+  and some may say minimum you will get a good phone around Rs 10,000. Bestcase is Rs 20,000 and worst-case his Rs10,000. But upper-bound
+  or lowerbound are not the exact value you got. So average bound is say around Rs 15,000 and that gives a exact price point at which you
+  can buy a phone.
+
+
+1.10.1: Comparison of Functions  
+--------------------------------
+ * log ab = log a + log b 
+   log a/b = log a - log b
+   log a(power of b) = b * loga
+
+
+1.11: Best, Worst and Average case Analysis
+--------------------------------------------
+ * Average case analysis may not be always possible in the case of algorithms. That is why worst case is always preferred. Average case is usually
+   similar to the worst case.
+ * Should not confuse best,worst and average case analysis with Asymptotic notations(big-o, omega & theta). Analysis is done on algorithms and notations
+   are modes of representing whether they are upperbound, lowerbound or average bound.
+   Example:
+   1. Linear Search
+          BestCase(n) = 1 -> O(1),Omega(1),Theta(1)
+          WorstCase(n) = n -> O(n), Omega(n), Theta(n)
+      NOTE(common misconception): Best case , Worst case can be represented using any Asymptotic notation(i.e big-o,omega & theta), It is not like the 
+                                  common misconception that best case means big-o, worst case means omega. No that is wrong.
+
+
+1.12: Disjoint Sets Data structure: Weighted Union and Collapsing find
+-----------------------------------------------------------------------
+  * The node with the highest weight(i.e which has more node connections) becomes the 'parent'.
+  * Find and Union are the mostly used sets properties.
+
+
+
+2. DIVIDE AND CONQUER Strategy
+********************************************************************************************************************************************************
+  * Idea:
+    DAC(problem)
+    {
+      if(small(problem))
+      {
+          small(problem);
+      }
+      else
+      {
+          Divide problem into problem1,problem2,problem3........problemk
+          Apply DAC(problem1),DAC(problem2)...........DAC(problemk)
+          Combine (DAC(problem1), DAC(problem2),.......)
+      }
+    }
+
+  * Divide & Conquer strategy application: 1. Binary Search
+                                           2. Finding maximum and minimum
+                                           3. MergeSort
+                                           4. Quicksort
+                                           5. Strassen's Matrix Multiplication
+
+  2.1.1: Recurrence Relation (T(n) = T(n-1) + 1) 
+  ----------------------------------------------
+      * T(n) = 1        , n=0
+               T(n-1)+1 , n>0
+
+
+  2.1.2: Recurrence Relation (T(n) = T(n-1) + n)
+  ----------------------------------------------
+      * T(n) = 1       , n=0
+               T(n-1)+n, n>0
+
+
+  2.2: Masters Theorem Decreasing function
+  ----------------------------------------
+      * T(n) = T(n-1) + 1    ----> O(n)
+        T(n) = T(n-1) + n    ----> O(n2)
+        T(n) = T(n-1) + logn ----> O(nlogn) 
+        T(n) = 2T(n-1) + 1   ----> O(2(power n))
+        T(n) = 3T(n-1) + 1   ----> O(3(power n))
+        T(n) = 2T(n-1) + n   ----> O(n2(power n))
+                         [LOOK INTO THE ABOVE FOR A WHILE & OBSERVE THE PATTERN]
+
+  
+  2.6.1: Binary Search Iterative Method 
+  --------------------------------------
+      * int BinarySearch(int[] arr, int size, int key)
+        {
+            int low = 0, high = n-1;
+
+            int mid = (low+high)/2;
+          
+            while(low < high)
+            {
+                if(key == a[mid])
+                {
+                    //return key found
+                }
+                else if(key < a[mid])
+                {
+                    high = mid-1;   //NOTE: You just add 'high' condition, no 'low' condition
+                }
+                else
+                {
+                    low = mid+1;   //NOTE: you just add 'low' condition, no 'high' condition
+                }
+            }
+
+            return -1;
+        }
+
+
+  2.6.2: Binary Search Recursive Method
+  --------------------------------------
+    *  Algorithm RecursiveBSearch(low,high,key)
+       {
+           if(low == high)                                   // 1 UNIT
+           {
+               if(key == a[low])
+               {
+                   return low;
+               }
+           }
+           else
+           {
+               int mid = (low+high)/2;                        // 1 UNIT
+               
+               if(key == a[mid])                              // 1
+               {
+                  return mid;
+               }
+               if(key < a[mid])                                    // BELOW IF-ELSE: T(N/2)
+               {
+                   return RecursiveBSearch(low,mid-1,key);
+               }
+               else
+               {
+                   return RecursiveBSearch(mid+1,high,key);
+               }
+           }  
+       }
+
+       T(N) = T(N/2) + 1, N > 1
+
+
+  
+  2.7: The Sorting techniques & how to talk about their Whys:
+  ----------------------------------------------------------------------------------------
+
+       1. QUICK SORT (THE BEST)
+            WHY?  - The best, uses Best case = O(nlogn), Worst case = O(n2) time 
+                  - No extra space
+                  - Fastest on average, cache-friendly, used conceptually in many standard libraries
+                  - https://www.youtube.com/watch?v=-qOVVRIZzao&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=37
+               
+              * Key mental model (Algorithm): QuickSort → “Pick pivot, partition, fix pivot forever”
+
+                 1. Pivot you start with assuming the first element, i = leftmost element & j = rightmost element
+                 2. Move i right: while(A[i] <= Pivot). If condition fail, stop i there
+                 3. Move j left: while(A[j] > Pivot). If condition fail, stop j there
+                 4. If(i < j). Swap. But remember i & j indexes & also Pivot remains the same
+                 5. If(i >= j). Swap with the Pivot element. Here very important, once the Pivot is sorted, the left
+                    elements to it becomes a sub-array & also right elements become a sub array.
+             
+            * Example mental replay (no code)
+           
+              Given array
+              [8, 3, 6, 1, 4, 5, 2]
+
+              Step 1 Pick pivot
+
+                     Pivot = 8 (first element)
+
+                     Think:
+
+                     “Everything smaller goes left, bigger goes right”
+
+              Step 2️⃣ Partition around pivot
+
+                     After partition:
+
+                     [2, 3, 6, 1, 4, 5 | 8]
+
+
+                     ✔ Pivot 8 is fixed forever
+
+             Step 3️⃣ Recurse on left sub-array
+                      [2, 3, 6, 1, 4, 5]
+
+
+                      Pivot = 2
+
+                      After partition:
+
+                      [1 | 2 | 6, 3, 4, 5]
+
+
+                       ✔ Pivot 2 fixed
+
+            Step 4️⃣ Recurse on right sub-array
+                      [6, 3, 4, 5]
+
+
+                      Pivot = 6
+
+                    After partition:
+
+                     [5, 3, 4 | 6]
+
+
+                    ✔ Pivot 6 fixed
+
+            Step 5️⃣ Continue recursively
+                     [5, 3, 4]
+
+
+                     Pivot = 5
+
+                     After partition:
+
+                    [4, 3 | 5]
+
+
+                    ✔ Pivot 5 fixed
+
+           Step 6️⃣ Final small partition
+                    [4, 3]
+
+
+                   Pivot = 4
+
+                  After partition:
+
+                  [3 | 4]
+
+
+                  ✔ Pivot 4 fixed
+
+            ✅ Final sorted array
+            [1, 2, 3, 4, 5, 6, 8]
+            
+    -----------------------------------------------------------------------------------------------------------
+
+       2. MERGE SORT (THE BEST)
+            WHY?  - Guaranteed O(nlogn)
+                  - Stable
+                  - Backbone of external sorting and linked list sorting, Suitable for 'linked list'
+                  - Drawback: Extra Space is needed (Not In Place sorting like 'Quick Sort')
+                  - https://www.youtube.com/watch?v=ak-pz7tS5DE&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=35
+            
+              * Key mental model (Algorithm): MergeSort → “Divide completely, then merge cleanly”
+                1 Divide step (Recursion)
+
+                  - Always divide the array into two halves using mid
+                  - Keep dividing until each sub-array has only one element
+                  - One element is already sorted — no work needed
+
+                 📌 Important: MergeSort does nothing useful until the divide is complete
+
+                2 Merge step (Where sorting actually happens)
+
+                  - Take two sorted sub-arrays (left & right)
+                  - Compare elements one by one
+                  - Copy the smaller element first into the original array
+                  - Continue until one sub-array is exhausted
+                  - Copy the remaining elements as-is (already sorted)
+
+                3 Index mental model (very important)
+
+                  - Left and Right arrays start at index 0
+                  - Original array writing starts at index low
+                  - Merge only happens in the range low → high
+                
+            🧪 Example mental replay (no code)
+
+                  For array:
+
+                 [8, 3, 6, 1]
+
+
+                 MergeSort thinks:
+
+                  Split → [8,3] & [6,1]
+                  Split → [8][3] & [6][1]
+                  Merge → [3,8] & [1,6]
+                  Merge → [1,3,6,8]
+
+     ----------------------------------------------------------------------------------------------------------------
+
+       3. HEAP SORT (THE BEST)
+            WHY?  - Guaranteed O(nlogn)
+                  - In place
+                  - Good when worst case matters 
+            
+            Just Watch this: https://www.youtube.com/watch?v=Q_eia3jC9Ts&t=4s
+
+              * Key mental model (Algorithm): HeapSort → “Use max-heap, extract largest repeatedly”
+                
+     ----------------------------------------------------------------------------------------------------------------
+
+       4. INSERTION SORT (FOUNDATIONAL)
+            WHY?  - Very fast for small or nearly sorted data
+                  - Used internally by real algorithms (hybrid sorts) 
+                  - https://www.youtube.com/watch?v=yCxV0kBpA6M&list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU&index=98
+              * Key mental model (Algorithm): InsertionSort → “Insert element into sorted left part”
+                
+                1. The basic idea is to start with considering left side, first start with just 1 element and think of
+                   this side as the 'sorted sublist'.
+                2. The right side as the 'Unsorted sublist. Now consider the first element on the unsorted list to be the
+                    the element to start comparing with the left sorted sublist.
+                3. So what you have to check? Is the left sublist value greater than the element being compared. Than 
+                   obviously you have to move the element to the left side before the existing left sublist element since
+                   the right sublist element is lesser than the that.
+                4. Keep this comparison logic, until you get the left sublist completely sorted. At the end, this will be the
+                   sorted list.
+                
+                Algorithm:
+
+                    for(int i = 1; i < n ; i++)
+                    {
+                      temp = a[i];
+                      j = i - 1;
+
+                      while(j >= 0 && a[j] > temp)
+                      {
+                        a[j+1] = a[j];
+                        j--;
+                      }
+                      a[j+1] = temp;
+                    }    
+
+                    Time complexity: Best case =  O(n), Worst case = O(n2) 
+                    Space complexity: O(1) [when space usage is just 'Constant']
+                
+
+     ----------------------------------------------------------------------------------------------------------------
+        
+        5.  SELECTION SORT (FOUNDATIONAL)
+            WHY?  - Predictable but inefficient
+                  - Rarely used in real systems 
+                  - Time complexity: O(n2) [both best and worst case]
+                  - Space complexity: O(n)
+                  - https://www.youtube.com/watch?v=9oWd4VJOwr0&list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU&index=99
+
+              * Key mental model (Algorithm): SelectionSort → “Select minimum and fix it”
+
+              
+     
+     ----------------------------------------------------------------------------------------------------------------
+
+         6. BUBBLE SORT (FOUNDATIONAL)
+            WHY?  - Just educational
+                  - Never used in production
+                  - Watch the video: https://www.youtube.com/watch?v=o4bAoo_gFBU
+
+
+              * Key mental model (Algorithm): BubbleSort → “Big values bubble to the end”
+
+                 - You will use two for loops.
+                 - The outer loop will keep the count of number of passes
+                 - The inner loop will consists of adjacent comparisons until the 'largest' element bubbles to the end
+
+              Algorithm:
+
+                  for(int i = 0 ; i < n-1 ; i++)
+                  {
+                      for(int j = 0; j < n-1-i; j++)  [NOTE: you will have 'i' also here, why since with wach pass the last 'i' elements will already be sorted]
+                      {
+                          if(a[j] > a[j+1])
+                          {
+                              temp = a[j];
+                              a[j] = a[j+1];
+                              a[j+1] = temp;
+                          }
+                      }
+                  }
+
+  
+
+3. GREEDY METHOD
+******************************************************************************************************************************************************************
+
+3.1: Introduction
+------------------
+
+* Imagine a problem. You need to travel from Bangalore to Delhi.
+  You have various constraints lets say:
+      1. A constraint like need to reach in less than 12hrs. Than, 'Flight' is a solution. This solution is known
+         has 'Feasible solution'.
+      2. Say a constraint like, you need to reach with minimum cost. 'Train' is the solution. This becomes the 
+         'optimal solution' and is a 'minimization problem'.
+
+* Optimization problem = If a problem needs a minimal/maximum solution to a problem.
+
+* 3 ways to optimize problems:
+      1. Greedy Method
+      2. Dynamic Programming
+      3. Branch and Bound
+
+* What is Greedy method? Think of an example of buying a car. You have set of specifications on the basis of which you are 
+  looking say 'reliability, maintenance, looks' so you with honda. Than within honda, you have a model in mind like you
+  do not want a hatchback/SUV but you want a sedan. Than once, you select a sedan you want the latest model. Notice,
+  how your 'optimizing' the solution based upon your own needs. This may not be true to everyone but you have figured out
+  this is the optimal solution for you. This is called 'Greedy Method'.
+
+
+3.2: Greedy Method : Knapsack problem
+---------------------------------------
+- Fill the knapsack based on calculating the weights to get the highest profit.
+- Job sequencing with deadlines: Execute the jobs in the sequence given until all available slots are filled, once 
+  no slots available discard the remaining jobs, calculate the total profit.
+
+
+3.3: Greedy Method: Optimal Merge Pattern 
+------------------------------------------
+- Bit representation:
+  ASCII Codes = 8 bits
+  Ex:
+    1. Say, alphabet A:65 - 01000001
+                     B:66 - 01000010 & so on.
+- A Bit can be represented only as 0 or 1.
+- In short, always select the two minimum values in a list of values and keep merging.
+
+
+3.4: Greedy Method: Huffman Coding
+-----------------------------------
+- You use ASCII codes to encode and decode values.
+- In Huffman coding, the application is in compressing/decompressing a file. Think of it like when you are sending a file
+  over internet and you want to compress/decompress(reduce the file size). You can think of this approach.
+- Lets take an example: Message = 'BCCABBDDAECCBB....'
+      * Intention here is to reduce the size of the message(i.e compress) and send the message over.
+      * Count the occurence of the characters, you generate the code and calculate.
+
+
+3.5: Greedy Method: Prims and Kruskals Algorithm
+-------------------------------------------------
+- Minimum Cost Spanning Tree
+  --------------------------
+
+What is a Spanning Tree?
+
+A spanning tree of a graph is: A structure that connects all the vertices
+  - Uses exactly (V − 1) edges
+  - Has no cycles
+
+Think of it like:
+
+Connecting all cities with roads so that you can travel between any two cities,
+with no loops, and using the minimum number of roads.
+
+
+What is a Minimum Cost Spanning Tree?
+--------------------------------------
+Now imagine every road has a cost (distance, money, weight).
+
+A Minimum Cost Spanning Tree (MST) is: A spanning tree with the "lowest total cost" among all possible spanning trees.
+
+So:
+- Connect all nodes 
+- No cycles 
+- Use minimum number of edges 
+- Total weight is minimal 
+
+Why do we want MST?
+--------------------
+  - Because it saves resources:
+  - Cheapest network design
+  - Least cost cable layout
+  - Minimum road construction cost
+  - Efficient pipeline / electrical network
+
+🧩 Example (very simple)
+
+Graph:
+
+   (2)
+A ----- B
+ \     /
+ (3) (1)
+   \ /
+    C
+
+
+Edges and costs:
+
+A–B = 2
+
+B–C = 1
+
+A–C = 3
+
+To choose MST:
+
+1️⃣ Connect the cheapest edge first → B–C (cost 1)
+2️⃣ Next cheapest → A–B (cost 2)
+3️⃣ A–C is more expensive (3), skip it because it creates a cycle
+
+So MST edges:
+
+B–C (1)
+
+A–B (2)
+
+Total cost = 3
+
+That’s the MST.
+
+
+MST Properties (easy to remember)
+---------------------------------
+
+- Uses V − 1 edges
+- No cycles
+- Total weight is minimal
+
+If all edge weights are different → MST is unique
+
+⚙️ How to find MST?
+
+There are two famous algorithms:
+
+1. Kruskal’s Algorithm
+
+- Sort edges by weight
+- Pick the smallest edge
+- Add it unless it makes a cycle
+
+2. Prim’s Algorithm
+
+- Start from any vertex
+- Keep adding the cheapest edge that expands the tree
+- Both produce the same MST.
+
+A Minimum Cost Spanning Tree is: A set of edges that connects all vertices with no cycles and minimum total cost.
+
+PRIMS ALGORITHM
+---------------
+- From the given graph, start with selecting the edge with the lowest weight.
+- The idea is here to form a spanning tree with the 'least cost', so you have to keep on picking lowest weights.
+- There is a Condition but: The condition is the next 'lowest weight' edge you pick should be connected to the 
+  previously picked edge.[Important condition]
+
+KRUSKALS ALGORITHM
+------------------ 
+- From the given graph, start with selecting the edge with the lowest weight. 
+- Keep on selecting edges with the lowest weights even if the edges remain disconnected.
+- But when selecting make sure, you are not forming any 'cycles'. That is the rule to keep in mind.
+
+
+3.6: Greedy Method - Dijkstra Algorithm: Single Source Shortest Path
+----------------------------------------------------------------------
+-  If a weighted graph is given, we need to find the shortest path from any vertex to all the other vertices.
+-  This is a minimization problem, thus a Optimization problem. So optimization problems can be solved using Greedy method.
+-  Greedy method states that a problem should be solved in stages taking one step at a time & considering one input a time
+   to get a optimal solution. In greedy method, there are predefined peocedures and we follow the procedures to get the 
+   optimal solution.
+-  In Dijkstra algorithm, selects the vertice with the shorted path & than update the shortest path to other vertices if 
+   possible.
+
+
+4. PRINCIPLE OF OPTIMALITY - DYNAMIC PROGRAMMING INTRODUCTION
+**************************************************************************************************************************************************
+
+
+4.1: Dynamic Programming - Principle of OPTIMALITY
+------------------------------------------------------------------------------------------
+- Greedy method and Dynamic programming are optimization techniques.
+- In greedy method, decision is taken one time that we will do like this and we just follow that procedure.
+- In Dynamic programming, every stage we will take a decision.
+- Principle of optimality states that a problem can be solved by taking sequence of decisions.
+
+
+4.2: Dynamic Programming: All Pairs Shortest Path (Floyd - Warshall)
+------------------------------------------------------------------------------------------
+  - Floyd Warshall is different from Dijkstra. Firstly, Dijkstra is a greedy method of optimizing a problem. It finds
+    shortest path from a 'single source'.
+  - However, Floyd Warshall applies dynamic programming approach of optimizing a problem. You will find the shortest path
+    from 'multiple sources'. Like you will traverse through each node & keep updating the original matrices.
+
+
+4.3: Matrix Chain Multiplication using Dynamic Programming Formula
+-------------------------------------------------------------------
+
+  - c[i,j] = min {c[i,k] + c[k+1,j]+ d(i-1)*d(k)*d(j)}
+
+
+4.4: Dynamic Programming: Bellman Ford Algorithm - Single Source Shortest Path
+-------------------------------------------------------------------------------
+  - In Bellman ford algorithm, you first identify how many number of vertices are there. Say you have 4 vertices: So you will perform a 'operation'
+    which is specified in the next point (n-1) times i.e in this case (4-1 = 3) times
+  - The operation is say like if you have vertices 1,2,3,4. You can start from any vertex. The vertex you start from you assign '0' and all
+    others 'infinity'.
+  - First write down path from all vertices like how they are directed in the form of (x,y) say a 'list'
+  - Now through the entire list you can iterate '3' times (remember the (n-1))
+  - Each time you calculate the minimum distance based on a condition as below:
+    (weight at say vertex 'a') + (distance of vertex 'a' from vertex 'b') < (weight at say vertex 'b')
+            // If the above condition gets satisfied change the weight at vertex 'b' to the value from the left hand side
+  - Keep doing the above until iteration condition < 3 times //you need to be cautious of that condition
+  - The failure of Bellman Ford algorithm is even some times after '3' times you can optimize your problem above but we stop at this. So 
+    not a complete solution.
+
+
+4.6.2: Dynamic Programming: Optimal Binary Search Tree successful and unsuccessful probability
+-----------------------------------------------------------------------------------------------
+  - Basic idea behind Dynamic programming is, there may be many combinations of patterns possible like many. To try and test each of them it will take
+    lot of time.
+    The idea in DP is - you will 'indirectly' try all of them with the use of an established formula to arrive at an optimal solution.
+
+
+5.1: Graph Traversals - BFS(Breadth First Search) & DFS(Depth First Search)
+-----------------------------------------------------------------------------
+BFS:
+----
+  - In BFS, First you select a vertex(you can select any vertex).And than we explore the vertex. So in BFS, we explore a particular vertex and than go to the next vertex to explore.
+  - By exploration, we mean checking all the other connected vertex to this particular vertex
+  - Like you explore the 'breadth' of that vertex (understand the word in this way)
+  - BFS = Level order traversal in binary tree
+  - BFS calculations = use 'Queue'
+
+DFS:
+----
+  - In DFS, once you move from vertex '1' to vertex '2'. You suspend exploration of vertex '1' and start exploring vertex '2'.
+  - Once the vertex '2' exploration is done, you get back to vertex '1' and perform the exploration here.
+  - In this approach, you go in depth of a particular 'vertex' which is presently in your attention.
+  - DFS = PreOrder traversal in binary tree
+  - DFS calculations = use 'Stack'
+
+
+5.2: Graphs - Articulation point and Biconnected Components
+-------------------------------------------------------------
+  - Articulation point is a vertex in a graph, if it is removed graph will split into components.
+
+
+6: Backtracking(Problem solving strategy) Introduction - Brute Force approach
+-------------------------------------------------------------------------------
+  - In Brute force approach, for any given problem you should try all the possible solutions and pick up the desired solution.
+  - Backtracking follows DFS, Branch and bound follows BFS.
+  - State space tree
+
+
+6.4: Backtracking - Hamiltonian cycle
+------------------------------------------
+  - A graph is said to be in a hamiltonian cycle, when you start from a vertex say 'x' and are able to reach
+    back to the vertex 'x' traversing through all the vertexes and forming a cycle.
+  - Think of F1 racer Levis hamilton finishing a race circuit, like starting from point 'a' and
+    coming back to the point 'a' finishing the circuit cycle.
+
+
+7: Branch and Bound(Problem solving strategy) - Introduction
+-------------------------------------------------------------
+  - Branch and bound we use BFS approach, you divide the problem level by level
+  - Branch and bound problem applications - Job sequencing with deadline, 0/1 Knapsack problem,
+                                            Traveling salesman problem
+
+
+8. NP-Hard and NP-Complete problems
+-------------------------------------
+
+  - Polynomial Time
+  ------------------
+    * Linear search = n
+    * Binary search = logn
+    * InsertionSort = n2
+    * MergeSort = nlogn
+    * Matrix Multiplication = n3
+
+  - Exponential Time
+  ------------------
+    * 0/1 knapsack = 2(power of n)
+    * Travelling salesman = 2(power of n)
+    * Sum of subsets = 2(power of n)
+    * Graph coloring = 2(power of n)
+    * Hamiltonian cycle = 2(power of n)
+
+ - P: Deterministic time taking Polynomial
+   NP: Non-deterministic time taking polynomial
+       - This are research oriented concepts in general. Deterministic means you know what would be the output. Non deterministic means we do not
+         know the exact final solution but yet we gather all the research related steps which have been previously performed on this specific 
+         problem.
+   Cookes theorem: P is a Subset of NP. Logically it is like saying the 'Deterministic' solution is a subset of 'Non-Deterministic' approaches, like
+                  one of the research approaches would have given the deterministic solution and there are still many approaches in the non-deterministic
+                  way.
+                  Cookes theorem states that P is approximately equal to NP.
+
+
+8.1: NPHard Graph Problem - Clique Decision Problem 
+-------------------------------------------------------
+   * Complete graph: It is a graph which is complete, means each vertice in the graph is connected to the other vertices in the graph
+         - If n is the number of vertices in the graph
+         - Than a complete graph, satisfies the formula: |V| = n, |E|(no. of edges) = n(n-1)/2
+
+   * Clique decision problem(CDP)
+        - A subgraph of a complete graph is termed has 'Clique decision problem'
+
+
+
+
+ 
+
+
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  
