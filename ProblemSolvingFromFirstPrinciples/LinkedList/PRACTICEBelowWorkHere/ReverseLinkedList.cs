@@ -1,5 +1,5 @@
 //TIME: 45 minutes , Easy:10pts, Med:20pts, Hard:30pts
-using ProductCodingPractice.LinkedList;
+using ProblemSolvingFromFirstPrinciples.LinkedList;
 
 public class Set1Problem1ReverseLinkedList
 {

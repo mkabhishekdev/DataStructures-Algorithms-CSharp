@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 using System.Linq;
 
 /*
@@ -14,7 +14,7 @@ APPROACH I CAME UP WITH:
 4. If not, Enqueue the next left,right sub tree nodes
 */
 
-namespace ProductCodingPractice.Trees.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork
 {
     public class SameTree
     {

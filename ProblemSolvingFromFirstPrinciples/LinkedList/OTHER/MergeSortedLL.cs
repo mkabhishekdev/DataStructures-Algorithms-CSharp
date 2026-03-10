@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-using ProductCodingPractice.LinkedList;
+using ProblemSolvingFromFirstPrinciples.LinkedList;
 
-namespace ProductCodingPractice.LinkedList.SET1
+namespace ProblemSolvingFromFirstPrinciples.LinkedList.SET1
 {
     public class MergeSortedLL
     {
