@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
 namespace ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork
 {

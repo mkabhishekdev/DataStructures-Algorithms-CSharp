@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
-namespace ProductCodingPractice.Trees.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork
 {
     /*
     REFERRED APPROACH:

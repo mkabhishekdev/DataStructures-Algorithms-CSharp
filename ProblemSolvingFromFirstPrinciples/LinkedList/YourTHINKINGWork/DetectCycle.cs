@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.LinkedList.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
 {
     /*
     APPROACH I CAME UP WITH::

@@ -7,8 +7,6 @@ USE ONLY GITHUB CLI(Command line interface)
    - How to create branch from GitCLI?
        - make sure you are in the main parent branch & pull the latest
              git checkout -b [branch-name] main
-             git push -u origin [branch-name]
-             gh repo view --web //command to open the web-view
 
     - To check branch: git branch
       To check status: git status
@@ -18,6 +16,25 @@ USE ONLY GITHUB CLI(Command line interface)
 **********************************************************************************************************************************************
 
 2. 
+FLOW
+------
+1. Regularly create a branch based on feature,bug,chore
+2. work on it commit, commit.....
+3. push it to main
+4. create a PR
+5. Decide whether to merge, rebase or squash based on the situation
+6. Delete the PR after merge
+
+IN LOCAL:
+-------------
+To maintain repo hygiene:
+1. Delete the branches which are not used and deleted in github web
+2. git checkout main, git pull origin main// be in the main
+3. git branch --merged main // to check if the branch is merged to main
+4. git branch -D <branch-name>
+5. git push origin --delete <branch-name> // delete the branch on GitHub(remote)
+6. git fetch --prune (clean stale references locally)
+
 
 merge  → combine histories (More common in enterprise/conservative companies - more safer)
 rebase → move commits

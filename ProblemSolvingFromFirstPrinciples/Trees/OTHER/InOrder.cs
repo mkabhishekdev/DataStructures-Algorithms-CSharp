@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
 
-namespace ProductFaangCodingPractice.BinaryTrees.SET1
+namespace ProblemSolvingFromFirstPrinciples.Trees.SET1
 {
     public class InOrder
     {

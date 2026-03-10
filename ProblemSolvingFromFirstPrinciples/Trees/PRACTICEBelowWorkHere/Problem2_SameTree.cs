@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
 /*
 APPROACH I CAME UP WITH:
@@ -13,7 +13,7 @@ APPROACH I CAME UP WITH:
 4. If not, Enqueue the next left,right sub tree nodes
 */
 
-namespace ProductCodingPractice.Trees.PRACTICE1
+namespace ProblemSolvingFromFirstPrinciples.Trees.PRACTICE1
 {
     public class Problem2_SameTree
     {

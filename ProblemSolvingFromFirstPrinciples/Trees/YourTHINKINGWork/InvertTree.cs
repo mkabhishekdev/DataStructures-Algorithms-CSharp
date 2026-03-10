@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
-namespace ProductCodingPractice.Trees.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork
 {
     public class InvertTree
     {

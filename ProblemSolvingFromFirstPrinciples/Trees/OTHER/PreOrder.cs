@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.BinaryTrees.SET1
+namespace ProblemSolvingFromFirstPrinciples.Trees.SET1
 {
     public class PreOrder
     {

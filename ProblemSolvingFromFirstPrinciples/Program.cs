@@ -1,21 +1,23 @@
 ﻿using System;
 using ProblemSolvingFromFirstPrinciples.InterestingProblems;
 using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
+using ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork;
 
 class Program
 {
     static void Main(string[] args)
     {
-        LevelOrder lo = new LevelOrder();
+        CourseSchedule_KahnesAlgorithm_TopologicalSort cs = new CourseSchedule_KahnesAlgorithm_TopologicalSort();
 
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
+        int numCourses = 2;
+        int[][] prerequisites = new int[][]
+        {
+            new int[] {1,0}
+        };
 
-        Console.WriteLine(lo.LevelOrderImpl(root));
+        Console.WriteLine(cs.CanFinish(numCourses, prerequisites));
+        
 
         
     }

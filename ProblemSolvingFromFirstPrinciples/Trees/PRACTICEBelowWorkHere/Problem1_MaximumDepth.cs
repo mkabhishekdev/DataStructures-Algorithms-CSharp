@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections;
-using ProductCodingPractice.BinaryTrees;
+using ProblemSolvingFromFirstPrinciples.Trees;
 
 public class Problem1_MaximumDepth
 {
