@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.Strings.SET1
+namespace ProblemSolvingFromFirstPrinciples.Strings
 {
     public class LongestCommonPrefix
     {

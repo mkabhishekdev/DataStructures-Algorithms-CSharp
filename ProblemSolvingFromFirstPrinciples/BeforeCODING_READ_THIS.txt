@@ -21,7 +21,7 @@ PURPOSE: The point being irrespective of you seing the output, first you need to
         Ex:
 
         /*
-       REFERRED APPROACH/APPROACH I CAME UP WITH(THINK/CODE - 45mins):
+       REFERRED APPROACH/MY APPROACH (THINK/CODE - 45mins):
 
 
 

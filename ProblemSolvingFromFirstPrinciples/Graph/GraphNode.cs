@@ -5,24 +5,24 @@ using System.Threading.Tasks;
 
 namespace ProblemSolvingFromFirstPrinciples.Graph
 {
-    public class Node
+    public class GraphNode
     {
         public int val;
-        public IList<Node> neighbors;
+        public IList<GraphNode> neighbors;
 
-        public Node()
+        public GraphNode()
         {
             val = 0;
-            neighbors = new List<Node>();
+            neighbors = new List<GraphNode>();
         }
         
-        public Node(int _val)
+        public GraphNode(int _val)
         {
             val = _val;
-            neighbors = new List<Node>();
+            neighbors = new List<GraphNode>();
         }
 
-        public Node(int _val, List<Node> _neighbors)
+        public GraphNode(int _val, List<GraphNode> _neighbors)
         {
             val = _val;
             neighbors = _neighbors;
