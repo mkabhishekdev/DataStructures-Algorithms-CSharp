@@ -22,7 +22,7 @@ Time Complexity: O(n2) Why? - The store list below groes on large inputs, each c
 Space Complexity: O(n)
 */
 
-namespace ProductCodingPractice.Strings.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork
 {
     public class LongestSubstring
     {

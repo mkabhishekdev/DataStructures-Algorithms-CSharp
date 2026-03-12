@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.Strings.SET1
+namespace ProblemSolvingFromFirstPrinciples.Strings
 {
     public class ReverseWordsInString
     {

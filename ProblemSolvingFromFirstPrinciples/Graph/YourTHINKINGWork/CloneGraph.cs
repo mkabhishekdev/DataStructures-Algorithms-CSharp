@@ -280,9 +280,9 @@ namespace ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork
 {
     public class CloneGraph
     {
-        Dictionary<Node,Node> map = new Dictionary<Node, Node>();
+        Dictionary<GraphNode,GraphNode> map = new Dictionary<GraphNode, GraphNode>();
 
-        public Node CloneGraphImpl(Node node)
+        public GraphNode CloneGraphImpl(GraphNode node)
         {
 
             if(node == null)
@@ -290,7 +290,7 @@ namespace ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork
                 return null;
             }
 
-            Node curr = new Node(node.val);
+            GraphNode curr = new GraphNode(node.val);
             map.Add(node, curr);
 
             foreach(var neighborNode in node.neighbors)

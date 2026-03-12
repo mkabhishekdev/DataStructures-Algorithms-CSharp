@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.AlgorithmCoding
+namespace ProblemSolvingFromFirstPrinciples.AlgorithmCoding
 {
     public class ImplementBubbleSort
     {

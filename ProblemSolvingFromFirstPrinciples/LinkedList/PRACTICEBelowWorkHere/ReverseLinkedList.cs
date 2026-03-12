@@ -1,7 +1,7 @@
 //TIME: 45 minutes , Easy:10pts, Med:20pts, Hard:30pts
 using ProblemSolvingFromFirstPrinciples.LinkedList;
 
-public class Set1Problem1ReverseLinkedList
+public class ReverseLinkedList
 {
     public ListNode ReverseList(ListNode head)
     {

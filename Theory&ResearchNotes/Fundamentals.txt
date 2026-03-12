@@ -256,9 +256,93 @@ Because when your program starts, no objects exist yet, the runtime (CLR) must b
 “Main is static because "IT'S THE PROGRAMS ENTRY DOOR" — it must open before anything inside can be accessed.”
 
 ******************************************************************************************
+What happens if the class is NOT static?
+
+Your current helper:
+
+public class BuildList
+{
+    public static ListNode BuildList(int[] arr) { ... }
+    public static void PrintList(ListNode head) { ... }
+}
+
+You would call it like this:
+
+ListNode list = BuildList.BuildList(new int[]{1,2,4});
+
+Notice something important:
+
+You never create an object of BuildList.
+
+You never do:
+
+BuildList obj = new BuildList();
+
+because the class is just a container of utility methods.
+
+Why make the class static then?
+
+If we write:
+
+public static class BuildList
+
+we are telling C#:
+
+"This class will never have objects.
+It only contains utility methods."
+
+So C# enforces this rule.
+
+If someone tries:
+
+BuildList obj = new BuildList();
+
+Compiler error.
+
+Simple Real-Life Analogy
+
+Think of:
+
+Math.Min()
+Math.Max()
+Math.Sqrt()
+
+You don't do:
+
+Math math = new Math();
+math.Min();
+
+Instead:
+
+Math.Min(3,5);
+
+Because Math is a static utility class.
+
+Your helper is exactly the same idea.
+
+What static really means (simple definition)
+
+static means:
+
+The method or class belongs to the class itself, not to an object.
+
+So you call it like this:
+
+ClassName.MethodName()
+
+Example:
+
+LinkedListHelper.BuildList(...)
+
+instead of
+
+LinkedListHelper obj = new LinkedListHelper();
+obj.BuildList(...)
+
+
 
 8. INSTANCE VARIABLE VS STATIC VARIABLE VS LOCAL VARIABLE VS CONSTANT VARIABLE ?
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 ✅1. Instance Variable (Field)
 "Belongs to each object (instance) of a class."
@@ -1201,3 +1285,6 @@ This is significantly heavier than Array.Sort.
 👉 In enterprise apps → LINQ is completely fine
 
 ***************************************************************************************************************************************
+
+17. int?[] input // '?' is to handle 'null' values remember this
+    Ex: [3,9,null,32,null,15,7]

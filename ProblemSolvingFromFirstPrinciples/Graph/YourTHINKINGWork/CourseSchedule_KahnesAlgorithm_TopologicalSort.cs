@@ -88,3 +88,15 @@ namespace ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork
         
 
     */
+
+    /*
+      CourseSchedule_KahnesAlgorithm_TopologicalSort cs = new CourseSchedule_KahnesAlgorithm_TopologicalSort();
+
+        int numCourses = 2;
+        int[][] prerequisites = new int[][]
+        {
+            new int[] {1,0}
+        };
+
+        Console.WriteLine(cs.CanFinish(numCourses, prerequisites));
+    */

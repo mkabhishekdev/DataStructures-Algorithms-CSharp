@@ -1,0 +1,19 @@
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+
+global using ProblemSolvingFromFirstPrinciples.AlgorithmCoding;
+global using ProblemSolvingFromFirstPrinciples.Arrays.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.BinarySearch;
+global using ProblemSolvingFromFirstPrinciples.BitManipulation.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.DynamicProgramming.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.Heap;
+global using ProblemSolvingFromFirstPrinciples.InterestingProblems;
+global using ProblemSolvingFromFirstPrinciples.Interval.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.LinkedList;
+global using ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.Trees;
+global using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
+

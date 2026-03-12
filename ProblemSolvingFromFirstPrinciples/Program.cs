@@ -1,24 +1,16 @@
-﻿using System;
-using ProblemSolvingFromFirstPrinciples.InterestingProblems;
-using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
-using ProblemSolvingFromFirstPrinciples.Trees;
-using ProblemSolvingFromFirstPrinciples.Graph.YourTHINKINGWork;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
-        CourseSchedule_KahnesAlgorithm_TopologicalSort cs = new CourseSchedule_KahnesAlgorithm_TopologicalSort();
-
-        int numCourses = 2;
-        int[][] prerequisites = new int[][]
-        {
-            new int[] {1,0}
-        };
-
-        Console.WriteLine(cs.CanFinish(numCourses, prerequisites));
+        MergeTwoSortedList mtsl = new MergeTwoSortedList();
         
+        int[] input1 = {1,2,4};
+        int[] input2 = {1,3,4};
 
+        ListNode inputList1 = LinkedListHelper.BuildList(input1);
+        ListNode inputList2 = LinkedListHelper.BuildList(input2);
         
+        mtsl.MergeTwoLists(inputList1, inputList2);
+
     }
 }

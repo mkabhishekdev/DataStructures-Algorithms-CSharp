@@ -16,8 +16,6 @@ namespace ProblemSolvingFromFirstPrinciples.Trees
         public TreeNode(int x)
         {
             val = x;
-            left = null;
-            right = null;
         }
     }
 }
