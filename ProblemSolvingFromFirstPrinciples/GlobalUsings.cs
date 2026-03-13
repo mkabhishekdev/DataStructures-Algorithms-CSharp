@@ -16,4 +16,5 @@ global using ProblemSolvingFromFirstPrinciples.LinkedList;
 global using ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork;
 global using ProblemSolvingFromFirstPrinciples.Trees;
 global using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.Matrix;
 

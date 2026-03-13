@@ -2,38 +2,69 @@
 namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
 {
       /*
-       REFERRED APPROACH/MY APPROACH (THINK/CODE - 45mins):
-       1. Handle base case, if any of the list are null return the other and if both are null return a null
-       2. Declare a result of the list type. Check which list1 or list2 head has greater value, start with saving the minimal
-          among those in the result list
-       3. Keep comparing both the lists whichever is having lesser value save that in the result.
-       4. Have two index pointer variables(firstListIndex, secondListIndex). This is to keep a track of next set of values to
-          compare
-       5. Iterate till the end of both the list
+       REFERRED APPROACH:
+       1. Create a Dummy linkedlist
+       2. Than assign a Tail linkedList with Dummy. In memory the dummy and tail would be linked, tail
+          keeps on moving forward and also in the memory the dummy will also be building since it is assigned
+          with tail
+        3. Based on the condition, keep moving the tail pointer
         */
 
         /*
         Any Optimization question while thinking through?/Any already learnt pattern you can remember?
-
+        Need to use dummy/tail index movement idea for these kind of linked list problems
         */
 
         /*
-        Time Complexity:
-        Space Complexity:
+        Time Complexity: O(n + m) n and m are size of the lists
+        Space Complexity: O(n)
         */
 
     public class MergeTwoSortedList
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-         
+            ListNode dummy = new ListNode(0);
+            ListNode tail = dummy;
+
+            while((list1 != null) && (list2 != null))
+            {
+                if(list1.val < list2.val)
+                {
+                    tail.next = list1;
+                    list1 = list1.next;
+                }
+                else
+                {
+                    tail.next = list2;
+                    list2 = list2.next;
+                }
+                tail = tail.next; // when the call goes for the next while condition, the tail has to be sitting at present
+            }
+
+            if(list1 == null)
+            {
+                tail.next = list2;
+            }
+            if(list2 == null)
+            {
+                tail.next = list1;
+            }
+
+            return dummy.next;
+
         }
     }
 }
 
      // If all test cases not clearing or You did not arrive at the solution on own, PRACTICE DEBUGGING MUST
-        /* FAILED APPROACH & WHY?
-
+        /* FAILED APPROACH & WHY? (Thinking aproach was right, about moving the index pointers
+         But the core idea is to use the dummy/tail pointer technique)
+  MY APPROACH (THINK/CODE - 45mins):
+       1. Keep a result list
+       2. If l1 == l2, store both l1 and l2 in result move l1 = l1.next and l2 = l2.next
+       3. If l1 < l2 -> store l1 in result and move only l1 = l1.next
+       4. if l1 > l2 -> store l2 in result and move only l2 = l2.next
        
         */ 
         /* CODE:
