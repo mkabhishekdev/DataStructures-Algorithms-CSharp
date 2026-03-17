@@ -46,12 +46,12 @@ namespace ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork
                         minLen = right - left + 1;
                         minStart = left;
                     }
+                    mapS[s[left]]--;
+                    left++;
                 } 
-                
-                mapS[s[left++]]--;
             }
             
-            return minLen == int.MaxValue ? "" : s.Substring(minStart, minStart + minLen);
+            return minLen == int.MaxValue ? "" : s.Substring(minStart, minLen);
 
         }
 
