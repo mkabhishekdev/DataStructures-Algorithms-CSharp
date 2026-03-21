@@ -2,9 +2,9 @@
 {
     static void Main(string[] args)
     {
-        FindMin fm = new FindMin();
-        int[] input = {2,1};
+        LongestIncSubseq lis = new LongestIncSubseq();
+        int[] input = {10,9,2,5,3,7,101,18};
 
-        Console.WriteLine(fm.FindMinImpl(input));
+        Console.WriteLine(lis.LongestIncSubseqImpl(input));
     }
 }
