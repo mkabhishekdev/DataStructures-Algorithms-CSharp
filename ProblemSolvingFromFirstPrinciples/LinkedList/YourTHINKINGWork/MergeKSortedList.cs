@@ -9,9 +9,14 @@ namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
     {
        /*
        MY APPROACH (THINK/CODE):
-         1. iterate using a for loop, access each of the elements present
-         2. compare the next with other elements and pick whichever is lesser and point to next
-         3. save the result in a listnode
+         1. pick the smallest element from the list of listNodes
+         2. make it the head of a listnode called result which will be the result node holding all values
+            of the result
+         3. remove the list from the list of listNode entries once you had them into the result
+         4. next, keep finding the minimum element and also its address
+         5. in the result list, keep pointing the next pointer to the address of the minimum element and value to the 
+            minimum element found
+         6. return the result list
         */
 
         /*
@@ -20,12 +25,42 @@ namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
         */
 
         /*
-        Time Complexity:
-        Space Complexity:
+        Time Complexity: O(N * k) , N: total iterations and each iteration: O(k)
+        Space Complexity: O(N)
         */
         public ListNode MergeKLists(ListNode[] lists)
         {
-            
+            ListNode result = new ListNode(0); // create dummy node
+            ListNode current = result;
+
+            if(lists == null)
+            {
+                return result;
+            }
+
+
+            while(lists.Any(list => list != null))
+            {
+                int min = int.MaxValue;
+                int minListIndex = -1;
+
+                for(int i = 0; i < lists.Length; i++)
+                {
+                    if(lists[i] != null && lists[i].val < min)
+                    {
+                        min = lists[i].val;
+                        minListIndex = i;
+                    }
+                }
+
+                current.next = new ListNode(min);
+                current = current.next; 
+
+                lists[minListIndex] = lists[minListIndex].next;
+
+            }
+
+            return result.next;
         }
     }
 }
