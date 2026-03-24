@@ -2,9 +2,12 @@
 {
     static void Main(string[] args)
     {
-        LongestIncSubseq lis = new LongestIncSubseq();
-        int[] input = {10,9,2,5,3,7,101,18};
+        RemoveNthNodeFromEnd rnn = new RemoveNthNodeFromEnd();
 
-        Console.WriteLine(lis.LongestIncSubseqImpl(input));
+        ListNode inputNode = LinkedListHelper.BuildList(new int[]{1,2,3,4,5});
+
+        LinkedListHelper.PrintList(inputNode);
+
+        rnn.RemoveNthNodeFromEndImpl(inputNode, 2);
     }
 }
