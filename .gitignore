@@ -11,3 +11,4 @@ artifacts/
 publish/
 .DS_Store
 Thumbs.db
+*.local.txt

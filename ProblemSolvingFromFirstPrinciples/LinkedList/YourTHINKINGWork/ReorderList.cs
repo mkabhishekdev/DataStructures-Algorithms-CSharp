@@ -40,7 +40,7 @@ namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
             ListNode fast = head;
 
             // tail of first half
-            ListNode prev;
+            ListNode prev = null;
 
             // This standard logic will always get us into the middle
             while(fast != null && fast.next != null)
@@ -52,7 +52,7 @@ namespace ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork
             
             prev.next = null;
     
-            ListNode l2 = ReverseLL(l2);
+            ListNode l2 = ReverseLL(slow);
             
             Merge(l1, l2);
         }
