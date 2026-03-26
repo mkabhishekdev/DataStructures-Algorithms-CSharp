@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.AlgorithmCoding
+namespace ProblemSolvingFromFirstPrinciples.PatternBasedRecognition.TreeTraversal
 {
-    public class ImplementMergeSort
+    public class SameTree
     {
         
     }
 }
-
-
