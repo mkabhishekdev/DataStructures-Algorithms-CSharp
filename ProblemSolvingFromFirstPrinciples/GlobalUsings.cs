@@ -14,6 +14,7 @@ global using ProblemSolvingFromFirstPrinciples.Interval.YourTHINKINGWork;
 global using ProblemSolvingFromFirstPrinciples.LinkedList.YourTHINKINGWork;
 global using ProblemSolvingFromFirstPrinciples.LinkedList;
 global using ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork;
+global using ProblemSolvingFromFirstPrinciples.Strings.OptimizedWay;
 global using ProblemSolvingFromFirstPrinciples.Trees;
 global using ProblemSolvingFromFirstPrinciples.Trees.YourTHINKINGWork;
 global using ProblemSolvingFromFirstPrinciples.Matrix;

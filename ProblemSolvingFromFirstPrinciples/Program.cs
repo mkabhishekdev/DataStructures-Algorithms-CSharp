@@ -2,7 +2,8 @@
 {
     static void Main(string[] args)
     {
-        LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        lps.LongestPalindrome("cbbd");
+        LongestPalindromeOptimized lpo = new LongestPalindromeOptimized();
+        lpo.LongestPalindrome("myracecarishere");
+    
     }
 }
