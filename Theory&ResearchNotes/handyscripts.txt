@@ -1,0 +1,12 @@
+1. How to download youtube playlists?
+   Use 'yt-dlp'
+       * First check if you have the latest version of yt-dlp using: yt-dlp --version on terminal
+       * If you don't have latest version do the below in the terminal:
+           curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o yt-dlp
+           chmod a+rx yt-dlp
+           sudo mv yt-dlp /usr/local/bin/
+       * than do a yt-dlp --version (version should have updated)
+       * copy the URL of the playlist(it should be the playlist) and so the below
+           yt-dlp -f best -o "%(playlist_index)s - %(title)s.%(ext)s" "<PLAYLIST_URL>"
+
+************************************************************************************************************
