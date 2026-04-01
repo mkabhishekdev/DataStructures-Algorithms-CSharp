@@ -1288,3 +1288,42 @@ This is significantly heavier than Array.Sort.
 
 17. int?[] input // '?' is to handle 'null' values remember this
     Ex: [3,9,null,32,null,15,7]
+
+***************************************************************************************************************
+
+18.
+🔢 Integer (int) limits (32-bit)
+int.MinValue =  -2,147,483,648
+int.MaxValue =   2,147,483,647
+
+🔢 Long (long) limits (64-bit)
+long.MinValue =  -9,223,372,036,854,775,808
+long.MaxValue =   9,223,372,036,854,775,807
+
+Side-by-side comparison
+Type	  Min Value	       Max Value
+int	    -2.1 billion	   +2.1 billion
+long	-9.2 quintillion   +9.2 quintillion
+
+What this means (super simple)
+long range is WAY bigger than int
+So:
+long.MinValue  <  int.MinValue
+long.MaxValue  >  int.MaxValue
+
+Why this matters for BST
+
+If your node has:
+node.val = -2,147,483,648 (int.MinValue)
+
+Then:
+Using int.MinValue as boundary → ❌ collision
+Using long.MinValue → ✅ safe (much smaller number exists)
+
+Quick memory trick
+int → ~2 billion range
+long → insanely large (19 digits)
+
+👉 When boundaries are involved → use long
+
+***********************************************************************************
