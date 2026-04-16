@@ -20,14 +20,25 @@ namespace ProductCodingPractice.Arrays.YourTHINKINGWork
     */
 
     /*
-    time complexity:
-    space complexity:
+    time complexity: O(n)
+    space complexity: O(1)
     */
     public class RotateSortedArray
     {
         public int Search(int[] nums, int target)
         {
-            for(int i = 0; i < nums.Length; i++)
+            if(nums.Length == 1)
+            {
+                if(target == nums[0])
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            for(int i = 0; i < nums.Length - 1; i++)
             {
                 if(nums[i] > nums[i+1])
                 {
@@ -49,6 +60,14 @@ namespace ProductCodingPractice.Arrays.YourTHINKINGWork
                     {
                         return -1;
                     }
+                }
+                else
+                {
+                    if(nums[i] == target)
+                    {
+                        return i;
+                    }
+                 
                 }
             }
             return -1;
