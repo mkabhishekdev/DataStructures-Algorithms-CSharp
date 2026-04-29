@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProblemSolvingFromFirstPrinciples.Arrays.YourTHINKINGWork
 {
-    /* My Approach
+    /* Referred Approach
     1. start with left = 0 and right = height - 1
     2. idea is to keep shrinking the left, right and finding the areas and 
        picking the max area out of them
