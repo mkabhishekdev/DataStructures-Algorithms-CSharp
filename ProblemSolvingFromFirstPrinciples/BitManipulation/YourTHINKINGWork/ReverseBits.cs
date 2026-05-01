@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.BitManipulation.YourTHINKINGWork
 {
     /* My Approach
     1. get the binary representation of n
