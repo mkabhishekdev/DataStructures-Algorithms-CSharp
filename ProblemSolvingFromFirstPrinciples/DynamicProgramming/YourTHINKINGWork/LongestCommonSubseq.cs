@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.DynamicProgramming.YourTHINKINGWork
 {
     /* Referred  approach
     1. Use Dynamic programming
