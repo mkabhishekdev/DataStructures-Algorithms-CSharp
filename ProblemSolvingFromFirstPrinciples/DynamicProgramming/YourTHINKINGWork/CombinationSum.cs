@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.DynamicProgramming.YourTHINKINGWork
 {
     /* Referred approach
     1. you need to access each index, apply recursion on that
