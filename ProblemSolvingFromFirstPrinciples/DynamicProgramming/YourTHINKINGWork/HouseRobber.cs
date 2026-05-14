@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.DynamicProgramming.YourTHINKINGWork
 {
     /* Referred approach
     1. use memoization, think in terms of each house. How to use the values from 
