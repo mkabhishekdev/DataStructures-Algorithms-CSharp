@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductCodingPractice.DynamicProgramming.YourTHINKINGWork
+namespace ProblemSolvingFromFirstPrinciples.Interval.YourTHINKINGWork
 {
     /* Referred Approach
     1. So think of it like to reach the bottom right positon for the robot,
