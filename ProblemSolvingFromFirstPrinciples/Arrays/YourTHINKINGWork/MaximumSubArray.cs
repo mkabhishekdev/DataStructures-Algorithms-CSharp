@@ -7,8 +7,8 @@ namespace ProblemSolvingFromFirstPrinciples.Arrays.YourTHINKINGWork
 {
    /*
    REFERRED APPROACH
-   1. This is the approach called 'Kadanes Algorithm'
-   2. You start with the firstelement assigning it the currentSum and maxSum
+   1. This is the approach called 'Kadanes Algorithm' (i.e uses DP - Memoization technique)
+   2. You start with the first element assigning it the currentSum and maxSum
    3. Idea is to start from the index=1 and keep updating currentSum and maxSum
    4. currentSum will be the max value between the present nums[index] or the currentSum+nums[index].
       You need to store the max at each point

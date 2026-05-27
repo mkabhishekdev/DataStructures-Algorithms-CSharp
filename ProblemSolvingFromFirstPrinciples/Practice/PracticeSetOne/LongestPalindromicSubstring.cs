@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace ProblemSolvingFromFirstPrinciples.Strings.YourTHINKINGWork
+namespace InterviewLabCodeRepo.Interview
 {
     public class LongestPalindromicSubstring
     {
