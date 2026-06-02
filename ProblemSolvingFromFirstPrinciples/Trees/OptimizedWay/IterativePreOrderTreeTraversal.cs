@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-namespace ProblemSolvingFromFirstPrinciples.Practice.One
+namespace ProblemSolvingFromFirstPrinciples.Trees
 {
     /* My approach (PREORDER: ROOT -> LEFT -> RIGHT)
      1. keep a stack

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
 {
     public class TwoSum
     {

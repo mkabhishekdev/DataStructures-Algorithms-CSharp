@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.Practice.One
+namespace ProblemSolvingFromFirstPrinciples.AlgorithmCoding
 {
     /* My approach
     1. pick the pivot, partition, pivot gets sorted
