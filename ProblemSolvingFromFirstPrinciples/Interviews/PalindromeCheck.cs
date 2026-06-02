@@ -3,42 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
+//"A man, a plan, a canal: Panama"
+namespace ProblemSolvingFromFirstPrinciples.Interviews
 {
-    /* My approach
-    1. use two pointer approach to iterate over the string
-    2. check if s[i] = s[j] -> i++, j--
-    3. if the condition breaks at any -> return false
-    4. when i crosses j, it means we have covered the entire string
-       return true
-    */
-
-    /* any optimization later
-
-    */
-
-    /* time complexity: O(n)
-    space complexity: O(1)
-    */
     public class PalindromeCheck
     {
         public bool PalindromeImpl(string input)
         {
-            if(String.IsNullOrEmpty(input))
+            if(string.IsNullOrEmpty(input))
             {
-                return false;
+                return true;
             }
-            
-            if(input.Length <= 1)
+
+            if(input.Length == 1)
             {
                 return true;
             }
 
             int i = 0, j = input.Length - 1;
-        
-    
+
             while(i < j)
             {
+                /* you need to use while -> cases say ': P', when a space after colon
+                involved you need to skip 2 char here, so using 'if' is wrong   */
                 while((i < j) && (!char.IsLetterOrDigit(input[i])))
                 {
                     i++;
@@ -47,11 +34,12 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
                 {
                     j--;
                 }
-                if(char.ToLower(input[i]) != char.ToLower(input[j]))
+                /* ToLowerInvariant() converts a string/character to lowercase using the 
+                culture independent(invariant) rules */
+                if(char.ToLowerInvariant(input[i]) != char.ToLowerInvariant(input[j]))
                 {
                     return false;
                 }
-
                 i++;
                 j--;
             }

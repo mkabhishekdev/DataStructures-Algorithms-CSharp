@@ -17,7 +17,7 @@ namespace ProblemSolvingFromFirstPrinciples.Trees
 
         public bool ContainsKey(char ch)
         {
-            return (links[ch - 'a'] != NULL);
+            return (links[ch - 'a'] != null);
         }
 
         public void put(char ch, TrieNode node)

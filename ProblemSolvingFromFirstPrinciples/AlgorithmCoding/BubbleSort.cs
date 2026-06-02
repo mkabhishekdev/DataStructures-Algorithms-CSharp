@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.Practice.One
+namespace ProblemSolvingFromFirstPrinciples.AlgorithmCoding
 {
     /* My Approach
      1. keep comparing the adjacent elements and move the element to the last by comparison

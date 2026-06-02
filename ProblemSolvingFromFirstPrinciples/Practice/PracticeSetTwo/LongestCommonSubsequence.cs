@@ -3,26 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
+namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
 {
-    /* My approach
-    1. will use dp- memoization
-    2. we need to keep saving the previous
-   result, and add it to our existing
-   result
-    3. implement code with this idea
-    */
-
-    /* any optimization later
-
-    */
-
-    /* time complexity:
-    space complexity:
-    */
     public class LongestCommonSubsequence
     {
-        public int LongestCommonSubImpl(string text1, string text2)
+        public int LongestSubsequenceImpl(string text1, string text2)
         {
             int[][] dp = new int[text1.Length+1][];
 
@@ -30,6 +15,8 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
             {
                 dp[i] = new int[text2.Length+1];
             }
+
+            dp[0][0] = 0;
             
             for(int i = 1; i <= text1.Length; i++)
             {
@@ -41,11 +28,11 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
                     }
                     else
                     {
-                        dp[i][j] = Math.Max(dp[i-1][j], dp[i][j-1]);
+                        dp[i][j] = Math.Max(dp[i-1][j],dp[i][j-1]);
                     }
                 }
             }
-
+            
             return dp[text1.Length][text2.Length];
         }
     }

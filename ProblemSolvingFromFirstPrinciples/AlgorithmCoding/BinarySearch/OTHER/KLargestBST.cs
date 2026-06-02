@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.BinarySearch
+namespace ProblemSolvingFromFirstPrinciples.AlgorithmCoding.BinarySearch
 {
     public class KLargestBST
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProblemSolvingFromFirstPrinciples.Practice.One
+namespace ProblemSolvingFromFirstPrinciples.Trees
 {
     /* My approach (INORDER: LEFT -> ROOT -> RIGHT)
      1. use a stack and also a current pointer is needed since backtracking is involved

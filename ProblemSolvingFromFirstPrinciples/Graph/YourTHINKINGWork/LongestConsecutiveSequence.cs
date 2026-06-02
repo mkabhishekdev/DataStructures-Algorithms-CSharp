@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
-namespace InterviewLabCodeRepo.Interview
+namespace ProblemSolvingFromFirstPrinciples.Graph
 {
     /* Referred approach
     1. use a Dictionary to store the num from nums as key and initially set the value to false for all

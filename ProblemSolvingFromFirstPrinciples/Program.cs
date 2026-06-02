@@ -2,12 +2,10 @@
 {
     static void Main(string[] args)
     {
-        BuildTree bt = new BuildTree();
+        BuySellStock bss = new BuySellStock();
+        int[] input = {7,1,5,3,6,4};
 
-        int[] preorder = new int[]{3,9,20,15,7};
-        int[] inorder = new int[]{9,3,15,20,7};
-
-        TreeBuilderHelper.PrintTree(bt.BuildTreeImpl(preorder,inorder));
+        Console.WriteLine(bss.BuySell(input));
     
     }
 }
