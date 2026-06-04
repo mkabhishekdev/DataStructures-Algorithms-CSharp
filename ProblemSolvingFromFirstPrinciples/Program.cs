@@ -2,10 +2,11 @@
 {
     static void Main(string[] args)
     {
-        BuySellStock bss = new BuySellStock();
-        int[] input = {7,1,5,3,6,4};
+      
+        JumpGameSetTwo jg = new JumpGameSetTwo();
+        int[] input = {3,2,1,0,4};
 
-        Console.WriteLine(bss.BuySell(input));
+        Console.WriteLine(jg.JumpGameImpl(input));
     
     }
 }
