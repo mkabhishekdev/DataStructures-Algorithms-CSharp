@@ -6,9 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{63B76700-06F6-4C59-95B5-E0D7B1680314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCodingPractice", "ProductCodingPractice\ProductCodingPractice.csproj", "{A30CFF41-1C95-4EAB-8BD3-D7F0188E4A39}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestYourSkill", "TestYourSkill\TestYourSkill.csproj", "{1B1CE2FE-751E-42CA-8470-90D3958B54D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemSolvingFromFirstPrinciples", "ProblemSolvingFromFirstPrinciples\ProblemSolvingFromFirstPrinciples.csproj", "{A30CFF41-1C95-4EAB-8BD3-D7F0188E4A39}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
