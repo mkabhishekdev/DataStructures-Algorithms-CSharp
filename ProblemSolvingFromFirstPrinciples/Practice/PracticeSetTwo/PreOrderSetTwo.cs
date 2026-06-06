@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-global using ProblemSolvingFromFirstPrinciples.Trees;
 
 namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
 {
@@ -10,10 +9,7 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
     {
         public List<int> PreOrderImpl(TreeNode root)
         {
-            if(root == null)
-            {
-                return new TreeNode(0);
-            }
+          
             
             List<int> myResult = new List<int>();
             Stack<TreeNode> myStack = new Stack<TreeNode>();

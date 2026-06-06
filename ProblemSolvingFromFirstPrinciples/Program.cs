@@ -3,10 +3,9 @@
     static void Main(string[] args)
     {
       
-        JumpGameSetTwo jg = new JumpGameSetTwo();
-        int[] input = {3,2,1,0,4};
+        ClimbinStairsSetTwo csst = new ClimbinStairsSetTwo();
 
-        Console.WriteLine(jg.JumpGameImpl(input));
+        Console.WriteLine(csst.CSImpl(4));
     
     }
 }
