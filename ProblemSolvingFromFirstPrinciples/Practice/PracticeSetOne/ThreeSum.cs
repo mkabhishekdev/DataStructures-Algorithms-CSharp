@@ -17,8 +17,6 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetOne
 
             IList<IList<int>> res = new List<IList<int>>();
        
-    
-
             Array.Sort(nums);
 
             for(int i = 0; i < nums.Length - 2; i++)
