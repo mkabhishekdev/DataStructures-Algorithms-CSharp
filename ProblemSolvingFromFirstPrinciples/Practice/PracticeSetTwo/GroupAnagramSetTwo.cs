@@ -40,8 +40,13 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
         {
             int[] freq = new int[26];
 
-            foreach(char ch in str.ToCharArray())
+            foreach(char ch in str)
             {
+                if(ch < 'a' || ch > 'z')
+                {
+                    throw new ArgumentException("Only lowercase a-z characters are supported.", nameof(str));
+                }
+
                 freq[ch - 'a']++;
             }
             
