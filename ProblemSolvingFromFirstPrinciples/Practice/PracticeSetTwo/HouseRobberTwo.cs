@@ -10,7 +10,12 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
     {
         public int HouseRobberCircular(int[] nums)
         {
-            if(nums.Length < 2)
+            if (nums.Length == 0)
+            {
+                return 0;
+            }
+
+            if (nums.Length == 1)
             {
                 return nums[0];
             }
