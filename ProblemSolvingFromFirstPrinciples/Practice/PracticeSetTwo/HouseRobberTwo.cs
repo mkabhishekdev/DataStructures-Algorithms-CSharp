@@ -35,7 +35,12 @@ namespace ProblemSolvingFromFirstPrinciples.Practice.PracticeSetTwo
 
         private int HouseRobberHelper(int[] input)
         {
-            if(input.Length < 2)
+            if (input.Length == 0)
+            {
+                return 0;
+            }
+
+            if (input.Length == 1)
             {
                 return input[0];
             }
