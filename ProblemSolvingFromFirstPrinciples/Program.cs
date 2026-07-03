@@ -3,9 +3,9 @@
     static void Main(string[] args)
     {
       
-        ClimbinStairsSetTwo csst = new ClimbinStairsSetTwo();
+        BinarySeachSetTwo bsst = new BinarySeachSetTwo();
+        int[] input = {11,7,4,2,8,6,1,13,9};
 
-        Console.WriteLine(csst.CSImpl(4));
-    
+        bsst.BinarySearchImpl(input, 1);
     }
 }
